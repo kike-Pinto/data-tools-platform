@@ -24,6 +24,7 @@ import { excelToCsvTool } from './configs/excel-to-csv'
 import { excelToJsonTool } from './configs/excel-to-json'
 import { mergeCsvFilesTool } from './configs/merge-csv-files'
 import { splitCsvFileTool } from './configs/split-csv-file'
+import { csvColumnRemoverTool } from './configs/csv-column-remover'
 
 export const toolRegistry: Record<string, ToolConfig> = {
   'csv-to-json': csvToJsonTool,
@@ -35,6 +36,7 @@ export const toolRegistry: Record<string, ToolConfig> = {
   'excel-to-json': excelToJsonTool,
   'merge-csv-files': mergeCsvFilesTool,
   'split-csv-file': splitCsvFileTool,
+  'csv-column-remover': csvColumnRemoverTool,
 }
 
 export const allTools = Object.values(toolRegistry)

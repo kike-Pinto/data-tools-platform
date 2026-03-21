@@ -10,6 +10,7 @@ import { excelToCsvProcessor } from './excelToCsv'
 import { excelToJsonProcessor } from './excelToJson'
 import { mergeCsvFilesProcessor } from './mergeCsvFiles'
 import { splitCsvFileProcessor } from './splitCsvFile'
+import { csvColumnRemoverProcessor } from './csvColumnRemover'
 
 export const processorRegistry: Record<string, ToolProcessor> = {
   csvToJson: csvToJsonProcessor,
@@ -21,4 +22,5 @@ export const processorRegistry: Record<string, ToolProcessor> = {
   excelToJson: excelToJsonProcessor,
   mergeCsvFiles: mergeCsvFilesProcessor,
   splitCsvFile: splitCsvFileProcessor,
+  csvColumnRemover: csvColumnRemoverProcessor,
 }
