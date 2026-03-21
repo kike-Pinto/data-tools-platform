@@ -20,6 +20,7 @@ import { jsonToCsvTool } from './configs/json-to-csv'
 import { csvCleanerTool } from './configs/csv-cleaner'
 import { removeDuplicatesCsvTool } from './configs/remove-duplicates-csv'
 import { csvToExcelTool } from './configs/csv-to-excel'
+import { excelToCsvTool } from './configs/excel-to-csv'
 
 export const toolRegistry: Record<string, ToolConfig> = {
   'csv-to-json': csvToJsonTool,
@@ -27,6 +28,7 @@ export const toolRegistry: Record<string, ToolConfig> = {
   'csv-cleaner': csvCleanerTool,
   'remove-duplicates-csv': removeDuplicatesCsvTool,
   'csv-to-excel': csvToExcelTool,
+  'excel-to-csv': excelToCsvTool,
 }
 
 export const allTools = Object.values(toolRegistry)

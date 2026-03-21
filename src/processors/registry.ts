@@ -6,6 +6,7 @@ import { jsonToCsvProcessor } from './jsonToCsv'
 import { csvCleanerProcessor } from './csvCleaner'
 import { removeDuplicatesCsvProcessor } from './removeDuplicatesCsv'
 import { csvToExcelProcessor } from './csvToExcel'
+import { excelToCsvProcessor } from './excelToCsv'
 
 export const processorRegistry: Record<string, ToolProcessor> = {
   csvToJson: csvToJsonProcessor,
@@ -13,4 +14,5 @@ export const processorRegistry: Record<string, ToolProcessor> = {
   csvCleaner: csvCleanerProcessor,
   removeDuplicatesCsv: removeDuplicatesCsvProcessor,
   csvToExcel: csvToExcelProcessor,
+  excelToCsv: excelToCsvProcessor,
 }
