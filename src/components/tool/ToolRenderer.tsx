@@ -5,11 +5,11 @@
 import { useState } from 'react'
 import { downloadBlob } from '@/lib/download'
 import type { ToolConfig, ToolProcessorResult } from '@/tools/types'
+import { processorRegistry } from '@/processors/registry'
 import { FileInput } from './FileInput'
 import { TextInput } from './TextInput'
 import { ResultCard } from './ResultCard'
 import { DownloadButton } from './DownloadButton'
-import { processorRegistry } from '@/processors/registry'
 
 type Props = {
   tool: ToolConfig
@@ -17,6 +17,7 @@ type Props = {
 
 export function ToolRenderer({ tool }: Props) {
   const [file, setFile] = useState<File | null>(null)
+  const [files, setFiles] = useState<File[]>([])
   const [text, setText] = useState('')
   const [result, setResult] = useState<ToolProcessorResult | null>(null)
   const [error, setError] = useState('')
@@ -36,6 +37,7 @@ export function ToolRenderer({ tool }: Props) {
 
       const output = await processor({
         file: file ?? undefined,
+        files: files.length > 0 ? files : undefined,
         text: text || undefined,
       })
 
@@ -59,7 +61,40 @@ export function ToolRenderer({ tool }: Props) {
 
         <div className='space-y-4'>
           {tool.input.kind === 'file' ? (
-            <FileInput accept={tool.input.accept} onChange={setFile} />
+            <>
+              <FileInput
+                accept={tool.input.accept}
+                multiple={tool.input.multiple}
+                onChange={(selectedFile, selectedFiles) => {
+                  setFile(selectedFile)
+                  setFiles(selectedFiles ?? [])
+                }}
+              />
+
+              {tool.input.multiple ? (
+                <div className='rounded-lg bg-zinc-50 p-3 text-sm'>
+                  <p className='font-medium'>
+                    Archivos seleccionados: {files.length}
+                  </p>
+
+                  {files.length > 0 ? (
+                    <ul className='mt-2 list-disc space-y-1 pl-5 text-zinc-600'>
+                      {files.map((selectedFile) => (
+                        <li
+                          key={`${selectedFile.name}-${selectedFile.lastModified}`}
+                        >
+                          {selectedFile.name}
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p className='mt-1 text-zinc-500'>
+                      Aún no has seleccionado archivos.
+                    </p>
+                  )}
+                </div>
+              ) : null}
+            </>
           ) : (
             <TextInput
               placeholder={tool.input.placeholder}

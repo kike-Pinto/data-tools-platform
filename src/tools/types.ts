@@ -18,6 +18,7 @@ export type ToolProcessorResult =
 
 export type ToolRunPayload = {
   file?: File
+  files?: File[]
   text?: string
 }
 
@@ -35,6 +36,7 @@ export type ToolConfig = {
     kind: ToolInputKind
     accept?: string
     placeholder?: string
+    multiple?: boolean
   }
 
   output: {
