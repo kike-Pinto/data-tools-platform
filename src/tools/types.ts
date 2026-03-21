@@ -46,5 +46,5 @@ export type ToolConfig = {
     description: string
   }
 
-  processor: ToolProcessor
+  processorKey: string
 }
