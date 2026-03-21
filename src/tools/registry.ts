@@ -17,10 +17,12 @@
 import type { ToolConfig } from './types'
 import { csvToJsonTool } from './configs/csv-to-json'
 import { jsonToCsvTool } from './configs/json-to-csv'
+import { csvCleanerTool } from './configs/csv-cleaner'
 
 export const toolRegistry: Record<string, ToolConfig> = {
   'csv-to-json': csvToJsonTool,
   'json-to-csv': jsonToCsvTool,
+  'csv-cleaner': csvCleanerTool,
 }
 
 export const allTools = Object.values(toolRegistry)
