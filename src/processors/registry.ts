@@ -14,6 +14,7 @@ import { csvColumnRemoverProcessor } from './csvColumnRemover'
 import { removeEmptyColumnsCsvProcessor } from './removeEmptyColumnsCsv'
 import { csvColumnSelectorProcessor } from './csvColumnSelector'
 import { csvHeaderRenamerProcessor } from './csvHeaderRenamer'
+import { csvRowCounterProcessor } from './csvRowCounter'
 
 export const processorRegistry: Record<string, ToolProcessor> = {
   csvToJson: csvToJsonProcessor,
@@ -29,4 +30,5 @@ export const processorRegistry: Record<string, ToolProcessor> = {
   removeEmptyColumnsCsv: removeEmptyColumnsCsvProcessor,
   csvColumnSelector: csvColumnSelectorProcessor,
   csvHeaderRenamer: csvHeaderRenamerProcessor,
+  csvRowCounter: csvRowCounterProcessor,
 }
