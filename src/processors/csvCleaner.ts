@@ -15,6 +15,9 @@ export const csvCleanerProcessor: ToolProcessor = async ({ file }) => {
     skipEmptyLines: true,
   })
 
+  console.log(parsed.data[0])
+  console.log(parsed.data)
+
   if (parsed.errors.length > 0) {
     throw new Error(parsed.errors[0].message)
   }
