@@ -16,6 +16,7 @@ import { mergeCsvFilesTool } from './configs/merge-csv-files'
 import { splitCsvFileTool } from './configs/split-csv-file'
 import { csvColumnRemoverTool } from './configs/csv-column-remover'
 import { removeEmptyColumnsCsvTool } from './configs/remove-empty-columns-csv'
+import { csvColumnSelectorTool } from './configs/csv-column-selector'
 
 export const toolRegistry: Record<string, ToolConfig> = {
   'csv-to-json': csvToJsonTool,
@@ -29,6 +30,7 @@ export const toolRegistry: Record<string, ToolConfig> = {
   'split-csv-file': splitCsvFileTool,
   'csv-column-remover': csvColumnRemoverTool,
   'remove-empty-columns-csv': removeEmptyColumnsCsvTool,
+  'csv-column-selector': csvColumnSelectorTool,
 }
 
 export const allTools = Object.values(toolRegistry)
