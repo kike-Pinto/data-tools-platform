@@ -60,7 +60,36 @@ export function ToolRenderer({ tool }: Props) {
         </div>
 
         <div className='space-y-4'>
-          {tool.input.kind === 'file' ? (
+          {Array.isArray(tool.input) ? (
+            tool.input.map((input, index) => {
+              if (input.kind === 'file') {
+                return (
+                  <FileInput
+                    key={index}
+                    accept={input.accept}
+                    multiple={input.multiple}
+                    onChange={(selectedFile, selectedFiles) => {
+                      setFile(selectedFile)
+                      setFiles(selectedFiles ?? [])
+                    }}
+                  />
+                )
+              }
+
+              if (input.kind === 'text') {
+                return (
+                  <TextInput
+                    key={index}
+                    placeholder={input.placeholder}
+                    value={text}
+                    onChange={setText}
+                  />
+                )
+              }
+
+              return null
+            })
+          ) : tool.input.kind === 'file' ? (
             <>
               <FileInput
                 accept={tool.input.accept}

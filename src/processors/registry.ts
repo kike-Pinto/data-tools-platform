@@ -12,6 +12,7 @@ import { mergeCsvFilesProcessor } from './mergeCsvFiles'
 import { splitCsvFileProcessor } from './splitCsvFile'
 import { csvColumnRemoverProcessor } from './csvColumnRemover'
 import { removeEmptyColumnsCsvProcessor } from './removeEmptyColumnsCsv'
+import { csvColumnSelectorProcessor } from './csvColumnSelector'
 
 export const processorRegistry: Record<string, ToolProcessor> = {
   csvToJson: csvToJsonProcessor,
@@ -25,4 +26,5 @@ export const processorRegistry: Record<string, ToolProcessor> = {
   splitCsvFile: splitCsvFileProcessor,
   csvColumnRemover: csvColumnRemoverProcessor,
   removeEmptyColumnsCsv: removeEmptyColumnsCsvProcessor,
+  csvColumnSelector: csvColumnSelectorProcessor,
 }

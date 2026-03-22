@@ -32,12 +32,19 @@ export type ToolConfig = {
   description: string
   category: 'csv' | 'json' | 'excel' | 'data'
 
-  input: {
-    kind: ToolInputKind
-    accept?: string
-    placeholder?: string
-    multiple?: boolean
-  }
+  input:
+    | {
+        kind: ToolInputKind
+        accept?: string
+        placeholder?: string
+        multiple?: boolean
+      }
+    | Array<{
+        kind: ToolInputKind
+        accept?: string
+        placeholder?: string
+        multiple?: boolean
+      }>
 
   output: {
     kind: ToolOutputKind
