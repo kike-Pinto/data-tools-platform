@@ -4,16 +4,6 @@
 
 // Es el lugar donde se registran todas las tools.
 
-// Más adelante aquí agregarás:
-
-// json-to-csv
-
-// csv-to-excel
-
-// excel-to-csv
-
-// csv-cleaner
-
 import type { ToolConfig } from './types'
 import { csvToJsonTool } from './configs/csv-to-json'
 import { jsonToCsvTool } from './configs/json-to-csv'
@@ -25,6 +15,7 @@ import { excelToJsonTool } from './configs/excel-to-json'
 import { mergeCsvFilesTool } from './configs/merge-csv-files'
 import { splitCsvFileTool } from './configs/split-csv-file'
 import { csvColumnRemoverTool } from './configs/csv-column-remover'
+import { removeEmptyColumnsCsvTool } from './configs/remove-empty-columns-csv'
 
 export const toolRegistry: Record<string, ToolConfig> = {
   'csv-to-json': csvToJsonTool,
@@ -37,6 +28,7 @@ export const toolRegistry: Record<string, ToolConfig> = {
   'merge-csv-files': mergeCsvFilesTool,
   'split-csv-file': splitCsvFileTool,
   'csv-column-remover': csvColumnRemoverTool,
+  'remove-empty-columns-csv': removeEmptyColumnsCsvTool,
 }
 
 export const allTools = Object.values(toolRegistry)
