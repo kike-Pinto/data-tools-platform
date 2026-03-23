@@ -17,6 +17,7 @@ import { csvHeaderRenamerProcessor } from './csvHeaderRenamer'
 import { csvRowCounterProcessor } from './csvRowCounter'
 import { csvSorterProcessor } from './csvSorter'
 import { csvFilterRowsProcessor } from './csvFilterRows'
+import { csvAddColumnProcessor } from './csvAddColumn'
 
 export const processorRegistry: Record<string, ToolProcessor> = {
   csvToJson: csvToJsonProcessor,
@@ -35,4 +36,5 @@ export const processorRegistry: Record<string, ToolProcessor> = {
   csvRowCounter: csvRowCounterProcessor,
   csvSorter: csvSorterProcessor,
   csvFilterRows: csvFilterRowsProcessor,
+  csvAddColumn: csvAddColumnProcessor,
 }

@@ -21,6 +21,7 @@ import { csvHeaderRenamerTool } from './configs/csv-header-renamer'
 import { csvRowCounterTool } from './configs/csv-row-counter'
 import { csvSorterTool } from './configs/csv-sorter'
 import { csvFilterRowsTool } from './configs/csv-filter-rows'
+import { csvAddColumnTool } from './configs/csv-add-column'
 
 export const toolRegistry: Record<string, ToolConfig> = {
   'csv-to-json': csvToJsonTool,
@@ -39,6 +40,7 @@ export const toolRegistry: Record<string, ToolConfig> = {
   'csv-row-counter': csvRowCounterTool,
   'csv-sorter': csvSorterTool,
   'csv-filter-rows': csvFilterRowsTool,
+  'csv-add-column': csvAddColumnTool,
 }
 
 export const allTools = Object.values(toolRegistry)
