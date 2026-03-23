@@ -23,6 +23,7 @@ import { csvSorterTool } from './configs/csv-sorter'
 import { csvFilterRowsTool } from './configs/csv-filter-rows'
 import { csvAddColumnTool } from './configs/csv-add-column'
 import { csvRemoveColumnSelectableTool } from './configs/csv-remove-column-selectable'
+import { csvColumnMergerTool } from './configs/csv-column-merger'
 
 export const toolRegistry: Record<string, ToolConfig> = {
   'csv-to-json': csvToJsonTool,
@@ -43,6 +44,7 @@ export const toolRegistry: Record<string, ToolConfig> = {
   'csv-filter-rows': csvFilterRowsTool,
   'csv-add-column': csvAddColumnTool,
   'csv-remove-column-selectable': csvRemoveColumnSelectableTool,
+  'csv-column-merger': csvColumnMergerTool,
 }
 
 export const allTools = Object.values(toolRegistry)
