@@ -185,4 +185,120 @@ Jose Rojas,28`,
       'CSV Validator',
     ],
   },
+  'csv-filter-rows': {
+    what: 'This tool filters CSV rows by matching a specific column and value. It helps you keep only the rows that match the condition you enter, which is useful for cleaning reports, exports, or segmented datasets.',
+
+    howTo: [
+      'Upload your CSV file.',
+      'Enter the filter using this format: column=value.',
+      'Click the "Run tool" button.',
+      'Download the filtered CSV file or review the result.',
+    ],
+
+    exampleInput: `name,age,country
+Maca,30,Brasil
+Ana,25,Chile
+Jose,28,Peru
+Marta,25,Chile`,
+
+    exampleOutput: `name,age,country
+Ana,25,Chile
+Marta,25,Chile`,
+
+    useCases: [
+      'Keep only rows from one country, category, or status.',
+      'Filter exported reports before sharing them.',
+      'Prepare segmented CSV files for analysis.',
+      'Reduce large datasets to only the records you need.',
+    ],
+
+    notes: [
+      'Use this format: column=value.',
+      'This first version uses exact matching.',
+      'Text matching is case-insensitive.',
+      'If no rows match, the tool will show a message instead of a file.',
+    ],
+
+    faqs: [
+      {
+        question: 'What format should I use?',
+        answer: 'Use this format: column=value. For example: country=Chile.',
+      },
+      {
+        question: 'Does uppercase or lowercase matter?',
+        answer: 'No. This version compares text without case sensitivity.',
+      },
+      {
+        question: 'Can I use multiple filters at once?',
+        answer:
+          'Not in this first version. The tool currently supports one filter at a time.',
+      },
+    ],
+
+    relatedTools: [
+      'CSV Column Selector',
+      'CSV Sorter',
+      'CSV Validator',
+      'CSV Remove Column',
+    ],
+  },
+  'csv-sorter': {
+    what: 'This tool sorts CSV rows by a selected column. It is useful for organizing data alphabetically or numerically before reviewing, sharing, or importing the file into another system.',
+
+    howTo: [
+      'Upload your CSV file.',
+      'Enter the name of the column you want to sort by.',
+      'Click the "Run tool" button.',
+      'Download the sorted CSV file.',
+    ],
+
+    exampleInput: `name,age,country
+Maca,30,Brasil
+Ana,25,Chile
+Jose,28,Peru`,
+
+    exampleOutput: `name,age,country
+Ana,25,Chile
+Jose,28,Peru
+Maca,30,Brasil`,
+
+    useCases: [
+      'Sort rows alphabetically by name or category.',
+      'Sort numeric values such as age, price, or quantity.',
+      'Prepare cleaner reports before exporting them.',
+      'Organize datasets before manual review.',
+    ],
+
+    notes: [
+      'This version sorts in ascending order only.',
+      'Text and numbers are supported.',
+      'Date columns may not sort correctly unless they use a consistent format.',
+      'Empty values may appear first depending on the data.',
+    ],
+
+    faqs: [
+      {
+        question: 'Can I sort by numbers?',
+        answer:
+          'Yes. If values look numeric, the tool will try to sort them as numbers.',
+      },
+      {
+        question: 'Can I sort in descending order?',
+        answer:
+          'Not in this first version. The current tool sorts in ascending order only.',
+      },
+      {
+        question: 'Why did my date column not sort correctly?',
+        answer:
+          'Date values may be interpreted as text if they do not follow a consistent sortable format.',
+      },
+    ],
+
+    relatedTools: [
+      'CSV Filter Rows',
+      'CSV Column Selector',
+      'CSV Validator',
+      'CSV Header Renamer',
+    ],
+  },
 }
