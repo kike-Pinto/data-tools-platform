@@ -71,4 +71,118 @@ Jose,28,Peru`,
       'CSV Validator',
     ],
   },
+  'csv-validator': {
+    what: 'This tool checks whether your CSV file has a valid structure. It detects problems such as inconsistent column counts, missing headers, or duplicated column names that may cause import errors.',
+
+    howTo: [
+      'Upload your CSV file.',
+      'Click the "Run tool" button.',
+      'Review the validation result.',
+      'Fix any detected issues if needed.',
+    ],
+
+    exampleInput: `name,age,country
+Maca,30,Brasil
+Ana,25
+Jose,28,Peru`,
+
+    exampleOutput: `CSV is invalid: inconsistent column count in row(s) 3.`,
+
+    useCases: [
+      'Check CSV files before importing them into another system.',
+      'Detect formatting problems that cause upload failures.',
+      'Validate exported reports before sharing them.',
+      'Troubleshoot CSV import errors.',
+    ],
+
+    notes: [
+      'All rows must contain the same number of columns.',
+      'Duplicate headers are not allowed.',
+      'Empty files are considered invalid.',
+    ],
+
+    faqs: [
+      {
+        question: 'What makes a CSV invalid?',
+        answer:
+          'A CSV file is invalid when rows contain different numbers of columns or when duplicate headers exist.',
+      },
+      {
+        question: 'Does this tool fix CSV errors?',
+        answer:
+          'No. This tool only detects structural issues. You can fix them manually or using other tools.',
+      },
+      {
+        question: 'Can this help with CSV import errors?',
+        answer:
+          'Yes. Many import failures happen due to inconsistent column counts or missing headers.',
+      },
+    ],
+
+    relatedTools: [
+      'CSV Cleaner',
+      'Remove Empty Columns CSV',
+      'CSV Header Renamer',
+      'CSV Filter Rows',
+    ],
+  },
+  'csv-column-merger': {
+    what: 'This tool merges two CSV columns into a new single column. It is useful when you want to combine separate fields like first name and last name into one value before exporting or importing data.',
+
+    howTo: [
+      'Upload your CSV file.',
+      'Enter the merge instruction using this format: column1,column2=newColumn.',
+      'Click the "Run tool" button.',
+      'Download the merged CSV file.',
+    ],
+
+    exampleInput: `first_name,last_name,age
+Maca,Soto,30
+Ana,Perez,25
+Jose,Rojas,28`,
+
+    exampleOutput: `full_name,age
+Maca Soto,30
+Ana Perez,25
+Jose Rojas,28`,
+
+    useCases: [
+      'Combine first name and last name into a full name column.',
+      'Prepare CSV files for systems that require a single field instead of two separate ones.',
+      'Simplify exported datasets before sharing them.',
+      'Standardize file structure before importing into another platform.',
+    ],
+
+    notes: [
+      'This version merges exactly two columns.',
+      'The two original columns are removed after merging.',
+      'The new merged column is inserted where the first selected column was located.',
+      'Values are joined with a space.',
+    ],
+
+    faqs: [
+      {
+        question: 'What format should I use?',
+        answer:
+          'Use this format: column1,column2=newColumn. For example: first_name,last_name=full_name.',
+      },
+      {
+        question: 'Does the tool keep the original columns?',
+        answer:
+          'No. This version removes the two original columns and replaces them with the new merged column.',
+      },
+      {
+        question: 'Can I merge more than two columns?',
+        answer:
+          'Not in this first version. This tool currently supports merging exactly two columns.',
+      },
+    ],
+
+    relatedTools: [
+      'CSV Header Renamer',
+      'CSV Column Selector',
+      'CSV Add Column',
+      'CSV Validator',
+    ],
+  },
 }
