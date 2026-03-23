@@ -301,4 +301,118 @@ Maca,30,Brasil`,
       'CSV Header Renamer',
     ],
   },
+  'csv-column-selector': {
+    what: 'This tool lets you keep only the CSV columns you need and remove the rest. It is useful when working with large exports that contain extra fields you do not want to keep.',
+
+    howTo: [
+      'Upload your CSV file.',
+      'Enter the column names you want to keep, separated by commas.',
+      'Click the "Run tool" button.',
+      'Download the new CSV file with only the selected columns.',
+    ],
+
+    exampleInput: `name,age,country,email,phone
+Maca,30,Brasil,maca@mail.com,123
+Ana,25,Chile,ana@mail.com,456
+Jose,28,Peru,jose@mail.com,789`,
+
+    exampleOutput: `name,country
+Maca,Brasil
+Ana,Chile
+Jose,Peru`,
+
+    useCases: [
+      'Remove unnecessary fields from exported reports.',
+      'Prepare CSV files for clients or teammates.',
+      'Simplify large datasets before analysis.',
+      'Keep only the fields needed for another import process.',
+    ],
+
+    notes: [
+      'Enter column names separated by commas.',
+      'Column names must match the CSV headers exactly.',
+      'The selected columns keep the same order you entered.',
+    ],
+
+    faqs: [
+      {
+        question: 'How should I enter the columns?',
+        answer: 'Use commas to separate them. For example: name,country,email.',
+      },
+      {
+        question: 'What happens if a column does not exist?',
+        answer:
+          'The tool will show an error message and will not generate the output file.',
+      },
+      {
+        question: 'Can I reorder columns too?',
+        answer:
+          'Yes. The output follows the order in which you list the selected columns.',
+      },
+    ],
+
+    relatedTools: [
+      'CSV Remove Column',
+      'CSV Header Renamer',
+      'CSV Filter Rows',
+      'Remove Empty Columns CSV',
+    ],
+  },
+  'csv-header-renamer': {
+    what: 'This tool renames one or more CSV headers using a simple mapping format. It is useful when you need to standardize column names before importing data into another tool or workflow.',
+
+    howTo: [
+      'Upload your CSV file.',
+      'Enter the header changes using this format: oldName=newName.',
+      'Use commas to separate multiple changes.',
+      'Click the "Run tool" button and download the updated CSV.',
+    ],
+
+    exampleInput: `name,age,country
+Maca,30,Brasil
+Ana,25,Chile
+Jose,28,Peru`,
+
+    exampleOutput: `full_name,age,location
+Maca,30,Brasil
+Ana,25,Chile
+Jose,28,Peru`,
+
+    useCases: [
+      'Standardize column names before import.',
+      'Rename technical headers to simpler labels.',
+      'Prepare CSV files for clients or reports.',
+      'Adapt exported files to another system format.',
+    ],
+
+    notes: [
+      'Use this format: oldName=newName.',
+      'Separate multiple changes with commas.',
+      'Headers that are not renamed remain unchanged.',
+    ],
+
+    faqs: [
+      {
+        question: 'How do I rename multiple headers?',
+        answer:
+          'Use commas to separate each mapping. Example: name=full_name,country=location.',
+      },
+      {
+        question: 'Do I need to rename every column?',
+        answer: 'No. You can rename only the columns you want to change.',
+      },
+      {
+        question: 'What happens if a header does not exist?',
+        answer:
+          'The tool will show an error and stop until you use valid header names.',
+      },
+    ],
+
+    relatedTools: [
+      'CSV Column Selector',
+      'CSV Validator',
+      'CSV Column Merger',
+      'CSV Add Column',
+    ],
+  },
 }
