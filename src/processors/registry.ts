@@ -20,6 +20,7 @@ import { csvFilterRowsProcessor } from './csvFilterRows'
 import { csvAddColumnProcessor } from './csvAddColumn'
 import { csvRemoveColumnSelectableProcessor } from './csvRemoveColumnSelectable'
 import { csvColumnMergerProcessor } from './csvColumnMerger'
+import { csvValidatorProcessor } from './csvValidator'
 
 export const processorRegistry: Record<string, ToolProcessor> = {
   csvToJson: csvToJsonProcessor,
@@ -41,4 +42,5 @@ export const processorRegistry: Record<string, ToolProcessor> = {
   csvAddColumn: csvAddColumnProcessor,
   csvRemoveColumnSelectable: csvRemoveColumnSelectableProcessor,
   csvColumnMerger: csvColumnMergerProcessor,
+  csvValidator: csvValidatorProcessor,
 }
