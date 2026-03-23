@@ -9,7 +9,10 @@ type ToolContentItem = {
     question: string
     answer: string
   }[]
-  relatedTools?: string[]
+  relatedTools?: {
+    name: string
+    slug: string
+  }[]
 }
 
 export const toolContentRegistry: Record<string, ToolContentItem> = {
@@ -65,10 +68,10 @@ Jose,28,Peru`,
     ],
 
     relatedTools: [
-      'CSV Column Selector',
-      'CSV Header Renamer',
-      'CSV Remove Column',
-      'CSV Validator',
+      { name: 'CSV Column Selector', slug: 'csv-column-selector' },
+      { name: 'CSV Header Renamer', slug: 'csv-header-renamer' },
+      { name: 'CSV Remove Column', slug: 'csv-remove-column-selectable' },
+      { name: 'CSV Validator', slug: 'csv-validator' },
     ],
   },
   'csv-validator': {
@@ -120,10 +123,10 @@ Jose,28,Peru`,
     ],
 
     relatedTools: [
-      'CSV Cleaner',
-      'Remove Empty Columns CSV',
-      'CSV Header Renamer',
-      'CSV Filter Rows',
+      { name: 'CSV Cleaner', slug: 'csv-cleaner' },
+      { name: 'Remove Empty Columns CSV', slug: 'remove-empty-columns-csv' },
+      { name: 'CSV Header Renamer', slug: 'csv-header-renamer' },
+      { name: 'CSV Filter Rows', slug: 'csv-filter-rows' },
     ],
   },
   'csv-column-merger': {
@@ -179,10 +182,10 @@ Jose Rojas,28`,
     ],
 
     relatedTools: [
-      'CSV Header Renamer',
-      'CSV Column Selector',
-      'CSV Add Column',
-      'CSV Validator',
+      { name: 'CSV Header Renamer', slug: 'csv-header-renamer' },
+      { name: 'CSV Column Selector', slug: 'csv-column-selector' },
+      { name: 'CSV Add Column', slug: 'csv-add-column' },
+      { name: 'CSV Validator', slug: 'csv-validator' },
     ],
   },
   'csv-filter-rows': {
@@ -236,10 +239,10 @@ Marta,25,Chile`,
     ],
 
     relatedTools: [
-      'CSV Column Selector',
-      'CSV Sorter',
-      'CSV Validator',
-      'CSV Remove Column',
+      { name: 'CSV Column Selector', slug: 'csv-column-selector' },
+      { name: 'CSV Sorter', slug: 'csv-sorter' },
+      { name: 'CSV Validator', slug: 'csv-validator' },
+      { name: 'CSV Remove Column', slug: 'csv-remove-column-selectable' },
     ],
   },
   'csv-sorter': {
@@ -295,10 +298,10 @@ Maca,30,Brasil`,
     ],
 
     relatedTools: [
-      'CSV Filter Rows',
-      'CSV Column Selector',
-      'CSV Validator',
-      'CSV Header Renamer',
+      { name: 'CSV Filter Rows', slug: 'csv-filter-rows' },
+      { name: 'CSV Column Selector', slug: 'csv-column-selector' },
+      { name: 'CSV Validator', slug: 'csv-validator' },
+      { name: 'CSV Header Renamer', slug: 'csv-header-renamer' },
     ],
   },
   'csv-column-selector': {
@@ -352,10 +355,10 @@ Jose,Peru`,
     ],
 
     relatedTools: [
-      'CSV Remove Column',
-      'CSV Header Renamer',
-      'CSV Filter Rows',
-      'Remove Empty Columns CSV',
+      { name: 'CSV Remove Column', slug: 'csv-remove-column-selectable' },
+      { name: 'CSV Header Renamer', slug: 'csv-header-renamer' },
+      { name: 'CSV Filter Rows', slug: 'csv-filter-rows' },
+      { name: 'Remove Empty Columns CSV', slug: 'remove-empty-columns-csv' },
     ],
   },
   'csv-header-renamer': {
@@ -409,10 +412,126 @@ Jose,28,Peru`,
     ],
 
     relatedTools: [
-      'CSV Column Selector',
-      'CSV Validator',
-      'CSV Column Merger',
-      'CSV Add Column',
+      { name: 'CSV Column Selector', slug: 'csv-column-selector' },
+      { name: 'CSV Validator', slug: 'csv-validator' },
+      { name: 'CSV Column Merger', slug: 'csv-column-merger' },
+      { name: 'CSV Add Column', slug: 'csv-add-column' },
+    ],
+  },
+  'csv-add-column': {
+    what: 'This tool adds a new column to your CSV file and fills it with the same value for all rows. It is useful when you need to label, tag, or standardize records before exporting or importing data.',
+
+    howTo: [
+      'Upload your CSV file.',
+      'Enter the new column instruction using this format: newColumn=value.',
+      'Click the "Run tool" button.',
+      'Download the updated CSV file.',
+    ],
+
+    exampleInput: `name,age,country
+Maca,30,Brasil
+Ana,25,Chile
+Jose,28,Peru`,
+
+    exampleOutput: `name,age,country,status
+Maca,30,Brasil,active
+Ana,25,Chile,active
+Jose,28,Peru,active`,
+
+    useCases: [
+      'Add a status field to all rows.',
+      'Mark imported records with a source label.',
+      'Create a constant category or tag before importing data elsewhere.',
+      'Standardize exported CSV files with extra metadata.',
+    ],
+
+    notes: [
+      'Use this format: newColumn=value.',
+      'The new column is added at the end of the CSV.',
+      'The same value is applied to all rows.',
+      'The tool will show an error if the column already exists.',
+    ],
+
+    faqs: [
+      {
+        question: 'What format should I use?',
+        answer: 'Use this format: newColumn=value. For example: status=active.',
+      },
+      {
+        question: 'Can I use a different value for each row?',
+        answer:
+          'Not in this first version. The tool applies the same value to every row.',
+      },
+      {
+        question: 'What happens if the column already exists?',
+        answer:
+          'The tool will stop and show an error message to avoid overwriting existing data.',
+      },
+    ],
+
+    relatedTools: [
+      { name: 'CSV Header Renamer', slug: 'csv-header-renamer' },
+      { name: 'CSV Column Merger', slug: 'csv-column-merger' },
+      { name: 'CSV Filter Rows', slug: 'csv-filter-rows' },
+      { name: 'CSV Remove Column', slug: 'csv-remove-column-selectable' },
+    ],
+  },
+  'csv-remove-column-selectable': {
+    what: 'This tool removes a specific column from your CSV file. It is useful when you want to delete unnecessary fields before exporting, sharing, or importing data into another system.',
+
+    howTo: [
+      'Upload your CSV file.',
+      'Enter the name of the column you want to remove.',
+      'Click the "Run tool" button.',
+      'Download the updated CSV file.',
+    ],
+
+    exampleInput: `name,age,country,email
+Maca,30,Brasil,maca@mail.com
+Ana,25,Chile,ana@mail.com
+Jose,28,Peru,jose@mail.com`,
+
+    exampleOutput: `name,age,country
+Maca,30,Brasil
+Ana,25,Chile
+Jose,28,Peru`,
+
+    useCases: [
+      'Remove private or unnecessary fields from exported data.',
+      'Delete columns before sending files to clients or teammates.',
+      'Simplify CSV files before importing them elsewhere.',
+      'Clean reports by removing irrelevant fields.',
+    ],
+
+    notes: [
+      'Enter the column name exactly as it appears in the CSV header.',
+      'This tool removes only one selected column at a time.',
+      'The original file is not changed.',
+      'You cannot remove the only remaining column in a CSV file.',
+    ],
+
+    faqs: [
+      {
+        question: 'How do I choose the column to remove?',
+        answer: 'Type the exact header name of the column you want to delete.',
+      },
+      {
+        question: 'Can I remove more than one column at once?',
+        answer:
+          'Not in this first version. The tool currently removes one column at a time.',
+      },
+      {
+        question: 'What happens if the column does not exist?',
+        answer:
+          'The tool will show an error message and no file will be generated.',
+      },
+    ],
+
+    relatedTools: [
+      { name: 'CSV Column Selector', slug: 'csv-column-selector' },
+      { name: 'Remove Empty Columns CSV', slug: 'remove-empty-columns-csv' },
+      { name: 'CSV Header Renamer', slug: 'csv-header-renamer' },
+      { name: 'CSV Validator', slug: 'csv-validator' },
     ],
   },
 }

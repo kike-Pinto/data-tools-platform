@@ -11,7 +11,10 @@ type ToolContentProps = {
     question: string
     answer: string
   }[]
-  relatedTools?: string[]
+  relatedTools?: {
+    name: string
+    slug: string
+  }[]
 }
 
 export function ToolContent({
@@ -123,8 +126,15 @@ export function ToolContent({
           <h2 className='text-lg font-semibold mb-2'>Related tools</h2>
 
           <ul className='list-disc pl-5 space-y-1 text-sm text-zinc-700'>
-            {relatedTools.map((tool, index) => (
-              <li key={index}>{tool}</li>
+            {relatedTools.map((tool) => (
+              <li key={tool.slug}>
+                <a
+                  href={`/tools/${tool.slug}`}
+                  className='text-blue-600 hover:underline'
+                >
+                  {tool.name}
+                </a>
+              </li>
             ))}
           </ul>
         </section>
