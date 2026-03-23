@@ -19,6 +19,8 @@ import { removeEmptyColumnsCsvTool } from './configs/remove-empty-columns-csv'
 import { csvColumnSelectorTool } from './configs/csv-column-selector'
 import { csvHeaderRenamerTool } from './configs/csv-header-renamer'
 import { csvRowCounterTool } from './configs/csv-row-counter'
+import { csvSorterTool } from './configs/csv-sorter'
+import { csvFilterRowsTool } from './configs/csv-filter-rows'
 
 export const toolRegistry: Record<string, ToolConfig> = {
   'csv-to-json': csvToJsonTool,
@@ -35,6 +37,8 @@ export const toolRegistry: Record<string, ToolConfig> = {
   'csv-column-selector': csvColumnSelectorTool,
   'csv-header-renamer': csvHeaderRenamerTool,
   'csv-row-counter': csvRowCounterTool,
+  'csv-sorter': csvSorterTool,
+  'csv-filter-rows': csvFilterRowsTool,
 }
 
 export const allTools = Object.values(toolRegistry)
