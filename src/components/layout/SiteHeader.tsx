@@ -12,23 +12,17 @@ export function SiteHeader() {
           <Link href='/' className='transition hover:text-neutral-900'>
             Home
           </Link>
-          <Link
-            href='/categories/csv-tools'
-            className='transition hover:text-neutral-900'
-          >
-            Categories
+          <Link href='/tools' className='transition hover:text-neutral-900'>
+            Tools
           </Link>
-          <Link
-            href='/guides/how-to-convert-csv-to-json'
-            className='transition hover:text-neutral-900'
-          >
+          <Link href='/guides' className='transition hover:text-neutral-900'>
             Guides
           </Link>
           <Link
-            href='/tools/csv-to-json'
+            href='/categories'
             className='transition hover:text-neutral-900'
           >
-            Tools
+            Categories
           </Link>
         </nav>
       </div>
