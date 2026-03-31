@@ -6,6 +6,7 @@ import { ToolRenderer } from './ToolRenderer'
 import { ToolContent } from './ToolContent'
 import { toolContentRegistry } from '@/tools/toolContentRegistry'
 import { getCategoriesForTool } from '@/content/categoryHelpers'
+import { getGuideForTool } from '@/content/guideHelpers'
 
 type Props = {
   tool: ToolConfig
@@ -14,6 +15,7 @@ type Props = {
 export function ToolShell({ tool }: Props) {
   const content = toolContentRegistry[tool.slug]
   const relatedCategories = getCategoriesForTool(tool.slug)
+  const relatedGuide = getGuideForTool(tool.slug)
 
   return (
     <main className='mx-auto max-w-4xl px-4 py-10'>
@@ -35,6 +37,25 @@ export function ToolShell({ tool }: Props) {
                 {category.name}
               </Link>
             ))}
+          </div>
+        </section>
+      ) : null}
+
+      {relatedGuide ? (
+        <section className='mt-8 rounded-2xl border border-neutral-200 p-5'>
+          <p className='text-sm font-medium text-neutral-500'>Related guide</p>
+          <h2 className='mt-2 text-xl font-semibold'>{relatedGuide.title}</h2>
+          <p className='mt-2 text-sm leading-6 text-neutral-600'>
+            {relatedGuide.seoDescription}
+          </p>
+
+          <div className='mt-4'>
+            <Link
+              href={`/guides/${relatedGuide.slug}`}
+              className='inline-flex rounded-lg border border-neutral-900 px-4 py-2 text-sm font-medium text-neutral-900 transition hover:bg-neutral-900 hover:text-white'
+            >
+              Read the guide
+            </Link>
           </div>
         </section>
       ) : null}

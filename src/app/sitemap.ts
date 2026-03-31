@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next'
 import { toolRegistry } from '@/tools/registry'
 import { categoryRegistry } from '@/content/categories'
+import { guideRegistry } from '@/content/guides'
 import { siteConfig } from '@/config/site'
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -29,5 +30,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }))
 
-  return [...staticPages, ...toolPages, ...categoryPages]
+  const guidePages = Object.values(guideRegistry).map((guide) => ({
+    url: `${siteConfig.url}/guides/${guide.slug}`,
+    lastModified: now,
+    changeFrequency: 'weekly' as const,
+    priority: 0.75,
+  }))
+
+  return [...staticPages, ...toolPages, ...categoryPages, ...guidePages]
 }
