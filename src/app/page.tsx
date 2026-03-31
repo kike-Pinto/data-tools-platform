@@ -1,5 +1,6 @@
 // Paso 7: Mostrar tool desde la home
 
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import { categoryRegistry } from '@/content/categories'
 import { guideRegistry } from '@/content/guides'
@@ -8,7 +9,40 @@ import {
   featuredGuideSlugs,
   featuredToolSlugs,
 } from '@/content/home'
+import { siteConfig } from '@/config/site'
 import { toolRegistry } from '@/tools/registry'
+
+export const metadata: Metadata = {
+  title: 'Free CSV, Excel, JSON, and Data Tools',
+  description:
+    'Free online tools for CSV, Excel, JSON, file conversion, data cleanup, validation, filtering, sorting, and everyday admin workflows.',
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    type: 'website',
+    url: siteConfig.url,
+    title: 'Free CSV, Excel, JSON, and Data Tools',
+    description:
+      'Free online tools for CSV, Excel, JSON, file conversion, data cleanup, validation, filtering, sorting, and everyday admin workflows.',
+    siteName: siteConfig.name,
+    images: [
+      {
+        url: siteConfig.ogImage,
+        width: 1200,
+        height: 630,
+        alt: siteConfig.name,
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Free CSV, Excel, JSON, and Data Tools',
+    description:
+      'Free online tools for CSV, Excel, JSON, file conversion, data cleanup, validation, filtering, sorting, and everyday admin workflows.',
+    images: [siteConfig.ogImage],
+  },
+}
 
 export default function HomePage() {
   const featuredCategories = featuredCategorySlugs
