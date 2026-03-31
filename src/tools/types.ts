@@ -26,11 +26,13 @@ export type ToolProcessor = (
   payload: ToolRunPayload,
 ) => Promise<ToolProcessorResult>
 
+export type ToolCategory = 'csv' | 'json' | 'excel' | 'data'
+
 export type ToolConfig = {
   slug: string
   name: string
   description: string
-  category: 'csv' | 'json' | 'excel' | 'data'
+  category: ToolCategory
 
   input:
     | {
@@ -53,7 +55,11 @@ export type ToolConfig = {
   seo: {
     title: string
     description: string
+    keywords?: string[]
   }
+
+  featured?: boolean
+  relatedGuideSlugs?: string[]
 
   processorKey: string
 }
