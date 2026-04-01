@@ -133,7 +133,37 @@ export default async function GuidePage({ params }: Props) {
             .
           </p>
 
-          <div className='mt-4'>
+          {guide.toolBenefits && guide.toolBenefits.length > 0 ? (
+            <div className='mt-5'>
+              <h3 className='text-sm font-semibold text-neutral-900'>
+                Why use this tool
+              </h3>
+
+              <ul className='mt-3 space-y-2'>
+                {guide.toolBenefits.map((benefit, index) => (
+                  <li
+                    key={`${guide.slug}-benefit-${index}`}
+                    className='rounded-lg border border-neutral-200 px-4 py-3 text-sm leading-6 text-neutral-700'
+                  >
+                    {benefit}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
+
+          {guide.expectedResult ? (
+            <div className='mt-5 rounded-xl bg-neutral-50 p-4'>
+              <p className='text-sm font-medium text-neutral-500'>
+                Expected result
+              </p>
+              <p className='mt-2 text-sm leading-6 text-neutral-700'>
+                {guide.expectedResult}
+              </p>
+            </div>
+          ) : null}
+
+          <div className='mt-5'>
             <Link
               href={`/tools/${tool.slug}`}
               className='inline-flex rounded-lg border border-neutral-900 px-4 py-2 text-sm font-medium text-neutral-900 transition hover:bg-neutral-900 hover:text-white'

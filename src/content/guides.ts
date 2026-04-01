@@ -14,6 +14,8 @@ export type GuideConfig = {
   steps: string[]
   commonMistakes?: string[]
   faq?: GuideFaqItem[]
+  toolBenefits?: string[]
+  expectedResult?: string
   toolSlug: string
   relatedCategorySlugs: string[]
   relatedGuideSlugs?: string[]
@@ -65,6 +67,13 @@ export const guideRegistry: Record<string, GuideConfig> = {
           'Yes. Cleaning the file first can reduce errors and produce more reliable JSON output.',
       },
     ],
+    toolBenefits: [
+      'Convert spreadsheet-style rows into structured JSON quickly.',
+      'Avoid doing manual copy-paste transformations.',
+      'Get output that is easier to use in apps, APIs, and scripts.',
+    ],
+    expectedResult:
+      'A structured JSON output generated from your CSV file, ready to review, copy, or reuse.',
     toolSlug: 'csv-to-json',
     relatedCategorySlugs: ['csv-tools', 'file-conversion-tools'],
     relatedGuideSlugs: [
@@ -118,6 +127,13 @@ export const guideRegistry: Record<string, GuideConfig> = {
           'Yes. Nested data may require flattening or special handling depending on the structure.',
       },
     ],
+    toolBenefits: [
+      'Turn structured JSON into spreadsheet-friendly rows and columns.',
+      'Make technical data easier to review manually.',
+      'Prepare exports that can be opened in Excel or shared with teammates.',
+    ],
+    expectedResult:
+      'A CSV file generated from your JSON input, ready for spreadsheet review or export workflows.',
     toolSlug: 'json-to-csv',
     relatedCategorySlugs: ['csv-tools', 'file-conversion-tools'],
     relatedGuideSlugs: ['how-to-convert-csv-to-json'],
@@ -163,6 +179,13 @@ export const guideRegistry: Record<string, GuideConfig> = {
           'Not always. CSV mainly stores raw tabular values, not rich spreadsheet formatting.',
       },
     ],
+    toolBenefits: [
+      'Turn plain CSV data into a more familiar spreadsheet file.',
+      'Make exports easier to review and share.',
+      'Reduce friction when working with Excel-based office workflows.',
+    ],
+    expectedResult:
+      'An Excel file created from your CSV data, ready to open and review.',
     toolSlug: 'csv-to-excel',
     relatedCategorySlugs: ['excel-tools', 'file-conversion-tools'],
     relatedGuideSlugs: ['how-to-convert-excel-to-csv'],
@@ -208,6 +231,13 @@ export const guideRegistry: Record<string, GuideConfig> = {
           'No. CSV is designed for plain tabular values, not spreadsheet formulas or rich formatting.',
       },
     ],
+    toolBenefits: [
+      'Generate a simpler file format accepted by many import workflows.',
+      'Prepare spreadsheet data for systems that prefer CSV.',
+      'Reduce compatibility issues across platforms and tools.',
+    ],
+    expectedResult:
+      'A CSV export generated from your Excel file, ready for upload or import.',
     toolSlug: 'excel-to-csv',
     relatedCategorySlugs: ['excel-tools', 'file-conversion-tools'],
     relatedGuideSlugs: ['how-to-convert-csv-to-excel'],
@@ -258,6 +288,13 @@ export const guideRegistry: Record<string, GuideConfig> = {
           'Yes. Cleaner files usually reduce errors and make downstream workflows easier.',
       },
     ],
+    toolBenefits: [
+      'Reduce messy formatting before imports or analysis.',
+      'Make CSV files easier to review, share, and reuse.',
+      'Save time compared with cleaning everything manually.',
+    ],
+    expectedResult:
+      'A cleaner CSV file with fewer formatting issues and better structure for downstream use.',
     toolSlug: 'csv-cleaner',
     relatedCategorySlugs: ['csv-tools', 'data-cleaning-tools'],
     relatedGuideSlugs: [
@@ -307,6 +344,13 @@ export const guideRegistry: Record<string, GuideConfig> = {
           'Yes. Some repeated-looking records may still represent valid separate entries.',
       },
     ],
+    toolBenefits: [
+      'Remove repeated rows faster than doing it manually.',
+      'Improve reporting accuracy and reduce noise in exports.',
+      'Prepare cleaner files for imports and analysis.',
+    ],
+    expectedResult:
+      'A CSV file with duplicate rows removed and a cleaner final dataset.',
     toolSlug: 'remove-duplicates-csv',
     relatedCategorySlugs: ['csv-tools', 'data-cleaning-tools'],
     relatedGuideSlugs: [
@@ -355,6 +399,13 @@ export const guideRegistry: Record<string, GuideConfig> = {
           'Yes. Keeping the original is a good habit before any cleanup step.',
       },
     ],
+    toolBenefits: [
+      'Simplify wide CSV files with unnecessary blank columns.',
+      'Make exported data easier to review and share.',
+      'Reduce clutter before analysis or import.',
+    ],
+    expectedResult:
+      'A cleaner CSV file with empty columns removed and a more focused structure.',
     toolSlug: 'remove-empty-columns-csv',
     relatedCategorySlugs: ['csv-tools', 'data-cleaning-tools'],
     relatedGuideSlugs: [
@@ -403,6 +454,13 @@ export const guideRegistry: Record<string, GuideConfig> = {
           'Yes. Date-like strings may not sort properly unless the format is consistent and sortable.',
       },
     ],
+    toolBenefits: [
+      'Organize rows quickly for easier review.',
+      'Make patterns and values easier to inspect.',
+      'Prepare datasets for filtering, sharing, or reporting.',
+    ],
+    expectedResult:
+      'A CSV file sorted by the selected column and easier to inspect or reuse.',
     toolSlug: 'csv-sorter',
     relatedCategorySlugs: ['csv-tools', 'data-cleaning-tools'],
     relatedGuideSlugs: ['how-to-filter-csv-rows', 'how-to-clean-a-csv-file'],
@@ -448,6 +506,13 @@ export const guideRegistry: Record<string, GuideConfig> = {
           'The result may be empty or the tool may return a message instead of a file, depending on implementation.',
       },
     ],
+    toolBenefits: [
+      'Keep only the rows you actually need.',
+      'Reduce large exports into smaller focused datasets.',
+      'Make CSV review and sharing more targeted.',
+    ],
+    expectedResult:
+      'A filtered CSV output containing only rows that match your condition.',
     toolSlug: 'csv-filter-rows',
     relatedCategorySlugs: ['csv-tools', 'data-cleaning-tools'],
     relatedGuideSlugs: ['how-to-sort-a-csv-file', 'how-to-clean-a-csv-file'],
@@ -498,6 +563,13 @@ export const guideRegistry: Record<string, GuideConfig> = {
           'Yes. It is one of the safest checks you can do before using a CSV in another system.',
       },
     ],
+    toolBenefits: [
+      'Catch structural problems before they break downstream workflows.',
+      'Reduce failed imports and confusing file errors.',
+      'Build confidence before using a CSV in another system.',
+    ],
+    expectedResult:
+      'A validation result that helps confirm whether your CSV structure is safe to use.',
     toolSlug: 'csv-validator',
     relatedCategorySlugs: ['csv-tools', 'data-cleaning-tools'],
     relatedGuideSlugs: [
