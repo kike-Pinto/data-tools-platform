@@ -30,6 +30,34 @@ export function ToolShell({ tool }: Props) {
 
       <ToolRenderer tool={tool} />
 
+      {content?.what ? (
+        <section className='mt-8 rounded-2xl border border-neutral-200 p-6'>
+          <h2 className='text-xl font-semibold'>What this tool helps you do</h2>
+          <p className='mt-3 text-sm leading-7 text-neutral-700'>
+            {content.what}
+          </p>
+        </section>
+      ) : null}
+
+      {content?.useCases && content.useCases.length > 0 ? (
+        <section className='mt-8'>
+          <h2 className='text-2xl font-semibold tracking-tight'>
+            Common use cases
+          </h2>
+
+          <div className='mt-4 grid gap-3 sm:grid-cols-2'>
+            {content.useCases.map((useCase, index) => (
+              <div
+                key={`${tool.slug}-use-case-${index}`}
+                className='rounded-xl border border-neutral-200 p-4 text-sm leading-6 text-neutral-700'
+              >
+                {useCase}
+              </div>
+            ))}
+          </div>
+        </section>
+      ) : null}
+
       {relatedCategories.length > 0 ? (
         <section className='mt-8'>
           <p className='text-sm font-medium text-neutral-500'>
