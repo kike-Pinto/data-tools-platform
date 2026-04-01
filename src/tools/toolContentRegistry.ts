@@ -534,4 +534,372 @@ Jose,28,Peru`,
       { name: 'CSV Validator', slug: 'csv-validator' },
     ],
   },
+  'csv-to-json': {
+    what: 'This tool converts CSV data into JSON format automatically. It is useful when you need to transform spreadsheet-style rows into structured objects for apps, APIs, scripts, or web development workflows.',
+
+    howTo: [
+      'Upload your CSV file.',
+      'Click the "Run tool" button.',
+      'Wait for the tool to convert the rows into JSON objects.',
+      'Copy the JSON output or download the result if available.',
+    ],
+
+    exampleInput: `name,age,country
+Maca,30,Brasil
+Ana,25,Chile
+Jose,28,Peru`,
+
+    exampleOutput: `[
+  {
+    "name": "Maca",
+    "age": "30",
+    "country": "Brasil"
+  },
+  {
+    "name": "Ana",
+    "age": "25",
+    "country": "Chile"
+  },
+  {
+    "name": "Jose",
+    "age": "28",
+    "country": "Peru"
+  }
+]`,
+
+    useCases: [
+      'Convert spreadsheet exports into JSON for apps or APIs.',
+      'Prepare tabular data for scripts and automation workflows.',
+      'Transform CSV files into developer-friendly structured data.',
+      'Make exported rows easier to use in web projects.',
+    ],
+
+    notes: [
+      'CSV headers are used as the property names in the JSON output.',
+      'All values are typically converted as text unless extra parsing logic is added later.',
+      'It is a good idea to clean the CSV first if the file contains messy rows or extra spaces.',
+    ],
+
+    faqs: [
+      {
+        question: 'Why convert CSV to JSON?',
+        answer:
+          'JSON is easier to use in apps, APIs, and scripts than raw CSV files.',
+      },
+      {
+        question: 'Do column headers matter?',
+        answer:
+          'Yes. The CSV headers usually become the keys in the generated JSON objects.',
+      },
+      {
+        question: 'Should I validate or clean the CSV first?',
+        answer:
+          'Yes. Cleaner and more consistent CSV files usually produce better JSON output.',
+      },
+    ],
+
+    relatedTools: [
+      { name: 'JSON to CSV', slug: 'json-to-csv' },
+      { name: 'CSV Cleaner', slug: 'csv-cleaner' },
+      { name: 'CSV Validator', slug: 'csv-validator' },
+      { name: 'CSV to Excel', slug: 'csv-to-excel' },
+    ],
+  },
+  'json-to-csv': {
+    what: 'This tool converts JSON data into CSV format automatically. It is useful when you want to turn structured objects into rows and columns that can be opened in Excel, reviewed in spreadsheets, or shared in business workflows.',
+
+    howTo: [
+      'Paste your JSON data into the text input.',
+      'Click the "Run tool" button.',
+      'Wait for the tool to convert the JSON into CSV format.',
+      'Download the CSV file or review the output.',
+    ],
+
+    exampleInput: `[
+  {
+    "name": "Maca",
+    "age": "30",
+    "country": "Brasil"
+  },
+  {
+    "name": "Ana",
+    "age": "25",
+    "country": "Chile"
+  },
+  {
+    "name": "Jose",
+    "age": "28",
+    "country": "Peru"
+  }
+]`,
+
+    exampleOutput: `name,age,country
+Maca,30,Brasil
+Ana,25,Chile
+Jose,28,Peru`,
+
+    useCases: [
+      'Turn API or app data into spreadsheet-friendly files.',
+      'Prepare JSON-based data for Excel or CSV imports.',
+      'Share structured technical data with non-technical teammates.',
+      'Convert JSON objects into a format that is easier to inspect manually.',
+    ],
+
+    notes: [
+      'The JSON input should be valid before conversion.',
+      'This works best when the objects follow a consistent structure.',
+      'Nested JSON may require flattening or a simpler structure to produce clean columns.',
+    ],
+
+    faqs: [
+      {
+        question: 'Why convert JSON to CSV?',
+        answer:
+          'CSV is easier to review in spreadsheets and is often better for sharing and reporting workflows.',
+      },
+      {
+        question: 'Does the JSON need to be valid?',
+        answer:
+          'Yes. Invalid JSON can break the conversion or produce incomplete output.',
+      },
+      {
+        question: 'Can nested JSON be harder to convert?',
+        answer:
+          'Yes. Deeply nested structures may not map cleanly into simple CSV columns.',
+      },
+    ],
+
+    relatedTools: [
+      { name: 'CSV to JSON', slug: 'csv-to-json' },
+      { name: 'CSV Validator', slug: 'csv-validator' },
+      { name: 'CSV Cleaner', slug: 'csv-cleaner' },
+      { name: 'Excel to CSV', slug: 'excel-to-csv' },
+    ],
+  },
+  'csv-cleaner': {
+    what: 'This tool cleans CSV data automatically so your file is easier to review, share, and import into other systems. It is useful when your CSV contains messy formatting, inconsistent spacing, or general structural noise.',
+
+    howTo: [
+      'Upload your CSV file.',
+      'Click the "Run tool" button.',
+      'Wait for the tool to clean and normalize the data.',
+      'Download the cleaned CSV file.',
+    ],
+
+    exampleInput: `name, age ,country
+Maca, 30 , Brasil
+ Ana ,25,Chile
+Jose , 28, Peru`,
+
+    exampleOutput: `name,age,country
+Maca,30,Brasil
+Ana,25,Chile
+Jose,28,Peru`,
+
+    useCases: [
+      'Clean messy CSV exports before importing them into another platform.',
+      'Normalize formatting before reporting or analysis.',
+      'Prepare exported files for teammates or clients.',
+      'Reduce manual cleanup work on administrative datasets.',
+    ],
+
+    notes: [
+      'This first version focuses on general cleanup and normalization.',
+      'It is still a good idea to validate the CSV after cleaning it.',
+      'You may want to use related tools afterward to remove duplicates or delete empty columns.',
+    ],
+
+    faqs: [
+      {
+        question: 'What does this tool clean?',
+        answer:
+          'It helps normalize messy CSV formatting so the file is easier to use in later workflows.',
+      },
+      {
+        question: 'Should I validate the CSV after cleaning it?',
+        answer:
+          'Yes. Validation is a good final check before importing or sharing the cleaned file.',
+      },
+      {
+        question: 'Can this replace all manual CSV cleanup?',
+        answer:
+          'It can reduce a lot of repetitive cleanup work, but some files may still need manual review depending on the data.',
+      },
+    ],
+
+    relatedTools: [
+      { name: 'CSV Validator', slug: 'csv-validator' },
+      { name: 'Remove Duplicates CSV', slug: 'remove-duplicates-csv' },
+      { name: 'Remove Empty Columns CSV', slug: 'remove-empty-columns-csv' },
+      { name: 'CSV Filter Rows', slug: 'csv-filter-rows' },
+    ],
+  },
+  'remove-duplicates-csv': {
+    what: 'This tool removes duplicate rows from your CSV file automatically. It is useful when exported data contains repeated records that make reports inaccurate, imports messy, or datasets harder to trust.',
+
+    howTo: [
+      'Upload your CSV file.',
+      'Click the "Run tool" button.',
+      'Wait for the tool to detect and remove duplicate rows.',
+      'Download the cleaned CSV file.',
+    ],
+
+    exampleInput: `name,age,country
+Maca,30,Brasil
+Ana,25,Chile
+Maca,30,Brasil
+Jose,28,Peru`,
+
+    exampleOutput: `name,age,country
+Maca,30,Brasil
+Ana,25,Chile
+Jose,28,Peru`,
+
+    useCases: [
+      'Remove repeated records from exported reports.',
+      'Prepare cleaner CSV files before importing them into another tool.',
+      'Improve accuracy in reporting and analysis.',
+      'Reduce noise in files shared with clients or teammates.',
+    ],
+
+    notes: [
+      'This version removes rows that are exactly duplicated.',
+      'It is a good idea to review the output if repeated-looking rows might still be valid records.',
+      'You can validate the final result after deduplication.',
+    ],
+
+    faqs: [
+      {
+        question: 'Why remove duplicates from a CSV file?',
+        answer:
+          'Duplicate rows can distort reports, create import issues, and make the dataset less reliable.',
+      },
+      {
+        question: 'Does this remove only exact duplicates?',
+        answer: 'Yes. This first version is intended for exact duplicate rows.',
+      },
+      {
+        question: 'Should I review the result afterward?',
+        answer:
+          'Yes. Some datasets may contain repeated-looking rows that still need human review.',
+      },
+    ],
+
+    relatedTools: [
+      { name: 'CSV Cleaner', slug: 'csv-cleaner' },
+      { name: 'CSV Validator', slug: 'csv-validator' },
+      { name: 'Remove Empty Columns CSV', slug: 'remove-empty-columns-csv' },
+      { name: 'CSV Sorter', slug: 'csv-sorter' },
+    ],
+  },
+  'csv-to-excel': {
+    what: 'This tool converts CSV files into Excel format automatically. It is useful when you need a spreadsheet file that is easier to review, share, and open in Excel-based office workflows.',
+
+    howTo: [
+      'Upload your CSV file.',
+      'Click the "Run tool" button.',
+      'Wait for the tool to convert the file into Excel format.',
+      'Download the generated Excel file.',
+    ],
+
+    exampleInput: `name,age,country
+Maca,30,Brasil
+Ana,25,Chile
+Jose,28,Peru`,
+
+    exampleOutput: `An Excel file containing the same rows and columns from the original CSV.`,
+
+    useCases: [
+      'Convert plain CSV exports into Excel files for easier review.',
+      'Prepare files for teammates who prefer spreadsheet formats.',
+      'Turn CSV data into a more familiar office workflow format.',
+      'Share tabular data in a format that is easier to open and edit.',
+    ],
+
+    notes: [
+      'CSV stores plain tabular data, so advanced spreadsheet styling is not preserved automatically.',
+      'It is a good idea to review the resulting Excel file after conversion.',
+      'This tool is useful when another person expects an Excel file instead of CSV.',
+    ],
+
+    faqs: [
+      {
+        question: 'Why convert CSV to Excel?',
+        answer:
+          'Excel files are often easier to review, edit, and share in office workflows.',
+      },
+      {
+        question: 'Will the Excel file keep rich formatting?',
+        answer:
+          'Not necessarily. CSV mainly stores raw table data, not rich spreadsheet formatting.',
+      },
+      {
+        question: 'Should I clean the CSV before converting?',
+        answer:
+          'Yes. A cleaner CSV usually produces a cleaner spreadsheet result.',
+      },
+    ],
+
+    relatedTools: [
+      { name: 'Excel to CSV', slug: 'excel-to-csv' },
+      { name: 'CSV to JSON', slug: 'csv-to-json' },
+      { name: 'CSV Cleaner', slug: 'csv-cleaner' },
+      { name: 'CSV Validator', slug: 'csv-validator' },
+    ],
+  },
+  'excel-to-csv': {
+    what: 'This tool converts Excel files into CSV format automatically. It is useful when you need to prepare spreadsheet data for systems, imports, databases, or workflows that require a plain CSV file.',
+
+    howTo: [
+      'Upload your Excel file.',
+      'Click the "Run tool" button.',
+      'Wait for the tool to convert the spreadsheet into CSV format.',
+      'Download the generated CSV file.',
+    ],
+
+    exampleInput: `An Excel file with columns such as name, age, and country.`,
+
+    exampleOutput: `name,age,country
+Maca,30,Brasil
+Ana,25,Chile
+Jose,28,Peru`,
+
+    useCases: [
+      'Prepare spreadsheet data for systems that only accept CSV uploads.',
+      'Convert Excel reports into a lighter plain text format.',
+      'Export spreadsheet content for databases or automation workflows.',
+      'Make Excel-based data easier to process in tools that prefer CSV.',
+    ],
+
+    notes: [
+      'CSV does not preserve formulas, cell colors, or advanced spreadsheet formatting.',
+      'It is important to review the CSV result before importing it into another system.',
+      'This tool is especially useful for upload and import workflows.',
+    ],
+
+    faqs: [
+      {
+        question: 'Why convert Excel to CSV?',
+        answer:
+          'Many platforms and import workflows accept CSV more easily than Excel files.',
+      },
+      {
+        question: 'Will formulas and formatting stay in the CSV?',
+        answer:
+          'No. CSV is designed for plain tabular values, not formulas or rich formatting.',
+      },
+      {
+        question: 'Should I review the CSV after conversion?',
+        answer:
+          'Yes. Reviewing the output helps confirm the structure is correct before import or reuse.',
+      },
+    ],
+
+    relatedTools: [
+      { name: 'CSV to Excel', slug: 'csv-to-excel' },
+      { name: 'Excel to JSON', slug: 'excel-to-json' },
+      { name: 'CSV Validator', slug: 'csv-validator' },
+      { name: 'CSV Cleaner', slug: 'csv-cleaner' },
+    ],
+  },
 }
