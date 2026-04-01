@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { categoryRegistry } from '@/content/categories'
 import { toolRegistry } from '@/tools/registry'
 import { siteConfig } from '@/config/site'
+import { Breadcrumbs } from '@/components/layout/Breadcrumbs'
 
 type Props = {
   params: Promise<{ slug: string }>
@@ -80,6 +81,14 @@ export default async function CategoryPage({ params }: Props) {
 
   return (
     <main className='mx-auto w-full max-w-6xl px-6 py-10'>
+      <Breadcrumbs
+        items={[
+          { label: 'Home', href: '/' },
+          { label: 'Categories', href: '/categories' },
+          { label: category.name },
+        ]}
+      />
+
       <div className='max-w-3xl'>
         <p className='text-sm font-medium text-neutral-500'>Category</p>
         <h1 className='mt-2 text-3xl font-bold tracking-tight sm:text-4xl'>

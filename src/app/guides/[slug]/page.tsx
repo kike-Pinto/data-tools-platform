@@ -5,6 +5,7 @@ import { guideRegistry } from '@/content/guides'
 import { categoryRegistry } from '@/content/categories'
 import { toolRegistry } from '@/tools/registry'
 import { siteConfig } from '@/config/site'
+import { Breadcrumbs } from '@/components/layout/Breadcrumbs'
 
 type Props = {
   params: Promise<{ slug: string }>
@@ -91,6 +92,14 @@ export default async function GuidePage({ params }: Props) {
 
   return (
     <main className='mx-auto w-full max-w-4xl px-6 py-10'>
+      <Breadcrumbs
+        items={[
+          { label: 'Home', href: '/' },
+          { label: 'Guides', href: '/guides' },
+          { label: guide.title },
+        ]}
+      />
+
       <article className='max-w-3xl'>
         <p className='text-sm font-medium text-neutral-500'>Guide</p>
 

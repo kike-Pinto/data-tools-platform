@@ -7,6 +7,7 @@ import { ToolContent } from './ToolContent'
 import { toolContentRegistry } from '@/tools/toolContentRegistry'
 import { getCategoriesForTool } from '@/content/categoryHelpers'
 import { getGuideForTool } from '@/content/guideHelpers'
+import { Breadcrumbs } from '@/components/layout/Breadcrumbs'
 
 type Props = {
   tool: ToolConfig
@@ -19,6 +20,14 @@ export function ToolShell({ tool }: Props) {
 
   return (
     <main className='mx-auto max-w-4xl px-4 py-10'>
+      <Breadcrumbs
+        items={[
+          { label: 'Home', href: '/' },
+          { label: 'Tools', href: '/tools' },
+          { label: tool.name },
+        ]}
+      />
+
       <ToolRenderer tool={tool} />
 
       {relatedCategories.length > 0 ? (
