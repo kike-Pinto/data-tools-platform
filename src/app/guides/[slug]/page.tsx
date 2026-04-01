@@ -111,6 +111,15 @@ export default async function GuidePage({ params }: Props) {
           {guide.intro}
         </p>
 
+        {guide.summary ? (
+          <section className='mt-8 rounded-2xl border border-neutral-200 p-6'>
+            <h2 className='text-xl font-semibold'>Overview</h2>
+            <p className='mt-3 text-sm leading-7 text-neutral-700'>
+              {guide.summary}
+            </p>
+          </section>
+        ) : null}
+
         <div className='mt-8 rounded-2xl border border-neutral-200 p-6'>
           <h2 className='text-xl font-semibold'>Use the tool</h2>
           <p className='mt-2 text-sm leading-6 text-neutral-600'>
@@ -134,6 +143,25 @@ export default async function GuidePage({ params }: Props) {
           </div>
         </div>
 
+        {guide.whenToUse && guide.whenToUse.length > 0 ? (
+          <section className='mt-10'>
+            <h2 className='text-2xl font-semibold tracking-tight'>
+              When to use this
+            </h2>
+
+            <ul className='mt-4 space-y-3'>
+              {guide.whenToUse.map((item, index) => (
+                <li
+                  key={`${guide.slug}-when-${index}`}
+                  className='rounded-xl border border-neutral-200 p-4 text-sm leading-6 text-neutral-700'
+                >
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </section>
+        ) : null}
+
         <section className='mt-10'>
           <h2 className='text-2xl font-semibold tracking-tight'>
             Step-by-step
@@ -155,6 +183,45 @@ export default async function GuidePage({ params }: Props) {
             ))}
           </ol>
         </section>
+
+        {guide.commonMistakes && guide.commonMistakes.length > 0 ? (
+          <section className='mt-10'>
+            <h2 className='text-2xl font-semibold tracking-tight'>
+              Common mistakes
+            </h2>
+
+            <ul className='mt-4 space-y-3'>
+              {guide.commonMistakes.map((item, index) => (
+                <li
+                  key={`${guide.slug}-mistake-${index}`}
+                  className='rounded-xl border border-neutral-200 p-4 text-sm leading-6 text-neutral-700'
+                >
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </section>
+        ) : null}
+
+        {guide.faq && guide.faq.length > 0 ? (
+          <section className='mt-10'>
+            <h2 className='text-2xl font-semibold tracking-tight'>FAQ</h2>
+
+            <div className='mt-4 space-y-4'>
+              {guide.faq.map((item, index) => (
+                <div
+                  key={`${guide.slug}-faq-${index}`}
+                  className='rounded-xl border border-neutral-200 p-5'
+                >
+                  <h3 className='text-base font-semibold'>{item.question}</h3>
+                  <p className='mt-2 text-sm leading-6 text-neutral-600'>
+                    {item.answer}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
+        ) : null}
 
         {relatedCategories.length > 0 ? (
           <section className='mt-10'>
