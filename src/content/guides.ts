@@ -265,6 +265,26 @@ export const guideRegistry: Record<string, GuideConfig> = {
     ],
     expectedResult:
       'A CSV export generated from your Excel file, ready for upload or import.',
+    whyThisMatters:
+      'Converting Excel files to CSV format makes data easier to share, import, and process across different platforms. Many systems require CSV files because they are lightweight, universal, and simple to parse.',
+
+    beforeYouStart: [
+      'Check that your Excel file contains consistent data.',
+      'Remove unnecessary formatting such as colors or merged cells.',
+      'Ensure column headers are clearly defined.',
+    ],
+
+    afterYouFinish: [
+      'Open the CSV file to confirm formatting looks correct.',
+      'Check for unexpected delimiter or encoding issues.',
+      'Validate the CSV if it will be imported into another system.',
+    ],
+
+    realWorldTips: [
+      'Avoid complex Excel formulas when preparing files for CSV export.',
+      'Large Excel files should be tested with smaller samples first.',
+      'Always verify special characters after conversion.',
+    ],
     toolSlug: 'excel-to-csv',
     relatedCategorySlugs: ['excel-tools', 'file-conversion-tools'],
     relatedGuideSlugs: ['how-to-convert-csv-to-excel'],
@@ -322,6 +342,26 @@ export const guideRegistry: Record<string, GuideConfig> = {
     ],
     expectedResult:
       'A cleaner CSV file with fewer formatting issues and better structure for downstream use.',
+    whyThisMatters:
+      'Cleaning a CSV file is one of the most practical steps in any data workflow. Messy formatting, extra spaces, duplicate rows, blank columns, and inconsistent structure can all create problems later during imports, reporting, analysis, or sharing. A cleaner file is easier to trust and easier to reuse.',
+
+    beforeYouStart: [
+      'Check whether the CSV has clear column headers.',
+      'Look for empty rows, extra spaces, duplicated records, or unnecessary columns.',
+      'Keep a backup of the original file before cleaning it.',
+    ],
+
+    afterYouFinish: [
+      'Validate the cleaned CSV structure before importing it anywhere else.',
+      'Review a few rows manually to confirm the cleanup worked as expected.',
+      'Use related tools if you still need to remove duplicates, filter rows, or delete empty columns.',
+    ],
+
+    realWorldTips: [
+      'Start with general cleanup first, then do more specific tasks like removing duplicates or filtering rows.',
+      'If the CSV came from a platform export, always check for hidden formatting problems.',
+      'A quick validation pass after cleaning can save time and prevent import errors later.',
+    ],
     toolSlug: 'csv-cleaner',
     relatedCategorySlugs: ['csv-tools', 'data-cleaning-tools'],
     relatedGuideSlugs: [
@@ -378,6 +418,26 @@ export const guideRegistry: Record<string, GuideConfig> = {
     ],
     expectedResult:
       'A CSV file with duplicate rows removed and a cleaner final dataset.',
+    whyThisMatters:
+      'Duplicate rows can distort reports, inflate totals, and create confusion during analysis. Removing duplicates ensures that each record is counted only once, making your dataset more accurate and reliable.',
+
+    beforeYouStart: [
+      'Decide which columns define a duplicate record.',
+      'Check if duplicates should be removed entirely or merged.',
+      'Save a copy of the original file before removing duplicates.',
+    ],
+
+    afterYouFinish: [
+      'Review the cleaned dataset to confirm duplicates were removed correctly.',
+      'Check totals or row counts to verify expected results.',
+      'Validate the file before importing or sharing it.',
+    ],
+
+    realWorldTips: [
+      'Duplicates often appear after merging multiple CSV files.',
+      'Always verify that unique identifiers remain consistent.',
+      'Removing duplicates regularly keeps datasets easier to manage.',
+    ],
     toolSlug: 'remove-duplicates-csv',
     relatedCategorySlugs: ['csv-tools', 'data-cleaning-tools'],
     relatedGuideSlugs: [
@@ -433,6 +493,26 @@ export const guideRegistry: Record<string, GuideConfig> = {
     ],
     expectedResult:
       'A cleaner CSV file with empty columns removed and a more focused structure.',
+    whyThisMatters:
+      'Empty columns add unnecessary complexity to CSV files and can cause confusion during analysis or import. Removing unused columns makes datasets cleaner, easier to read, and more efficient to process.',
+
+    beforeYouStart: [
+      'Check which columns contain no useful data.',
+      'Confirm that empty columns are not required later.',
+      'Save a backup copy of the original file.',
+    ],
+
+    afterYouFinish: [
+      'Verify that remaining columns contain valid data.',
+      'Check the file structure after removing columns.',
+      'Run validation if the file will be imported into another system.',
+    ],
+
+    realWorldTips: [
+      'Exports from software tools often include unused placeholder columns.',
+      'Removing empty columns improves readability and reduces file size.',
+      'Always double-check before deleting columns in shared datasets.',
+    ],
     toolSlug: 'remove-empty-columns-csv',
     relatedCategorySlugs: ['csv-tools', 'data-cleaning-tools'],
     relatedGuideSlugs: [
@@ -488,6 +568,26 @@ export const guideRegistry: Record<string, GuideConfig> = {
     ],
     expectedResult:
       'A CSV file sorted by the selected column and easier to inspect or reuse.',
+    whyThisMatters:
+      'Sorting CSV data helps organize records logically, making analysis faster and easier. Well-ordered datasets improve readability and simplify searching, filtering, and reporting.',
+
+    beforeYouStart: [
+      'Decide which column should be used for sorting.',
+      'Check if sorting should be ascending or descending.',
+      'Confirm that data types are consistent.',
+    ],
+
+    afterYouFinish: [
+      'Verify that records are correctly ordered.',
+      'Check edge cases such as missing or empty values.',
+      'Save a copy of the sorted file.',
+    ],
+
+    realWorldTips: [
+      'Sorting before filtering makes datasets easier to review.',
+      'Mixed data types can produce unexpected sorting results.',
+      'Always test sorting logic on a small sample first.',
+    ],
     toolSlug: 'csv-sorter',
     relatedCategorySlugs: ['csv-tools', 'data-cleaning-tools'],
     relatedGuideSlugs: ['how-to-filter-csv-rows', 'how-to-clean-a-csv-file'],
@@ -540,6 +640,26 @@ export const guideRegistry: Record<string, GuideConfig> = {
     ],
     expectedResult:
       'A filtered CSV output containing only rows that match your condition.',
+    whyThisMatters:
+      'Filtering rows allows you to isolate specific records quickly. This makes large datasets easier to analyze and helps extract only the information needed for reports or workflows.',
+
+    beforeYouStart: [
+      'Identify the condition you want to filter by.',
+      'Confirm the column names used in filtering.',
+      'Save a copy of the original file.',
+    ],
+
+    afterYouFinish: [
+      'Verify that only relevant rows remain.',
+      'Review the filtered dataset manually.',
+      'Export the filtered results for reuse.',
+    ],
+
+    realWorldTips: [
+      'Filtering helps reduce dataset size before exporting.',
+      'Use consistent column names to avoid filter errors.',
+      'Always double-check results when using multiple conditions.',
+    ],
     toolSlug: 'csv-filter-rows',
     relatedCategorySlugs: ['csv-tools', 'data-cleaning-tools'],
     relatedGuideSlugs: ['how-to-sort-a-csv-file', 'how-to-clean-a-csv-file'],
@@ -597,12 +717,365 @@ export const guideRegistry: Record<string, GuideConfig> = {
     ],
     expectedResult:
       'A validation result that helps confirm whether your CSV structure is safe to use.',
+    whyThisMatters:
+      'Validating a CSV file helps detect structural problems early, such as mismatched columns, missing headers, or inconsistent formatting. Fixing these issues before importing or sharing the file prevents failed uploads, broken reports, and unexpected data loss.',
+
+    beforeYouStart: [
+      'Make sure your CSV file is saved correctly and not corrupted.',
+      'Confirm that column headers exist and are readable.',
+      'Keep a backup copy of the original file before making changes.',
+    ],
+
+    afterYouFinish: [
+      'Fix any detected structural issues before importing the file.',
+      'Run validation again after applying corrections.',
+      'Store the validated file separately from the original.',
+    ],
+
+    realWorldTips: [
+      'Always validate files received from external sources before using them.',
+      'Even small CSV files can contain hidden formatting errors.',
+      'Validation is especially important before bulk imports or automation workflows.',
+    ],
     toolSlug: 'csv-validator',
     relatedCategorySlugs: ['csv-tools', 'data-cleaning-tools'],
     relatedGuideSlugs: [
       'how-to-clean-a-csv-file',
       'how-to-remove-empty-columns-in-csv',
     ],
+  },
+
+  'how-to-merge-csv-files': {
+    slug: 'how-to-merge-csv-files',
+
+    title: 'How to Merge CSV Files',
+
+    seoTitle:
+      'How to Merge CSV Files - Combine Multiple CSV Files Step-by-Step',
+
+    seoDescription:
+      'Learn how to merge CSV files into one dataset. Combine multiple CSV files quickly using simple tools and avoid formatting issues.',
+
+    intro:
+      'Merging CSV files allows you to combine multiple datasets into a single file. This is useful when collecting data from different sources, exports, or reporting periods.',
+
+    summary:
+      'When working with multiple CSV files, merging them into one structured dataset makes analysis easier and reduces manual work. A merging workflow ensures that all records are collected consistently.',
+
+    whenToUse: [
+      'When combining multiple CSV exports into one dataset.',
+      'When merging monthly or daily reports.',
+      'When consolidating data from different teams or sources.',
+    ],
+
+    steps: [
+      'Prepare the CSV files you want to merge.',
+      'Open the CSV merge tool.',
+      'Upload all files that should be combined.',
+      'Run the merge process.',
+      'Review the merged dataset.',
+      'Download the combined CSV file.',
+    ],
+
+    commonMistakes: [
+      'Merging files with different column structures.',
+      'Forgetting to validate the merged dataset.',
+      'Not checking for duplicate records after merging.',
+    ],
+
+    faq: [
+      {
+        question: 'Can CSV files with different headers be merged?',
+        answer:
+          'Yes, but results depend on how columns are aligned. Consistent headers improve results.',
+      },
+      {
+        question: 'Should I validate merged files?',
+        answer:
+          'Yes. Validation helps detect structural issues before importing data.',
+      },
+    ],
+
+    toolBenefits: [
+      'Combine multiple CSV files quickly.',
+      'Avoid manual copy-paste operations.',
+      'Keep datasets consistent and organized.',
+    ],
+
+    expectedResult:
+      'A single CSV file containing the merged content of multiple input files.',
+
+    whyThisMatters:
+      'Merging CSV files saves time and reduces manual work when handling multiple datasets. A structured merge process prevents missing records and helps maintain data consistency.',
+
+    beforeYouStart: [
+      'Ensure all CSV files use the same column structure.',
+      'Check that headers are consistent across files.',
+      'Keep backup copies of original files.',
+    ],
+
+    afterYouFinish: [
+      'Review the merged dataset for missing or duplicated rows.',
+      'Validate the file before importing it into another system.',
+      'Remove duplicate records if necessary.',
+    ],
+
+    realWorldTips: [
+      'Merge files in batches when working with large datasets.',
+      'Use validation tools after merging to confirm structure.',
+      'Always review column alignment before exporting.',
+    ],
+
+    toolSlug: 'merge-csv-files',
+
+    relatedCategorySlugs: ['csv-tools', 'file-conversion-tools'],
+
+    relatedGuideSlugs: [
+      'how-to-remove-duplicates-in-csv',
+      'how-to-validate-a-csv-file',
+    ],
+  },
+
+  'how-to-split-csv-file': {
+    slug: 'how-to-split-csv-file',
+
+    title: 'How to Split a CSV File',
+
+    seoTitle: 'How to Split a CSV File - Divide Large CSV Files Step-by-Step',
+
+    seoDescription:
+      'Learn how to split large CSV files into smaller parts. Divide datasets into manageable chunks quickly and safely.',
+
+    intro:
+      'Splitting a CSV file helps divide large datasets into smaller files that are easier to manage, share, or import.',
+
+    summary:
+      'Large CSV files can be difficult to process or upload. Splitting them into smaller files improves performance and reduces errors.',
+
+    whenToUse: [
+      'When working with very large CSV files.',
+      'When a system limits file size during import.',
+      'When distributing data into smaller datasets.',
+    ],
+
+    steps: [
+      'Open the CSV file you want to split.',
+      'Choose how many rows each file should contain.',
+      'Run the split process.',
+      'Review each generated file.',
+      'Download the smaller CSV files.',
+    ],
+
+    commonMistakes: [
+      'Splitting files without verifying row limits.',
+      'Losing track of split file order.',
+      'Not validating output files after splitting.',
+    ],
+
+    faq: [
+      {
+        question: 'Why split large CSV files?',
+        answer:
+          'Splitting improves performance and helps meet file size limits.',
+      },
+    ],
+
+    toolBenefits: [
+      'Divide large CSV files quickly.',
+      'Improve file handling performance.',
+      'Avoid file size upload limits.',
+    ],
+
+    expectedResult:
+      'Multiple smaller CSV files created from one large dataset.',
+
+    whyThisMatters:
+      'Splitting large CSV files improves reliability and reduces processing failures when working with large datasets.',
+
+    beforeYouStart: [
+      'Check how many rows exist in the original file.',
+      'Choose an appropriate split size.',
+      'Backup the original file.',
+    ],
+
+    afterYouFinish: [
+      'Verify that all rows were preserved.',
+      'Check file sequence order.',
+      'Validate output files if importing later.',
+    ],
+
+    realWorldTips: [
+      'Split files evenly for better performance.',
+      'Use clear file naming after splitting.',
+      'Test with small samples first.',
+    ],
+
+    toolSlug: 'split-csv-file',
+
+    relatedCategorySlugs: ['csv-tools', 'data-cleaning-tools'],
+
+    relatedGuideSlugs: ['how-to-merge-csv-files', 'how-to-validate-a-csv-file'],
+  },
+
+  'how-to-fix-invalid-csv-file': {
+    slug: 'how-to-fix-invalid-csv-file',
+
+    title: 'How to Fix an Invalid CSV File',
+
+    seoTitle: 'How to Fix Invalid CSV Files - Detect and Repair CSV Errors',
+
+    seoDescription:
+      'Learn how to fix invalid CSV files by detecting structural issues, correcting formatting problems, and validating data.',
+
+    intro:
+      'Invalid CSV files can cause import failures, broken reports, or missing data. Fixing structural problems ensures reliability.',
+
+    summary:
+      'CSV validation and repair workflows help detect formatting errors and restore file consistency.',
+
+    whenToUse: [
+      'When a CSV file fails to import.',
+      'When columns are misaligned.',
+      'When data appears corrupted.',
+    ],
+
+    steps: [
+      'Open the CSV validation tool.',
+      'Upload the invalid CSV file.',
+      'Detect formatting errors.',
+      'Fix column inconsistencies.',
+      'Validate the corrected file.',
+    ],
+
+    commonMistakes: [
+      'Ignoring validation warnings.',
+      'Editing files manually without testing.',
+      'Skipping re-validation.',
+    ],
+
+    faq: [
+      {
+        question: 'What causes invalid CSV files?',
+        answer:
+          'Common causes include mismatched columns, missing values, or formatting errors.',
+      },
+    ],
+
+    toolBenefits: [
+      'Detect structural problems quickly.',
+      'Repair broken datasets.',
+      'Prevent import failures.',
+    ],
+
+    expectedResult: 'A corrected CSV file that passes validation checks.',
+
+    whyThisMatters:
+      'Fixing invalid CSV files prevents downstream errors and ensures consistent data handling.',
+
+    beforeYouStart: [
+      'Locate the invalid CSV file.',
+      'Backup the original version.',
+      'Review the reported error messages.',
+    ],
+
+    afterYouFinish: [
+      'Run validation again.',
+      'Check row alignment.',
+      'Confirm correct file structure.',
+    ],
+
+    realWorldTips: [
+      'Always validate files before importing.',
+      'Keep original copies for reference.',
+      'Fix small errors early.',
+    ],
+
+    toolSlug: 'csv-validator',
+
+    relatedCategorySlugs: ['csv-tools', 'data-cleaning-tools'],
+
+    relatedGuideSlugs: ['how-to-validate-a-csv-file'],
+  },
+
+  'how-to-clean-messy-excel-data': {
+    slug: 'how-to-clean-messy-excel-data',
+
+    title: 'How to Clean Messy Excel Data',
+
+    seoTitle:
+      'How to Clean Messy Excel Data - Fix Formatting and Prepare Files',
+
+    seoDescription:
+      'Learn how to clean messy Excel data by fixing formatting, removing duplicates, and preparing datasets.',
+
+    intro:
+      'Messy Excel data often contains extra spaces, blank cells, and formatting inconsistencies that must be corrected.',
+
+    summary:
+      'Cleaning Excel files improves accuracy and prepares data for exports, reporting, and conversion.',
+
+    whenToUse: [
+      'When Excel data contains formatting issues.',
+      'Before exporting to CSV.',
+      'Before analysis or reporting.',
+    ],
+
+    steps: [
+      'Review Excel formatting.',
+      'Remove empty rows.',
+      'Standardize column headers.',
+      'Remove duplicates.',
+      'Export cleaned data.',
+    ],
+
+    commonMistakes: [
+      'Ignoring hidden formatting.',
+      'Leaving duplicate rows.',
+      'Skipping validation.',
+    ],
+
+    faq: [
+      {
+        question: 'Why clean Excel data first?',
+        answer:
+          'Cleaning ensures accurate results before exporting or analysis.',
+      },
+    ],
+
+    toolBenefits: [
+      'Fix messy Excel files quickly.',
+      'Improve dataset readability.',
+      'Prepare files for conversion.',
+    ],
+
+    expectedResult: 'A clean and structured Excel dataset ready for export.',
+
+    whyThisMatters:
+      'Messy Excel data causes errors and reduces data reliability.',
+
+    beforeYouStart: [
+      'Check formatting issues.',
+      'Identify duplicate rows.',
+      'Backup the original file.',
+    ],
+
+    afterYouFinish: [
+      'Review cleaned data.',
+      'Validate structure.',
+      'Export the cleaned dataset.',
+    ],
+
+    realWorldTips: [
+      'Always remove empty rows first.',
+      'Use consistent headers.',
+      'Review final formatting.',
+    ],
+
+    toolSlug: 'excel-to-csv',
+
+    relatedCategorySlugs: ['excel-tools'],
+
+    relatedGuideSlugs: ['how-to-convert-excel-to-csv'],
   },
 }
 
