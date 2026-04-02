@@ -902,4 +902,305 @@ Jose,28,Peru`,
       { name: 'CSV Cleaner', slug: 'csv-cleaner' },
     ],
   },
+  'excel-to-json': {
+    what: 'This tool converts Excel files into JSON format automatically. It is useful when you need to transform spreadsheet data into structured objects for apps, APIs, scripts, or web workflows.',
+
+    howTo: [
+      'Upload your Excel file.',
+      'Click the "Run tool" button.',
+      'Wait for the tool to convert the spreadsheet into JSON format.',
+      'Copy the JSON output or download it if available.',
+    ],
+
+    exampleInput: `An Excel file with columns such as name, age, and country.`,
+
+    exampleOutput: `[
+  {
+    "name": "Maca",
+    "age": "30",
+    "country": "Brasil"
+  },
+  {
+    "name": "Ana",
+    "age": "25",
+    "country": "Chile"
+  },
+  {
+    "name": "Jose",
+    "age": "28",
+    "country": "Peru"
+  }
+]`,
+
+    useCases: [
+      'Convert spreadsheet data into JSON for apps or APIs.',
+      'Prepare Excel-based data for scripts and automation workflows.',
+      'Transform administrative spreadsheets into developer-friendly structured data.',
+      'Move Excel content into a format easier to use in web projects.',
+    ],
+
+    notes: [
+      'Spreadsheet column names are typically used as JSON property names.',
+      'CSV and Excel cleanup before conversion can improve output quality.',
+      'It is a good idea to review the resulting JSON before using it in production workflows.',
+    ],
+
+    faqs: [
+      {
+        question: 'Why convert Excel to JSON?',
+        answer:
+          'JSON is easier to use in modern apps, APIs, scripts, and structured data workflows than spreadsheet files.',
+      },
+      {
+        question: 'Do spreadsheet headers matter?',
+        answer:
+          'Yes. They usually become the keys in the generated JSON objects.',
+      },
+      {
+        question: 'Should I clean the spreadsheet before converting?',
+        answer:
+          'Yes. Cleaner source data usually leads to cleaner JSON output.',
+      },
+    ],
+
+    relatedTools: [
+      { name: 'Excel to CSV', slug: 'excel-to-csv' },
+      { name: 'CSV to JSON', slug: 'csv-to-json' },
+      { name: 'CSV Validator', slug: 'csv-validator' },
+      { name: 'CSV Cleaner', slug: 'csv-cleaner' },
+    ],
+  },
+  'merge-csv-files': {
+    what: 'This tool merges multiple CSV files into one single CSV file. It is useful when you need to combine exports, reports, or datasets that share the same structure into one unified file.',
+
+    howTo: [
+      'Upload the CSV files you want to merge.',
+      'Click the "Run tool" button.',
+      'Wait for the tool to combine the files into one output.',
+      'Download the merged CSV file.',
+    ],
+
+    exampleInput: `file 1
+name,age,country
+Maca,30,Brasil
+Ana,25,Chile
+
+file 2
+name,age,country
+Jose,28,Peru
+Marta,31,Chile`,
+
+    exampleOutput: `name,age,country
+Maca,30,Brasil
+Ana,25,Chile
+Jose,28,Peru
+Marta,31,Chile`,
+
+    useCases: [
+      'Combine multiple CSV exports into one report.',
+      'Join files from different teams, dates, or sources.',
+      'Prepare a unified dataset before analysis or import.',
+      'Reduce manual copy-paste work across similar CSV files.',
+    ],
+
+    notes: [
+      'This works best when all CSV files follow the same column structure.',
+      'It is a good idea to validate the merged file after combining it.',
+      'If headers differ between files, the output may need manual review.',
+    ],
+
+    faqs: [
+      {
+        question: 'Can I merge CSV files with different columns?',
+        answer:
+          'This first version works best when the files share the same headers and structure.',
+      },
+      {
+        question: 'Why merge CSV files?',
+        answer:
+          'Merging is useful when you want one consolidated file instead of several separate exports.',
+      },
+      {
+        question: 'Should I validate the final file?',
+        answer:
+          'Yes. Validation helps confirm the merged structure is still consistent.',
+      },
+    ],
+
+    relatedTools: [
+      { name: 'Split CSV File', slug: 'split-csv-file' },
+      { name: 'CSV Validator', slug: 'csv-validator' },
+      { name: 'CSV Cleaner', slug: 'csv-cleaner' },
+      { name: 'CSV Sorter', slug: 'csv-sorter' },
+    ],
+  },
+  'split-csv-file': {
+    what: 'This tool splits one CSV file into smaller CSV files automatically. It is useful when your dataset is too large to manage easily or when you need to break one export into smaller parts.',
+
+    howTo: [
+      'Upload your CSV file.',
+      'Click the "Run tool" button.',
+      'Wait for the tool to split the file into smaller parts.',
+      'Download the generated split CSV files.',
+    ],
+
+    exampleInput: `name,age,country
+Maca,30,Brasil
+Ana,25,Chile
+Jose,28,Peru
+Marta,31,Chile`,
+
+    exampleOutput: `multiple smaller CSV files generated from the original dataset`,
+
+    useCases: [
+      'Break large CSV files into smaller files for easier review.',
+      'Prepare smaller chunks for sharing or import.',
+      'Reduce file size when a platform has upload limits.',
+      'Organize one large export into more manageable parts.',
+    ],
+
+    notes: [
+      'This is useful when one CSV file is too large for manual handling.',
+      'You should review the split outputs to confirm the expected distribution of rows.',
+      'If needed, validate the resulting files before import or sharing.',
+    ],
+
+    faqs: [
+      {
+        question: 'Why split a CSV file?',
+        answer:
+          'Splitting makes large datasets easier to handle, share, and process.',
+      },
+      {
+        question: 'Can splitting help with upload limits?',
+        answer:
+          'Yes. Smaller CSV files can be useful when a platform limits file size or row count.',
+      },
+      {
+        question: 'Should I validate the split files afterward?',
+        answer:
+          'Yes. It is a good idea to confirm each output file still has a valid structure.',
+      },
+    ],
+
+    relatedTools: [
+      { name: 'Merge CSV Files', slug: 'merge-csv-files' },
+      { name: 'CSV Validator', slug: 'csv-validator' },
+      { name: 'CSV Row Counter', slug: 'csv-row-counter' },
+      { name: 'CSV Cleaner', slug: 'csv-cleaner' },
+    ],
+  },
+  'csv-row-counter': {
+    what: 'This tool counts the number of rows in a CSV file automatically. It is useful when you need a quick way to measure dataset size before reporting, splitting, cleaning, or importing a file.',
+
+    howTo: [
+      'Upload your CSV file.',
+      'Click the "Run tool" button.',
+      'Wait for the tool to count the rows.',
+      'Review the result shown by the tool.',
+    ],
+
+    exampleInput: `name,age,country
+Maca,30,Brasil
+Ana,25,Chile
+Jose,28,Peru`,
+
+    exampleOutput: `Total rows: 3`,
+
+    useCases: [
+      'Check dataset size before importing a CSV file.',
+      'Measure how large an export is before splitting it.',
+      'Quickly review row counts in reports or administrative datasets.',
+      'Confirm whether a cleaned or filtered file contains the expected number of records.',
+    ],
+
+    notes: [
+      'This tool is useful as a quick inspection step before other operations.',
+      'You can use it before splitting, filtering, or validating a file.',
+      'The result usually refers to data rows, not just the header line.',
+    ],
+
+    faqs: [
+      {
+        question: 'Why count rows in a CSV file?',
+        answer:
+          'Row counts help you understand dataset size before cleanup, reporting, import, or splitting.',
+      },
+      {
+        question: 'Can this help before splitting a file?',
+        answer:
+          'Yes. Knowing the row count makes it easier to decide how to split a large file.',
+      },
+      {
+        question: 'Can row counting help validate expectations?',
+        answer:
+          'Yes. It is useful for checking whether a file contains the number of records you expected.',
+      },
+    ],
+
+    relatedTools: [
+      { name: 'Split CSV File', slug: 'split-csv-file' },
+      { name: 'CSV Filter Rows', slug: 'csv-filter-rows' },
+      { name: 'CSV Sorter', slug: 'csv-sorter' },
+      { name: 'CSV Validator', slug: 'csv-validator' },
+    ],
+  },
+  'csv-column-remover': {
+    what: 'This tool removes columns from a CSV file automatically. It is useful when you want to delete unnecessary fields before exporting, sharing, or importing the file into another system.',
+
+    howTo: [
+      'Upload your CSV file.',
+      'Click the "Run tool" button.',
+      'Wait for the tool to remove the target columns based on the tool logic.',
+      'Download the updated CSV file.',
+    ],
+
+    exampleInput: `name,age,country,email
+Maca,30,Brasil,maca@mail.com
+Ana,25,Chile,ana@mail.com
+Jose,28,Peru,jose@mail.com`,
+
+    exampleOutput: `name,age,country
+Maca,30,Brasil
+Ana,25,Chile
+Jose,28,Peru`,
+
+    useCases: [
+      'Remove unnecessary fields from exported reports.',
+      'Delete private or irrelevant columns before sharing files.',
+      'Simplify CSV files before another import process.',
+      'Reduce clutter in wide datasets.',
+    ],
+
+    notes: [
+      'Column removal is useful when a file contains extra fields you do not want to keep.',
+      'It is a good idea to review the output to confirm the right columns were removed.',
+      'If you need more control, you may prefer tools like CSV Column Selector or CSV Remove Column.',
+    ],
+
+    faqs: [
+      {
+        question: 'Why remove columns from a CSV file?',
+        answer:
+          'Removing columns helps simplify datasets, reduce clutter, and prepare files for sharing or import.',
+      },
+      {
+        question: 'Should I review the file after removing columns?',
+        answer:
+          'Yes. Reviewing the output helps confirm the final structure is correct.',
+      },
+      {
+        question: 'Is this useful before sending files to others?',
+        answer:
+          'Yes. It can help remove private, irrelevant, or unnecessary fields before sharing.',
+      },
+    ],
+
+    relatedTools: [
+      { name: 'CSV Column Selector', slug: 'csv-column-selector' },
+      { name: 'CSV Remove Column', slug: 'csv-remove-column-selectable' },
+      { name: 'CSV Header Renamer', slug: 'csv-header-renamer' },
+      { name: 'Remove Empty Columns CSV', slug: 'remove-empty-columns-csv' },
+    ],
+  },
 }
