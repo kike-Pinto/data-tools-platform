@@ -192,6 +192,35 @@ export default async function GuidePage({ params }: Props) {
           </section>
         ) : null}
 
+        {guide.whyThisMatters ? (
+          <section className='mt-10 rounded-2xl border border-neutral-200 bg-neutral-50 p-6'>
+            <h2 className='text-xl font-semibold'>Why this matters</h2>
+
+            <p className='mt-3 text-sm leading-7 text-neutral-700'>
+              {guide.whyThisMatters}
+            </p>
+          </section>
+        ) : null}
+
+        {guide.beforeYouStart && guide.beforeYouStart.length > 0 ? (
+          <section className='mt-10'>
+            <h2 className='text-2xl font-semibold tracking-tight'>
+              Before you start
+            </h2>
+
+            <ul className='mt-4 space-y-3'>
+              {guide.beforeYouStart.map((item, index) => (
+                <li
+                  key={`${guide.slug}-before-${index}`}
+                  className='rounded-xl border border-neutral-200 p-4 text-sm leading-6 text-neutral-700'
+                >
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </section>
+        ) : null}
+
         <section className='mt-10'>
           <h2 className='text-2xl font-semibold tracking-tight'>
             Step-by-step
@@ -214,6 +243,25 @@ export default async function GuidePage({ params }: Props) {
           </ol>
         </section>
 
+        {guide.afterYouFinish && guide.afterYouFinish.length > 0 ? (
+          <section className='mt-10'>
+            <h2 className='text-2xl font-semibold tracking-tight'>
+              After you finish
+            </h2>
+
+            <ul className='mt-4 space-y-3'>
+              {guide.afterYouFinish.map((item, index) => (
+                <li
+                  key={`${guide.slug}-after-${index}`}
+                  className='rounded-xl border border-neutral-200 p-4 text-sm leading-6 text-neutral-700'
+                >
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </section>
+        ) : null}
+
         {guide.commonMistakes && guide.commonMistakes.length > 0 ? (
           <section className='mt-10'>
             <h2 className='text-2xl font-semibold tracking-tight'>
@@ -227,6 +275,23 @@ export default async function GuidePage({ params }: Props) {
                   className='rounded-xl border border-neutral-200 p-4 text-sm leading-6 text-neutral-700'
                 >
                   {item}
+                </li>
+              ))}
+            </ul>
+          </section>
+        ) : null}
+
+        {guide.realWorldTips && guide.realWorldTips.length > 0 ? (
+          <section className='mt-10 rounded-2xl border border-neutral-200 p-6'>
+            <h2 className='text-xl font-semibold'>Real-world tips</h2>
+
+            <ul className='mt-4 space-y-3'>
+              {guide.realWorldTips.map((item, index) => (
+                <li
+                  key={`${guide.slug}-tip-${index}`}
+                  className='text-sm leading-6 text-neutral-700'
+                >
+                  • {item}
                 </li>
               ))}
             </ul>

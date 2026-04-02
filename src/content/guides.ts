@@ -14,8 +14,15 @@ export type GuideConfig = {
   steps: string[]
   commonMistakes?: string[]
   faq?: GuideFaqItem[]
+
   toolBenefits?: string[]
   expectedResult?: string
+
+  whyThisMatters?: string
+  beforeYouStart?: string[]
+  afterYouFinish?: string[]
+  realWorldTips?: string[]
+
   toolSlug: string
   relatedCategorySlugs: string[]
   relatedGuideSlugs?: string[]
@@ -74,6 +81,26 @@ export const guideRegistry: Record<string, GuideConfig> = {
     ],
     expectedResult:
       'A structured JSON output generated from your CSV file, ready to review, copy, or reuse.',
+    whyThisMatters:
+      'CSV to JSON conversion is one of the most common transformations when moving spreadsheet data into software systems. Many apps, APIs, and automation workflows rely on JSON, so understanding how to convert reliably helps prevent broken imports and data errors.',
+
+    beforeYouStart: [
+      'Make sure your CSV file contains clear column headers.',
+      'Remove empty rows or inconsistent formatting if possible.',
+      'Check that values do not contain unexpected line breaks.',
+    ],
+
+    afterYouFinish: [
+      'Validate the generated JSON structure before using it in production.',
+      'Review a few records manually to confirm field mapping.',
+      'Store a backup copy of both the original CSV and the JSON output.',
+    ],
+
+    realWorldTips: [
+      'If the CSV comes from Excel exports, always check delimiter consistency.',
+      'Large CSV files may take longer to convert, so test with smaller samples first.',
+      'If your JSON will be used in APIs, confirm that numeric values are correctly interpreted.',
+    ],
     toolSlug: 'csv-to-json',
     relatedCategorySlugs: ['csv-tools', 'file-conversion-tools'],
     relatedGuideSlugs: [
