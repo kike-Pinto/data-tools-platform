@@ -1071,7 +1071,7 @@ export const guideRegistry: Record<string, GuideConfig> = {
       'Review final formatting.',
     ],
 
-    toolSlug: 'excel-to-csv',
+    toolSlug: 'excel-cleaner',
 
     relatedCategorySlugs: ['excel-tools'],
 

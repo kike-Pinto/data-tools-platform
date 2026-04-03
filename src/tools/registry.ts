@@ -25,6 +25,7 @@ import { csvAddColumnTool } from './configs/csv-add-column'
 import { csvRemoveColumnSelectableTool } from './configs/csv-remove-column-selectable'
 import { csvColumnMergerTool } from './configs/csv-column-merger'
 import { csvValidatorTool } from './configs/csv-validator'
+import { excelCleanerTool } from './configs/excel-cleaner'
 
 export const toolRegistry: Record<string, ToolConfig> = {
   'csv-to-json': csvToJsonTool,
@@ -47,6 +48,7 @@ export const toolRegistry: Record<string, ToolConfig> = {
   'csv-remove-column-selectable': csvRemoveColumnSelectableTool,
   'csv-column-merger': csvColumnMergerTool,
   'csv-validator': csvValidatorTool,
+  'excel-cleaner': excelCleanerTool,
 }
 
 export const allTools = Object.values(toolRegistry)

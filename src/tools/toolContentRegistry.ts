@@ -1203,4 +1203,55 @@ Jose,28,Peru`,
       { name: 'Remove Empty Columns CSV', slug: 'remove-empty-columns-csv' },
     ],
   },
+  'excel-cleaner': {
+    what: 'This tool cleans Excel files by removing completely empty rows and preparing the spreadsheet for export, review, or further processing. It is useful when your Excel file contains unnecessary blank lines that make the dataset harder to manage.',
+
+    howTo: [
+      'Upload your Excel file.',
+      'Click the "Run tool" button.',
+      'Wait for the tool to remove completely empty rows.',
+      'Download the cleaned Excel file.',
+    ],
+
+    exampleInput: `An Excel file with data rows separated by unnecessary blank rows.`,
+
+    exampleOutput: `A cleaned Excel file with empty rows removed and the remaining dataset preserved.`,
+
+    useCases: [
+      'Clean spreadsheet exports before converting them to CSV or JSON.',
+      'Prepare Excel files for reporting or manual review.',
+      'Remove blank rows that make large spreadsheets harder to manage.',
+      'Improve the structure of messy Excel files before sharing them.',
+    ],
+
+    notes: [
+      'This first version removes completely empty rows only.',
+      'It does not yet remove duplicates, empty columns, or fix header names.',
+      'You should still review the cleaned spreadsheet before using it in another workflow.',
+    ],
+
+    faqs: [
+      {
+        question: 'What does this Excel cleaner remove?',
+        answer: 'This first version removes rows that are completely empty.',
+      },
+      {
+        question: 'Does it clean duplicate rows too?',
+        answer:
+          'No. This version focuses only on removing empty rows from Excel files.',
+      },
+      {
+        question: 'Should I still review the file after cleaning it?',
+        answer:
+          'Yes. It is always a good idea to review the cleaned spreadsheet before exporting or sharing it.',
+      },
+    ],
+
+    relatedTools: [
+      { name: 'Excel to CSV', slug: 'excel-to-csv' },
+      { name: 'Excel to JSON', slug: 'excel-to-json' },
+      { name: 'CSV Cleaner', slug: 'csv-cleaner' },
+      { name: 'CSV Validator', slug: 'csv-validator' },
+    ],
+  },
 }
