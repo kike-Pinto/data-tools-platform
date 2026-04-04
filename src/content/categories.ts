@@ -71,12 +71,15 @@ export const categoryRegistry: Record<string, CategoryConfig> = {
       'csv-to-excel',
       'excel-to-csv',
       'excel-to-json',
+      'excel-cleaner',
     ],
     guideSlugs: [
       'how-to-convert-csv-to-json',
       'how-to-convert-json-to-csv',
       'how-to-convert-csv-to-excel',
       'how-to-convert-excel-to-csv',
+      'how-to-clean-messy-excel-data',
+      'how-to-convert-excel-to-json',
     ],
   },
 

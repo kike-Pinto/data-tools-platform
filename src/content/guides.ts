@@ -1077,6 +1077,1041 @@ export const guideRegistry: Record<string, GuideConfig> = {
 
     relatedGuideSlugs: ['how-to-convert-excel-to-csv'],
   },
+
+  'how-to-convert-excel-to-json': {
+    slug: 'how-to-convert-excel-to-json',
+
+    title: 'How to Convert Excel to JSON',
+
+    seoTitle: 'How to Convert Excel to JSON - Step-by-Step Guide',
+
+    seoDescription:
+      'Learn how to convert Excel files to JSON format for apps, APIs, scripts, and structured data workflows.',
+
+    intro:
+      'Converting Excel to JSON is useful when you need to move spreadsheet data into apps, APIs, automation workflows, or structured software systems.',
+
+    summary:
+      'Excel files are convenient for manual editing, but JSON is often a better format for software workflows. Converting spreadsheets into JSON makes the data easier to reuse in development, automation, and integrations.',
+
+    whenToUse: [
+      'When you need spreadsheet data in a structured machine-friendly format.',
+      'When preparing Excel data for APIs, apps, or scripts.',
+      'When moving tabular data into development or automation workflows.',
+    ],
+
+    steps: [
+      'Review the Excel file and make sure the headers are clear.',
+      'Open the Excel to JSON tool.',
+      'Upload the spreadsheet file.',
+      'Run the conversion.',
+      'Review the JSON output.',
+      'Download or copy the result for reuse.',
+    ],
+
+    commonMistakes: [
+      'Using spreadsheets with inconsistent headers.',
+      'Ignoring empty rows or formatting issues before conversion.',
+      'Assuming the JSON output is ready without reviewing the structure.',
+    ],
+
+    faq: [
+      {
+        question: 'Why convert Excel to JSON?',
+        answer:
+          'JSON is easier to use in apps, APIs, and automation workflows than spreadsheet files.',
+      },
+      {
+        question: 'Do column headers matter?',
+        answer:
+          'Yes. Spreadsheet headers usually become the keys in the JSON output.',
+      },
+      {
+        question: 'Should I clean the Excel file first?',
+        answer:
+          'Yes. Cleaner spreadsheet data usually produces more reliable JSON output.',
+      },
+    ],
+
+    toolBenefits: [
+      'Transform spreadsheet rows into structured JSON objects quickly.',
+      'Prepare Excel data for technical workflows without manual rewriting.',
+      'Make spreadsheet content easier to use in apps and APIs.',
+    ],
+
+    expectedResult:
+      'A JSON output generated from your Excel file, ready to review and reuse.',
+
+    whyThisMatters:
+      'Excel to JSON conversion helps bridge the gap between spreadsheet workflows and software systems. It allows teams to keep working in spreadsheets while still preparing data for structured technical use.',
+
+    beforeYouStart: [
+      'Make sure your spreadsheet has clear column headers.',
+      'Remove unnecessary blank rows if possible.',
+      'Keep a backup of the original Excel file.',
+    ],
+
+    afterYouFinish: [
+      'Review a few records manually to confirm the mapping is correct.',
+      'Validate the JSON structure before using it in production workflows.',
+      'Store both the source spreadsheet and JSON result for reference.',
+    ],
+
+    realWorldTips: [
+      'If the spreadsheet comes from exports, check for hidden formatting issues first.',
+      'Test with smaller files first if the spreadsheet is very large.',
+      'Review numeric and date-like fields carefully in the JSON output.',
+    ],
+
+    toolSlug: 'excel-to-json',
+
+    relatedCategorySlugs: ['excel-tools', 'file-conversion-tools'],
+
+    relatedGuideSlugs: [
+      'how-to-convert-excel-to-csv',
+      'how-to-convert-csv-to-json',
+      'how-to-clean-messy-excel-data',
+    ],
+  },
+
+  'how-to-count-rows-in-a-csv-file': {
+    slug: 'how-to-count-rows-in-a-csv-file',
+
+    title: 'How to Count Rows in a CSV File',
+
+    seoTitle: 'How to Count Rows in a CSV File - Quick Step-by-Step Guide',
+
+    seoDescription:
+      'Learn how to count rows in a CSV file quickly to measure dataset size before splitting, importing, or analyzing data.',
+
+    intro:
+      'Counting rows in a CSV file is a simple but useful step when you want to understand dataset size before cleaning, splitting, importing, or reporting.',
+
+    summary:
+      'A quick row count helps you estimate file size, verify exports, and confirm whether a filtered or cleaned dataset contains the expected number of records.',
+
+    whenToUse: [
+      'Before splitting a large CSV file.',
+      'Before importing data into another platform.',
+      'When verifying export size or expected record counts.',
+    ],
+
+    steps: [
+      'Open the CSV Row Counter tool.',
+      'Upload your CSV file.',
+      'Run the tool.',
+      'Review the total row count.',
+      'Use the result to plan the next step in your workflow.',
+    ],
+
+    commonMistakes: [
+      'Assuming the file size tells you enough without checking row count.',
+      'Forgetting to confirm whether the count refers to data rows only.',
+      'Skipping row checks before splitting or importing large files.',
+    ],
+
+    faq: [
+      {
+        question: 'Why count rows in a CSV file?',
+        answer:
+          'Row counts help you understand dataset size before analysis, splitting, import, or reporting.',
+      },
+      {
+        question: 'Can row counting help before splitting a file?',
+        answer:
+          'Yes. It makes it easier to decide how to divide a large dataset into smaller parts.',
+      },
+    ],
+
+    toolBenefits: [
+      'Measure dataset size quickly.',
+      'Plan imports, splits, and reviews more easily.',
+      'Verify whether exports contain the expected number of records.',
+    ],
+
+    expectedResult:
+      'A row count result showing how many records exist in the CSV file.',
+
+    whyThisMatters:
+      'Knowing how many rows a CSV file contains helps you estimate effort, confirm export quality, and avoid mistakes in later steps such as splitting, importing, or validating the dataset.',
+
+    beforeYouStart: [
+      'Make sure the CSV file is the final version you want to inspect.',
+      'Keep in mind whether you care about header rows or only data rows.',
+      'Save the original file if you plan to process it afterward.',
+    ],
+
+    afterYouFinish: [
+      'Use the row count to decide whether the file needs splitting.',
+      'Compare the count with expected totals if the file came from an export.',
+      'Continue with validation, filtering, or cleanup if needed.',
+    ],
+
+    realWorldTips: [
+      'Row counting is useful before splitting large files into smaller parts.',
+      'A quick row count can reveal whether an export is incomplete.',
+      'Use row counts to compare original and cleaned datasets.',
+    ],
+
+    toolSlug: 'csv-row-counter',
+
+    relatedCategorySlugs: ['csv-tools', 'data-cleaning-tools'],
+
+    relatedGuideSlugs: [
+      'how-to-split-csv-file',
+      'how-to-filter-csv-rows',
+      'how-to-validate-a-csv-file',
+    ],
+  },
+
+  'how-to-select-columns-in-a-csv-file': {
+    slug: 'how-to-select-columns-in-a-csv-file',
+
+    title: 'How to Select Columns in a CSV File',
+
+    seoTitle: 'How to Select Columns in a CSV File - Step-by-Step Guide',
+
+    seoDescription:
+      'Learn how to keep only selected columns in a CSV file and remove unnecessary fields before sharing, importing, or analyzing data.',
+
+    intro:
+      'Selecting columns in a CSV file helps you keep only the fields you actually need and remove the rest.',
+
+    summary:
+      'Many CSV exports include extra columns that make the file harder to review, share, or import. Column selection simplifies the dataset and keeps only the most useful fields.',
+
+    whenToUse: [
+      'When a CSV export contains too many columns.',
+      'Before sharing a file with clients or teammates.',
+      'Before importing only a subset of fields into another system.',
+    ],
+
+    steps: [
+      'Review the CSV file and identify the columns you want to keep.',
+      'Open the CSV Column Selector tool.',
+      'Upload your CSV file.',
+      'Enter the column names you want to keep.',
+      'Run the tool.',
+      'Download the simplified CSV output.',
+    ],
+
+    commonMistakes: [
+      'Misspelling column names.',
+      'Removing fields that are still needed later.',
+      'Not reviewing the final column order before export.',
+    ],
+
+    faq: [
+      {
+        question: 'Why select columns in a CSV file?',
+        answer:
+          'Selecting columns helps reduce clutter and keeps only the fields relevant to your workflow.',
+      },
+      {
+        question: 'Can selecting columns also reorder them?',
+        answer:
+          'Yes. Depending on the tool input, the final output may follow the order you specify.',
+      },
+    ],
+
+    toolBenefits: [
+      'Keep only the fields you actually need.',
+      'Reduce clutter in wide CSV exports.',
+      'Prepare cleaner files for sharing, reporting, or import.',
+    ],
+
+    expectedResult:
+      'A simplified CSV file containing only the selected columns.',
+
+    whyThisMatters:
+      'Column selection makes CSV files easier to read and reduces the chance of sharing or importing unnecessary data. It is especially useful when working with wide exports from business tools.',
+
+    beforeYouStart: [
+      'Identify which columns must stay in the final file.',
+      'Check the exact spelling of the CSV headers.',
+      'Keep a backup of the original file before trimming fields.',
+    ],
+
+    afterYouFinish: [
+      'Review the output to confirm the correct columns were preserved.',
+      'Check whether the order of columns matches your needs.',
+      'Validate the final structure if the file will be imported elsewhere.',
+    ],
+
+    realWorldTips: [
+      'Column selection is a good cleanup step before sharing files with others.',
+      'Use it before imports when the target system only needs specific fields.',
+      'Double-check header spelling before running the tool.',
+    ],
+
+    toolSlug: 'csv-column-selector',
+
+    relatedCategorySlugs: ['csv-tools', 'data-cleaning-tools'],
+
+    relatedGuideSlugs: [
+      'how-to-remove-empty-columns-in-csv',
+      'how-to-remove-columns-from-a-csv-file',
+      'how-to-clean-a-csv-file',
+    ],
+  },
+
+  'how-to-rename-csv-headers': {
+    slug: 'how-to-rename-csv-headers',
+
+    title: 'How to Rename CSV Headers',
+
+    seoTitle: 'How to Rename CSV Headers - Step-by-Step Guide',
+
+    seoDescription:
+      'Learn how to rename CSV headers to standardize field names before sharing, importing, or cleaning your dataset.',
+
+    intro:
+      'Renaming CSV headers helps standardize field names and makes datasets easier to understand, map, and import into other systems.',
+
+    summary:
+      'CSV exports often include technical or inconsistent header names. Renaming headers improves readability and helps align the file with another workflow or platform.',
+
+    whenToUse: [
+      'Before importing a CSV file into another tool.',
+      'When headers are too technical or unclear.',
+      'When you need to standardize field names across datasets.',
+    ],
+
+    steps: [
+      'Review the CSV headers and decide which ones need to change.',
+      'Open the CSV Header Renamer tool.',
+      'Upload the CSV file.',
+      'Enter the header rename mappings.',
+      'Run the tool.',
+      'Download the updated CSV file.',
+    ],
+
+    commonMistakes: [
+      'Using header names that do not exactly match the original file.',
+      'Renaming fields inconsistently across multiple files.',
+      'Changing names without checking import requirements in the target system.',
+    ],
+
+    faq: [
+      {
+        question: 'Why rename CSV headers?',
+        answer:
+          'Renaming headers makes files easier to understand and helps align them with import or reporting requirements.',
+      },
+      {
+        question: 'Should header names match the target system?',
+        answer:
+          'Yes. If the file will be imported elsewhere, matching expected field names is often important.',
+      },
+    ],
+
+    toolBenefits: [
+      'Standardize column names quickly.',
+      'Make files easier to understand and share.',
+      'Prepare CSV data for cleaner imports and reporting workflows.',
+    ],
+
+    expectedResult:
+      'A CSV file with updated header names and the same underlying data rows.',
+
+    whyThisMatters:
+      'Header names control how users and systems interpret the data. Clear, consistent headers improve readability and reduce confusion during import, reporting, and collaboration.',
+
+    beforeYouStart: [
+      'List the headers you want to rename.',
+      'Check the exact spelling of existing column names.',
+      'Confirm whether the destination system expects specific names.',
+    ],
+
+    afterYouFinish: [
+      'Review the file to confirm the new header names appear correctly.',
+      'Check whether the output matches import or reporting requirements.',
+      'Store the standardized version for future reuse.',
+    ],
+
+    realWorldTips: [
+      'Use consistent naming patterns across files from different sources.',
+      'Rename headers before merging datasets when possible.',
+      'Keep a copy of the original file if you may need the original field names later.',
+    ],
+
+    toolSlug: 'csv-header-renamer',
+
+    relatedCategorySlugs: ['csv-tools', 'data-cleaning-tools'],
+
+    relatedGuideSlugs: [
+      'how-to-select-columns-in-a-csv-file',
+      'how-to-clean-a-csv-file',
+      'how-to-validate-a-csv-file',
+    ],
+  },
+
+  'how-to-add-a-column-to-a-csv-file': {
+    slug: 'how-to-add-a-column-to-a-csv-file',
+
+    title: 'How to Add a Column to a CSV File',
+
+    seoTitle: 'How to Add a Column to a CSV File - Step-by-Step Guide',
+
+    seoDescription:
+      'Learn how to add a new column to a CSV file for calculations, flags, labels, or additional data processing.',
+
+    intro:
+      'Adding a column to a CSV file is useful when you need to include new values such as status flags, calculated results, or labels.',
+
+    summary:
+      'CSV files often require extra fields during workflows such as reporting, validation, or importing into external systems.',
+
+    whenToUse: [
+      'When adding calculated fields.',
+      'When creating status or flag columns.',
+      'When preparing datasets for analysis.',
+    ],
+
+    steps: [
+      'Decide the name of the new column.',
+      'Open the CSV Add Column tool.',
+      'Upload your CSV file.',
+      'Enter the new column name.',
+      'Run the tool.',
+      'Download the updated CSV file.',
+    ],
+
+    commonMistakes: [
+      'Using duplicate column names.',
+      'Forgetting to review column order.',
+      'Skipping output validation.',
+    ],
+
+    faq: [
+      {
+        question: 'Why add a column to a CSV file?',
+        answer:
+          'New columns help include calculated values, labels, or workflow indicators.',
+      },
+    ],
+
+    toolBenefits: [
+      'Quickly add new fields.',
+      'Improve dataset structure.',
+      'Support reporting workflows.',
+    ],
+
+    expectedResult: 'A CSV file containing a new column added to the dataset.',
+
+    whyThisMatters:
+      'Adding structured fields helps standardize workflows and enables more flexible data processing.',
+
+    beforeYouStart: [
+      'Choose a clear column name.',
+      'Check existing column names.',
+      'Backup original file.',
+    ],
+
+    afterYouFinish: [
+      'Verify column placement.',
+      'Check new values.',
+      'Validate file structure.',
+    ],
+
+    realWorldTips: [
+      'Use short but descriptive column names.',
+      'Keep naming consistent.',
+      'Review data after insertion.',
+    ],
+
+    toolSlug: 'csv-add-column',
+
+    relatedCategorySlugs: ['csv-tools', 'data-cleaning-tools'],
+
+    relatedGuideSlugs: [
+      'how-to-rename-csv-headers',
+      'how-to-select-columns-in-a-csv-file',
+    ],
+  },
+
+  'how-to-merge-csv-columns': {
+    slug: 'how-to-merge-csv-columns',
+
+    title: 'How to Merge CSV Columns',
+
+    seoTitle: 'How to Merge CSV Columns - Step-by-Step Guide',
+
+    seoDescription:
+      'Learn how to merge multiple CSV columns into a single column for formatting, reporting, or exporting structured data.',
+
+    intro:
+      'Merging CSV columns allows you to combine values from multiple fields into a single column.',
+
+    summary:
+      'Column merging is often used when combining names, addresses, or formatted values.',
+
+    whenToUse: [
+      'When combining first and last names.',
+      'When formatting addresses.',
+      'When exporting simplified reports.',
+    ],
+
+    steps: [
+      'Identify the columns to merge.',
+      'Open the CSV Column Merger tool.',
+      'Upload the CSV file.',
+      'Select the columns.',
+      'Run the tool.',
+      'Download the merged file.',
+    ],
+
+    commonMistakes: [
+      'Merging incorrect columns.',
+      'Ignoring output formatting.',
+      'Skipping validation.',
+    ],
+
+    faq: [
+      {
+        question: 'Why merge CSV columns?',
+        answer:
+          'Column merging simplifies formatting and prepares structured outputs.',
+      },
+    ],
+
+    toolBenefits: [
+      'Combine fields quickly.',
+      'Simplify formatting workflows.',
+      'Improve dataset readability.',
+    ],
+
+    expectedResult: 'A CSV file where selected columns are merged into one.',
+
+    whyThisMatters:
+      'Merging columns simplifies dataset structure and supports reporting workflows.',
+
+    beforeYouStart: [
+      'Identify target columns.',
+      'Check formatting needs.',
+      'Backup file.',
+    ],
+
+    afterYouFinish: [
+      'Review merged values.',
+      'Confirm formatting.',
+      'Validate output.',
+    ],
+
+    realWorldTips: [
+      'Use delimiters when merging.',
+      'Test output formatting.',
+      'Verify merged fields.',
+    ],
+
+    toolSlug: 'csv-column-merger',
+
+    relatedCategorySlugs: ['csv-tools', 'data-cleaning-tools'],
+
+    relatedGuideSlugs: [
+      'how-to-select-columns-in-a-csv-file',
+      'how-to-rename-csv-headers',
+    ],
+  },
+
+  'how-to-remove-columns-from-a-csv-file': {
+    slug: 'how-to-remove-columns-from-a-csv-file',
+
+    title: 'How to Remove Columns from a CSV File',
+
+    seoTitle: 'How to Remove Columns from a CSV File - Step-by-Step Guide',
+
+    seoDescription:
+      'Learn how to remove unnecessary columns from a CSV file to simplify datasets and prepare files for sharing or importing.',
+
+    intro:
+      'Removing columns helps simplify CSV datasets and reduce unnecessary data fields.',
+
+    summary:
+      'Many CSV exports include columns that are not needed. Removing them improves readability and reduces file size.',
+
+    whenToUse: [
+      'Before sharing datasets.',
+      'Before importing files.',
+      'When simplifying wide exports.',
+    ],
+
+    steps: [
+      'Identify columns to remove.',
+      'Open the CSV Remove Column tool.',
+      'Upload the file.',
+      'Select unwanted columns.',
+      'Run the tool.',
+      'Download the cleaned file.',
+    ],
+
+    commonMistakes: [
+      'Removing required fields.',
+      'Ignoring column dependencies.',
+      'Skipping output validation.',
+    ],
+
+    faq: [
+      {
+        question: 'Why remove CSV columns?',
+        answer:
+          'Removing unnecessary fields simplifies datasets and improves clarity.',
+      },
+    ],
+
+    toolBenefits: [
+      'Simplify large datasets.',
+      'Remove unnecessary data.',
+      'Improve readability.',
+    ],
+
+    expectedResult: 'A CSV file with selected columns removed.',
+
+    whyThisMatters:
+      'Removing unnecessary data improves clarity and reduces risk when sharing datasets.',
+
+    beforeYouStart: [
+      'Review columns carefully.',
+      'Confirm required fields.',
+      'Backup file.',
+    ],
+
+    afterYouFinish: [
+      'Check output structure.',
+      'Verify column removal.',
+      'Continue processing.',
+    ],
+
+    realWorldTips: [
+      'Remove unused columns early.',
+      'Keep backups.',
+      'Validate final structure.',
+    ],
+
+    toolSlug: 'csv-remove-column-selectable',
+
+    relatedCategorySlugs: ['csv-tools', 'data-cleaning-tools'],
+
+    relatedGuideSlugs: [
+      'how-to-select-columns-in-a-csv-file',
+      'how-to-clean-a-csv-file',
+    ],
+  },
+
+  'how-to-prepare-a-csv-file-for-import': {
+    slug: 'how-to-prepare-a-csv-file-for-import',
+
+    title: 'How to Prepare a CSV File for Import',
+
+    seoTitle: 'How to Prepare a CSV File for Import - Step-by-Step Guide',
+
+    seoDescription:
+      'Learn how to prepare CSV files before importing them into systems, databases, or reporting tools.',
+
+    intro:
+      'Preparing a CSV file before importing it into another system helps prevent errors and ensures reliable data processing.',
+
+    summary:
+      'Most import workflows fail due to formatting issues, missing headers, or inconsistent values. Preparing the file first reduces these risks.',
+
+    whenToUse: [
+      'Before importing CSV data into another platform.',
+      'Before uploading data into databases.',
+      'When sharing structured datasets.',
+    ],
+
+    steps: [
+      'Review the CSV file for formatting issues.',
+      'Open the CSV Cleaner tool.',
+      'Upload the CSV file.',
+      'Remove unnecessary rows or spaces.',
+      'Validate the file structure.',
+      'Download the prepared CSV file.',
+    ],
+
+    commonMistakes: [
+      'Skipping validation before import.',
+      'Ignoring header formatting.',
+      'Leaving empty rows in the dataset.',
+    ],
+
+    faq: [
+      {
+        question: 'Why prepare CSV files before importing?',
+        answer:
+          'Prepared files reduce import errors and ensure consistent formatting.',
+      },
+    ],
+
+    toolBenefits: [
+      'Improve import success rates.',
+      'Standardize file structure.',
+      'Reduce formatting errors.',
+    ],
+
+    expectedResult: 'A clean and validated CSV file ready for importing.',
+
+    whyThisMatters:
+      'Well-prepared files reduce failures during import and improve workflow reliability.',
+
+    beforeYouStart: [
+      'Check header names.',
+      'Remove unnecessary rows.',
+      'Backup original file.',
+    ],
+
+    afterYouFinish: [
+      'Validate structure.',
+      'Confirm header consistency.',
+      'Proceed with import.',
+    ],
+
+    realWorldTips: [
+      'Always validate before importing.',
+      'Use consistent headers.',
+      'Keep backups of raw data.',
+    ],
+
+    toolSlug: 'csv-cleaner',
+
+    relatedCategorySlugs: ['csv-tools', 'data-cleaning-tools'],
+
+    relatedGuideSlugs: [
+      'how-to-clean-a-csv-file',
+      'how-to-validate-a-csv-file',
+    ],
+  },
+
+  'how-to-reorder-columns-in-a-csv-file': {
+    slug: 'how-to-reorder-columns-in-a-csv-file',
+
+    title: 'How to Reorder Columns in a CSV File',
+
+    seoTitle: 'How to Reorder Columns in a CSV File - Step-by-Step Guide',
+
+    seoDescription:
+      'Learn how to reorder columns in a CSV file to match required formats or import templates.',
+
+    intro:
+      'Reordering columns helps match file structures required by systems and templates.',
+
+    summary:
+      'Many import systems require columns in a specific order. Reordering ensures compatibility.',
+
+    whenToUse: [
+      'Before importing CSV files.',
+      'When matching templates.',
+      'When standardizing file formats.',
+    ],
+
+    steps: [
+      'Review the desired column order.',
+      'Open the CSV Column Selector tool.',
+      'Upload the CSV file.',
+      'Enter columns in the correct order.',
+      'Run the tool.',
+      'Download the reordered file.',
+    ],
+
+    commonMistakes: [
+      'Incorrect column order.',
+      'Missing required columns.',
+      'Skipping validation.',
+    ],
+
+    faq: [
+      {
+        question: 'Why reorder columns?',
+        answer:
+          'Correct column order ensures compatibility with import systems.',
+      },
+    ],
+
+    toolBenefits: [
+      'Match required file formats.',
+      'Standardize datasets.',
+      'Reduce import errors.',
+    ],
+
+    expectedResult: 'A CSV file with columns arranged in the correct order.',
+
+    whyThisMatters:
+      'Correct column order prevents mapping errors during data import.',
+
+    beforeYouStart: [
+      'Identify required column order.',
+      'Verify column names.',
+      'Backup file.',
+    ],
+
+    afterYouFinish: [
+      'Confirm column order.',
+      'Validate output.',
+      'Proceed with import.',
+    ],
+
+    realWorldTips: [
+      'Use templates when possible.',
+      'Double-check mapping rules.',
+      'Validate before uploading.',
+    ],
+
+    toolSlug: 'csv-column-selector',
+
+    relatedCategorySlugs: ['csv-tools', 'data-cleaning-tools'],
+
+    relatedGuideSlugs: [
+      'how-to-select-columns-in-a-csv-file',
+      'how-to-prepare-a-csv-file-for-import',
+    ],
+  },
+
+  'how-to-check-csv-file-structure': {
+    slug: 'how-to-check-csv-file-structure',
+
+    title: 'How to Check CSV File Structure',
+
+    seoTitle: 'How to Check CSV File Structure - Step-by-Step Guide',
+
+    seoDescription:
+      'Learn how to check CSV file structure to detect formatting errors and ensure consistency.',
+
+    intro:
+      'Checking CSV structure helps detect formatting problems before processing or importing the file.',
+
+    summary:
+      'Structural validation ensures rows, headers, and delimiters are consistent.',
+
+    whenToUse: [
+      'Before importing CSV files.',
+      'Before sharing datasets.',
+      'Before running automated processing.',
+    ],
+
+    steps: [
+      'Open the CSV Validator tool.',
+      'Upload your CSV file.',
+      'Run validation.',
+      'Review detected issues.',
+      'Fix any reported problems.',
+    ],
+
+    commonMistakes: [
+      'Ignoring structural warnings.',
+      'Skipping validation steps.',
+      'Assuming files are correct without checking.',
+    ],
+
+    faq: [
+      {
+        question: 'Why validate CSV structure?',
+        answer: 'Validation prevents errors in later workflows.',
+      },
+    ],
+
+    toolBenefits: [
+      'Detect formatting errors.',
+      'Improve dataset reliability.',
+      'Reduce processing failures.',
+    ],
+
+    expectedResult:
+      'A validation report showing whether the file structure is correct.',
+
+    whyThisMatters:
+      'Validating structure ensures consistent and reliable data workflows.',
+
+    beforeYouStart: [
+      'Locate the file to validate.',
+      'Check file encoding.',
+      'Backup original data.',
+    ],
+
+    afterYouFinish: [
+      'Review validation results.',
+      'Fix detected issues.',
+      'Confirm file readiness.',
+    ],
+
+    realWorldTips: [
+      'Validate large files before processing.',
+      'Check delimiter consistency.',
+      'Use validation as a standard workflow step.',
+    ],
+
+    toolSlug: 'csv-validator',
+
+    relatedCategorySlugs: ['csv-tools', 'data-cleaning-tools'],
+
+    relatedGuideSlugs: [
+      'how-to-validate-a-csv-file',
+      'how-to-clean-a-csv-file',
+    ],
+  },
+
+  'how-to-create-a-clean-csv-dataset': {
+    slug: 'how-to-create-a-clean-csv-dataset',
+
+    title: 'How to Create a Clean CSV Dataset',
+
+    seoTitle: 'How to Create a Clean CSV Dataset - Step-by-Step Guide',
+
+    seoDescription:
+      'Learn how to create a clean CSV dataset by removing errors, standardizing headers, and validating structure.',
+
+    intro:
+      'Creating a clean CSV dataset improves data quality and reduces errors in analysis, imports, and reporting workflows.',
+
+    summary:
+      'Clean datasets are easier to maintain, share, and process. Removing inconsistencies early prevents larger issues later.',
+
+    whenToUse: [
+      'Before sharing CSV datasets.',
+      'Before importing into other systems.',
+      'Before running data analysis.',
+    ],
+
+    steps: [
+      'Review the CSV file.',
+      'Open the CSV Cleaner tool.',
+      'Upload the file.',
+      'Remove empty rows and spaces.',
+      'Validate the structure.',
+      'Download the cleaned dataset.',
+    ],
+
+    commonMistakes: [
+      'Skipping validation steps.',
+      'Leaving inconsistent headers.',
+      'Ignoring empty rows.',
+    ],
+
+    faq: [
+      {
+        question: 'Why create clean datasets?',
+        answer: 'Clean datasets reduce errors and improve reliability.',
+      },
+    ],
+
+    toolBenefits: [
+      'Improve dataset consistency.',
+      'Reduce processing errors.',
+      'Standardize file structure.',
+    ],
+
+    expectedResult: 'A clean CSV dataset ready for processing or sharing.',
+
+    whyThisMatters:
+      'Clean datasets improve workflow accuracy and prevent unexpected failures.',
+
+    beforeYouStart: [
+      'Review headers.',
+      'Remove obvious errors.',
+      'Backup original data.',
+    ],
+
+    afterYouFinish: [
+      'Validate structure.',
+      'Confirm consistency.',
+      'Store final dataset.',
+    ],
+
+    realWorldTips: [
+      'Clean data before analysis.',
+      'Standardize naming.',
+      'Validate before importing.',
+    ],
+
+    toolSlug: 'csv-cleaner',
+
+    relatedCategorySlugs: ['csv-tools', 'data-cleaning-tools'],
+
+    relatedGuideSlugs: [
+      'how-to-clean-a-csv-file',
+      'how-to-validate-a-csv-file',
+    ],
+  },
+
+  'how-to-organize-large-csv-files': {
+    slug: 'how-to-organize-large-csv-files',
+
+    title: 'How to Organize Large CSV Files',
+
+    seoTitle: 'How to Organize Large CSV Files - Step-by-Step Guide',
+
+    seoDescription:
+      'Learn how to organize large CSV files by splitting, validating, and structuring datasets for easier processing.',
+
+    intro:
+      'Large CSV files can become difficult to manage. Organizing them improves performance and readability.',
+
+    summary:
+      'Breaking large datasets into smaller parts helps reduce errors and improve workflow efficiency.',
+
+    whenToUse: [
+      'When working with large datasets.',
+      'When processing performance slows.',
+      'Before sharing large CSV files.',
+    ],
+
+    steps: [
+      'Review dataset size.',
+      'Open the Split CSV File tool.',
+      'Upload the large CSV file.',
+      'Choose split size.',
+      'Run the tool.',
+      'Download smaller files.',
+    ],
+
+    commonMistakes: [
+      'Splitting files incorrectly.',
+      'Ignoring validation.',
+      'Not reviewing output files.',
+    ],
+
+    faq: [
+      {
+        question: 'Why split large CSV files?',
+        answer: 'Splitting improves performance and reduces processing errors.',
+      },
+    ],
+
+    toolBenefits: [
+      'Manage large datasets easily.',
+      'Improve workflow speed.',
+      'Reduce processing risks.',
+    ],
+
+    expectedResult:
+      'Multiple smaller CSV files derived from the original dataset.',
+
+    whyThisMatters:
+      'Managing large datasets efficiently reduces risk and improves reliability.',
+
+    beforeYouStart: [
+      'Check dataset size.',
+      'Plan split strategy.',
+      'Backup original file.',
+    ],
+
+    afterYouFinish: [
+      'Verify split results.',
+      'Check row counts.',
+      'Store organized files.',
+    ],
+
+    realWorldTips: [
+      'Split very large files before importing.',
+      'Keep consistent naming.',
+      'Validate output files.',
+    ],
+
+    toolSlug: 'split-csv-file',
+
+    relatedCategorySlugs: ['csv-tools'],
+
+    relatedGuideSlugs: ['how-to-split-csv-file', 'how-to-merge-csv-files'],
+  },
 }
 
 export const allGuides = Object.values(guideRegistry)
