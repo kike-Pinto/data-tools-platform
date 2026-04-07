@@ -1,5 +1,5 @@
-import Papa from 'papaparse'
 import { fileToText } from '@/lib/file'
+import { parseCsv, rowsToCsv } from '@/lib/csvUtils'
 import type { ToolProcessor } from '@/tools/types'
 
 export const removeDuplicatesCsvProcessor: ToolProcessor = async ({ file }) => {
@@ -8,19 +8,11 @@ export const removeDuplicatesCsvProcessor: ToolProcessor = async ({ file }) => {
   }
 
   const text = await fileToText(file)
-
-  const parsed = Papa.parse<Record<string, string>>(text, {
-    header: true,
-    skipEmptyLines: true,
-  })
-
-  if (parsed.errors.length > 0) {
-    throw new Error(parsed.errors[0].message)
-  }
+  const rows = parseCsv(text)
 
   const seen = new Set<string>()
 
-  const uniqueRows = parsed.data.filter((row) => {
+  const uniqueRows = rows.filter((row) => {
     const signature = JSON.stringify(row)
 
     if (seen.has(signature)) {
@@ -31,7 +23,7 @@ export const removeDuplicatesCsvProcessor: ToolProcessor = async ({ file }) => {
     return true
   })
 
-  const csv = Papa.unparse(uniqueRows)
+  const csv = rowsToCsv(uniqueRows)
 
   return {
     kind: 'download',

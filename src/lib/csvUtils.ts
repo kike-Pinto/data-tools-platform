@@ -7,35 +7,53 @@ export type CsvRow = Record<string, string>
  */
 export function normalizeCell(value: unknown): string {
   if (value === null || value === undefined) return ''
-
   return String(value).trim()
+}
+
+/**
+ * Limpia nombre de columna
+ */
+export function normalizeHeader(header: unknown): string {
+  if (header === null || header === undefined) return ''
+  return String(header).trim()
 }
 
 /**
  * Determina si un valor está vacío
  */
 export function isEmptyValue(value: unknown): boolean {
-  if (value === null) return true
-  if (value === undefined) return true
+  if (value === null || value === undefined) return true
+  return String(value).trim() === ''
+}
 
-  const str = String(value).trim()
+/**
+ * Determina si una fila completa está vacía
+ */
+export function isEmptyRow(row: Record<string, unknown>): boolean {
+  return Object.values(row).every((value) => isEmptyValue(value))
+}
 
-  return str === ''
+/**
+ * Normaliza una fila completa:
+ * - trim de headers
+ * - trim de valores
+ */
+export function normalizeRow(row: Record<string, unknown>): CsvRow {
+  const normalized: CsvRow = {}
+
+  Object.entries(row).forEach(([key, value]) => {
+    const cleanKey = normalizeHeader(key)
+    normalized[cleanKey] = normalizeCell(value)
+  })
+
+  return normalized
 }
 
 /**
  * Normaliza todas las filas CSV
  */
 export function normalizeRows(rows: Record<string, unknown>[]): CsvRow[] {
-  return rows.map((row) => {
-    const normalized: CsvRow = {}
-
-    Object.keys(row).forEach((key) => {
-      normalized[key] = normalizeCell(row[key])
-    })
-
-    return normalized
-  })
+  return rows.filter((row) => !isEmptyRow(row)).map((row) => normalizeRow(row))
 }
 
 /**
@@ -43,7 +61,6 @@ export function normalizeRows(rows: Record<string, unknown>[]): CsvRow[] {
  */
 export function getHeaders(rows: CsvRow[]): string[] {
   if (!rows.length) return []
-
   return Object.keys(rows[0])
 }
 
@@ -55,6 +72,10 @@ export function parseCsv(text: string): CsvRow[] {
     header: true,
     skipEmptyLines: true,
   })
+
+  if (parsed.errors.length > 0) {
+    throw new Error(parsed.errors[0].message)
+  }
 
   return normalizeRows(parsed.data)
 }
