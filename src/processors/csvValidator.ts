@@ -37,7 +37,21 @@ export const csvValidatorProcessor: ToolProcessor = async ({ file }) => {
     }
   }
 
-  const normalizedHeaders = headers.map((header) => header.trim())
+  const normalizedHeaders = headers.map((header) => String(header ?? '').trim())
+
+  const emptyHeaders = normalizedHeaders
+    .map((header, index) => ({ header, index }))
+    .filter(({ header }) => header === '')
+    .map(({ index }) => index + 1)
+
+  if (emptyHeaders.length > 0) {
+    return {
+      kind: 'text',
+      title: 'CSV Validation Result',
+      text: `CSV is invalid: empty header found in column(s) ${emptyHeaders.join(', ')}.`,
+    }
+  }
+
   const duplicateHeaders = normalizedHeaders.filter(
     (header, index) => normalizedHeaders.indexOf(header) !== index,
   )
@@ -52,11 +66,11 @@ export const csvValidatorProcessor: ToolProcessor = async ({ file }) => {
     }
   }
 
-  const expectedColumns = headers.length
+  const expectedColumns = normalizedHeaders.length
   const invalidRows: number[] = []
 
   for (let i = 1; i < rows.length; i++) {
-    const row = rows[i]
+    const row = rows[i] ?? []
 
     if (row.length !== expectedColumns) {
       invalidRows.push(i + 1)
