@@ -14,8 +14,8 @@
 
 // devuelve el resultado listo para mostrar en pantalla
 
-import Papa from 'papaparse'
 import { fileToText } from '@/lib/file'
+import { parseCsv } from '@/lib/csvUtils'
 import { ensurePrettyJson } from '@/lib/text'
 import type { ToolProcessor } from '@/tools/types'
 
@@ -26,18 +26,19 @@ export const csvToJsonProcessor: ToolProcessor = async ({ file }) => {
 
   const text = await fileToText(file)
 
-  const parsed = Papa.parse<Record<string, string>>(text, {
-    header: true,
-    skipEmptyLines: true,
-  })
+  const rows = parseCsv(text)
 
-  if (parsed.errors.length > 0) {
-    throw new Error(parsed.errors[0].message)
+  if (!rows.length) {
+    return {
+      kind: 'text',
+      title: 'JSON result',
+      text: '[]',
+    }
   }
 
   return {
     kind: 'text',
     title: 'JSON result',
-    text: ensurePrettyJson(parsed.data),
+    text: ensurePrettyJson(rows),
   }
 }

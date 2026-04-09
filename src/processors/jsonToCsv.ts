@@ -13,6 +13,18 @@ export const jsonToCsvProcessor: ToolProcessor = async ({ text }) => {
     throw new Error('El JSON debe ser un array de objetos.')
   }
 
+  if (json.length === 0) {
+    throw new Error('El JSON está vacío.')
+  }
+
+  const allObjects = json.every(
+    (item) => typeof item === 'object' && item !== null,
+  )
+
+  if (!allObjects) {
+    throw new Error('Todos los elementos del JSON deben ser objetos.')
+  }
+
   const csv = Papa.unparse(json as Record<string, unknown>[])
 
   return {

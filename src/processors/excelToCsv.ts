@@ -10,6 +10,7 @@ export const excelToCsvProcessor: ToolProcessor = async ({ file }) => {
   }
 
   const buffer = await fileToArrayBuffer(file)
+
   const workbook = XLSX.read(buffer, { type: 'array' })
 
   const firstSheetName = workbook.SheetNames[0]
@@ -19,7 +20,12 @@ export const excelToCsvProcessor: ToolProcessor = async ({ file }) => {
   }
 
   const worksheet = workbook.Sheets[firstSheetName]
+
   const csv = XLSX.utils.sheet_to_csv(worksheet)
+
+  if (!csv.trim()) {
+    throw new Error('La hoja Excel está vacía.')
+  }
 
   return {
     kind: 'download',

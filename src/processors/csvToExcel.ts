@@ -1,6 +1,6 @@
-import Papa from 'papaparse'
 import * as XLSX from 'xlsx'
 import { fileToText } from '@/lib/file'
+import { parseCsv } from '@/lib/csvUtils'
 import type { ToolProcessor } from '@/tools/types'
 
 export const csvToExcelProcessor: ToolProcessor = async ({ file }) => {
@@ -10,24 +10,18 @@ export const csvToExcelProcessor: ToolProcessor = async ({ file }) => {
 
   const text = await fileToText(file)
 
-  const parsed = Papa.parse<Record<string, unknown>>(text, {
-    header: true,
-    skipEmptyLines: true,
-  })
+  const rows = parseCsv(text)
 
-  if (parsed.errors.length > 0) {
-    throw new Error(parsed.errors[0].message)
+  if (!rows.length) {
+    throw new Error('El CSV no contiene datos.')
   }
 
-  // crear worksheet
-  const worksheet = XLSX.utils.json_to_sheet(parsed.data)
+  const worksheet = XLSX.utils.json_to_sheet(rows)
 
-  // crear workbook
   const workbook = XLSX.utils.book_new()
 
   XLSX.utils.book_append_sheet(workbook, worksheet, 'Sheet1')
 
-  // generar archivo binario
   const excelBuffer = XLSX.write(workbook, {
     bookType: 'xlsx',
     type: 'array',
