@@ -9,7 +9,6 @@ export const csvToExcelProcessor: ToolProcessor = async ({ file }) => {
   }
 
   const text = await fileToText(file)
-
   const rows = parseCsv(text)
 
   if (!rows.length) {
@@ -18,8 +17,22 @@ export const csvToExcelProcessor: ToolProcessor = async ({ file }) => {
 
   const worksheet = XLSX.utils.json_to_sheet(rows)
 
-  const workbook = XLSX.utils.book_new()
+  const headers = Object.keys(rows[0] ?? {})
 
+  const columnWidths = headers.map((header) => {
+    const maxCellLength = Math.max(
+      header.length,
+      ...rows.map((row) => String(row[header] ?? '').length),
+    )
+
+    return {
+      wch: Math.min(Math.max(maxCellLength + 2, 10), 30),
+    }
+  })
+
+  worksheet['!cols'] = columnWidths
+
+  const workbook = XLSX.utils.book_new()
   XLSX.utils.book_append_sheet(workbook, worksheet, 'Sheet1')
 
   const excelBuffer = XLSX.write(workbook, {
