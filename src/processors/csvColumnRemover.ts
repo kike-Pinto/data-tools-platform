@@ -17,7 +17,29 @@ export const csvColumnRemoverProcessor: ToolProcessor = async ({ file }) => {
     throw new Error(parsed.errors[0].message)
   }
 
-  const cleanedRows = parsed.data.map((row) => row.slice(0, -1))
+  const rows = parsed.data
+
+  if (!rows.length) {
+    return {
+      kind: 'text',
+      title: 'No data',
+      text: 'No data found in CSV.',
+    }
+  }
+
+  const headers = rows[0] ?? []
+
+  if (headers.length === 0) {
+    throw new Error('El CSV no contiene columnas.')
+  }
+
+  if (headers.length === 1) {
+    throw new Error(
+      'No se puede eliminar la última columna porque solo existe una columna.',
+    )
+  }
+
+  const cleanedRows = rows.map((row) => row.slice(0, -1))
   const csv = Papa.unparse(cleanedRows)
 
   return {
