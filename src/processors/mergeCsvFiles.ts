@@ -1,7 +1,8 @@
 // Crear processor merge
 
-import Papa from 'papaparse'
 import { fileToText } from '@/lib/file'
+import { parseCsv, rowsToCsv, getHeaders } from '@/lib/csvUtils'
+
 import type { ToolProcessor } from '@/tools/types'
 
 export const mergeCsvFilesProcessor: ToolProcessor = async ({ files }) => {
@@ -10,23 +11,39 @@ export const mergeCsvFilesProcessor: ToolProcessor = async ({ files }) => {
   }
 
   const allRows: Record<string, string>[] = []
+  let referenceHeaders: string[] | null = null
 
   for (const file of files) {
     const text = await fileToText(file)
 
-    const parsed = Papa.parse<Record<string, string>>(text, {
-      header: true,
-      skipEmptyLines: true,
-    })
+    const rows = parseCsv(text)
 
-    if (parsed.errors.length > 0) {
-      throw new Error(`${file.name}: ${parsed.errors[0].message}`)
+    if (!rows.length) {
+      continue
     }
 
-    allRows.push(...parsed.data)
+    const headers = getHeaders(rows)
+
+    if (!referenceHeaders) {
+      referenceHeaders = headers
+    } else {
+      const mismatch =
+        headers.length !== referenceHeaders.length ||
+        headers.some((h, i) => h !== referenceHeaders![i])
+
+      if (mismatch) {
+        throw new Error(`El archivo "${file.name}" tiene columnas distintas.`)
+      }
+    }
+
+    allRows.push(...rows)
   }
 
-  const mergedCsv = Papa.unparse(allRows)
+  if (!allRows.length) {
+    throw new Error('No se encontraron datos en los archivos.')
+  }
+
+  const mergedCsv = rowsToCsv(allRows)
 
   return {
     kind: 'download',

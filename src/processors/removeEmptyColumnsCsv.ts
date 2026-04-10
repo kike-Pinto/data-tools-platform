@@ -26,10 +26,8 @@ export const removeEmptyColumnsCsvProcessor: ToolProcessor = async ({
     throw new Error('Debes subir un archivo CSV.')
   }
 
-  // Leer archivo
   const text = await fileToText(file)
 
-  // Parsear CSV
   const rows = parseCsv(text)
 
   if (!rows.length) {
@@ -40,17 +38,18 @@ export const removeEmptyColumnsCsvProcessor: ToolProcessor = async ({
     }
   }
 
-  // Obtener headers
   const headers = getHeaders(rows)
 
-  // Detectar columnas no vacías
   const nonEmptyHeaders = headers.filter((header) => {
     return rows.some((row) => {
       return !isEmptyValue(row[header])
     })
   })
 
-  // Crear nuevas filas sin columnas vacías
+  if (!nonEmptyHeaders.length) {
+    throw new Error('Todas las columnas están vacías.')
+  }
+
   const cleanedRows = rows.map((row) => {
     const newRow: Record<string, string> = {}
 
@@ -61,7 +60,6 @@ export const removeEmptyColumnsCsvProcessor: ToolProcessor = async ({
     return newRow
   })
 
-  // Convertir a CSV
   const csvOutput = rowsToCsv(cleanedRows)
 
   return {

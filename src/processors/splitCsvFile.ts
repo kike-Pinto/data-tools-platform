@@ -1,7 +1,7 @@
 // Version simple: Partir el CSV en dos mitades
-
-import Papa from 'papaparse'
 import { fileToText } from '@/lib/file'
+import { parseCsv, rowsToCsv } from '@/lib/csvUtils'
+
 import type { ToolProcessor } from '@/tools/types'
 
 export const splitCsvFileProcessor: ToolProcessor = async ({ file }) => {
@@ -11,26 +11,46 @@ export const splitCsvFileProcessor: ToolProcessor = async ({ file }) => {
 
   const text = await fileToText(file)
 
-  const parsed = Papa.parse<Record<string, string>>(text, {
-    header: true,
-    skipEmptyLines: true,
-  })
+  const rows = parseCsv(text)
 
-  if (parsed.errors.length > 0) {
-    throw new Error(parsed.errors[0].message)
+  if (!rows.length) {
+    throw new Error('El CSV no contiene datos.')
   }
 
-  const rows = parsed.data
   const midpoint = Math.ceil(rows.length / 2)
-  const firstHalf = rows.slice(0, midpoint)
 
-  const csv = Papa.unparse(firstHalf)
+  const firstHalf = rows.slice(0, midpoint)
+  const secondHalf = rows.slice(midpoint)
+
+  const csv1 = rowsToCsv(firstHalf)
+  const csv2 = rowsToCsv(secondHalf)
+
+  const zipBlob = await createZip([
+    { name: 'split-part-1.csv', content: csv1 },
+    { name: 'split-part-2.csv', content: csv2 },
+  ])
 
   return {
     kind: 'download',
-    title: 'Split CSV (Part 1)',
-    filename: 'split-part-1.csv',
-    mimeType: 'text/csv;charset=utf-8;',
-    content: csv,
+    title: 'Split CSV',
+    filename: 'split-csv.zip',
+    mimeType: 'application/zip',
+    content: zipBlob,
   }
+}
+
+async function createZip(
+  files: { name: string; content: string }[],
+): Promise<ArrayBuffer> {
+  const JSZip = (await import('jszip')).default
+
+  const zip = new JSZip()
+
+  files.forEach((file) => {
+    zip.file(file.name, file.content)
+  })
+
+  return await zip.generateAsync({
+    type: 'arraybuffer',
+  })
 }
