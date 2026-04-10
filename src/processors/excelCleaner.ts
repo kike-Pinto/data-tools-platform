@@ -1,11 +1,12 @@
 import * as XLSX from 'xlsx'
 import type { ToolProcessor } from '@/tools/types'
 
-type SheetRow = Array<string | number | boolean | null | undefined>
+type SheetCell = string | number | boolean | null | undefined
+type SheetRow = SheetCell[]
 
 export const excelCleanerProcessor: ToolProcessor = async ({ file }) => {
   if (!file) {
-    throw new Error('File is required')
+    throw new Error('Debes subir un archivo Excel.')
   }
 
   const buffer = await file.arrayBuffer()
@@ -17,28 +18,58 @@ export const excelCleanerProcessor: ToolProcessor = async ({ file }) => {
   const firstSheetName = workbook.SheetNames[0]
 
   if (!firstSheetName) {
-    throw new Error('The Excel file does not contain any sheets')
+    throw new Error('El archivo Excel no contiene hojas.')
   }
 
   const firstSheet = workbook.Sheets[firstSheetName]
 
   if (!firstSheet) {
-    throw new Error('Could not read the first sheet')
+    throw new Error('No se pudo leer la primera hoja del Excel.')
   }
 
   const rows = XLSX.utils.sheet_to_json<SheetRow>(firstSheet, {
     header: 1,
   })
 
-  const cleanedRows = rows.filter((row) =>
-    row.some((cell) => {
-      if (cell === undefined || cell === null) return false
-      if (typeof cell === 'string') return cell.trim() !== ''
-      return true
-    }),
-  )
+  const cleanedRows = rows
+    .map((row) =>
+      row.map((cell) => {
+        if (typeof cell === 'string') {
+          return cell.trim()
+        }
+
+        return cell
+      }),
+    )
+    .filter((row) =>
+      row.some((cell) => {
+        if (cell === undefined || cell === null) return false
+        if (typeof cell === 'string') return cell !== ''
+        return true
+      }),
+    )
+
+  if (!cleanedRows.length) {
+    throw new Error(
+      'La hoja Excel no contiene datos útiles después de la limpieza.',
+    )
+  }
 
   const newSheet = XLSX.utils.aoa_to_sheet(cleanedRows)
+
+  const maxColumns = Math.max(...cleanedRows.map((row) => row.length), 0)
+
+  newSheet['!cols'] = Array.from({ length: maxColumns }, (_, colIndex) => {
+    const maxCellLength = Math.max(
+      ...cleanedRows.map((row) => String(row[colIndex] ?? '').length),
+      10,
+    )
+
+    return {
+      wch: Math.min(maxCellLength + 2, 30),
+    }
+  })
+
   const newWorkbook = XLSX.utils.book_new()
 
   XLSX.utils.book_append_sheet(newWorkbook, newSheet, 'Cleaned')
@@ -50,6 +81,7 @@ export const excelCleanerProcessor: ToolProcessor = async ({ file }) => {
 
   return {
     kind: 'download',
+    title: 'Cleaned Excel',
     filename: 'cleaned-excel.xlsx',
     mimeType:
       'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',

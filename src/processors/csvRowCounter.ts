@@ -10,6 +10,14 @@ export const csvRowCounterProcessor: ToolProcessor = async ({ file }) => {
   const fileText = await fileToText(file)
   const rows = parseCsv(fileText)
 
+  if (!rows.length) {
+    return {
+      kind: 'text',
+      title: 'CSV Row Count',
+      text: 'Total rows: 0',
+    }
+  }
+
   return {
     kind: 'text',
     title: 'CSV Row Count',
