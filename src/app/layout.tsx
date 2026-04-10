@@ -17,12 +17,20 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
+
+  verification: {
+    google: 'rgBAbn7ULYgjI7L7ilydOVae5q7XBGyJGOCt5dOKE8w',
+  },
+
   title: {
     default: siteConfig.title,
     template: `%s | ${siteConfig.name}`,
   },
+
   description: siteConfig.description,
+
   applicationName: siteConfig.name,
+
   keywords: [
     'csv tools',
     'excel tools',
@@ -34,8 +42,10 @@ export const metadata: Metadata = {
     'csv to json',
     'excel to csv',
   ],
+
   authors: [{ name: siteConfig.creator }],
   creator: siteConfig.creator,
+
   openGraph: {
     type: 'website',
     locale: 'en_US',
@@ -52,12 +62,14 @@ export const metadata: Metadata = {
       },
     ],
   },
+
   twitter: {
     card: 'summary_large_image',
     title: siteConfig.title,
     description: siteConfig.description,
     images: [siteConfig.ogImage],
   },
+
   robots: {
     index: true,
     follow: true,
