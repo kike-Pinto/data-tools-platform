@@ -4,6 +4,8 @@ import { categoryRegistry } from '@/content/categories'
 import { guideRegistry } from '@/content/guides'
 import { siteConfig } from '@/config/site'
 
+export const dynamic = 'force-static'
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date()
 
