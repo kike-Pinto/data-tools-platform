@@ -10,6 +10,7 @@ export const featuredGuideSlugs = [
   'how-to-clean-a-csv-file',
   'how-to-validate-a-csv-file',
   'how-to-convert-excel-to-csv',
+  'how-to-clean-large-csv-files-without-errors',
 ]
 
 export const featuredToolSlugs = [
