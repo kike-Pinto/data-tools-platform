@@ -73,7 +73,7 @@ export default function ToolsIndexPage() {
         </div>
       </section>
 
-      <section className='mt-16 max-w-4xl'>
+      <section className='mt-16'>
         <h2 className='text-2xl font-semibold tracking-tight'>
           Free online tools for CSV, Excel, JSON, and file conversion
         </h2>
