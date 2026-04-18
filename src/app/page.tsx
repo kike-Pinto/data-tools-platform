@@ -121,6 +121,15 @@ export default function HomePage() {
           <h2 className='mt-1 text-2xl font-semibold tracking-tight'>
             Start with these tools
           </h2>
+
+          <div className='mt-3'>
+            <Link
+              href='/tools'
+              className='text-sm font-medium text-neutral-900 underline underline-offset-4'
+            >
+              View all tools →
+            </Link>
+          </div>
         </div>
 
         <div className='mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3'>
@@ -145,6 +154,14 @@ export default function HomePage() {
           <h2 className='mt-1 text-2xl font-semibold tracking-tight'>
             Learn step by step
           </h2>
+          <div className='mt-3'>
+            <Link
+              href='/guides'
+              className='text-sm font-medium text-neutral-900 underline underline-offset-4'
+            >
+              View all guides →
+            </Link>
+          </div>
         </div>
 
         <div className='mt-6 grid gap-4 lg:grid-cols-2'>
@@ -161,6 +178,26 @@ export default function HomePage() {
             </Link>
           ))}
         </div>
+      </section>
+      <section className='mt-16 '>
+        <h2 className='text-2xl font-semibold tracking-tight'>
+          Free online CSV, Excel, and JSON tools
+        </h2>
+
+        <p className='mt-4 text-base leading-7 text-neutral-600'>
+          This platform provides free online tools designed to help with CSV,
+          Excel, and JSON file workflows. You can convert files between formats,
+          clean messy datasets, validate CSV structure, filter rows, sort
+          columns, merge files, split large datasets, and prepare data for
+          imports, reporting, and automation tasks.
+        </p>
+
+        <p className='mt-4 text-base leading-7 text-neutral-600'>
+          Whether you are working with spreadsheets, APIs, or data pipelines,
+          these tools help reduce manual work and simplify repetitive data
+          preparation tasks. All tools run directly in your browser, making them
+          fast, secure, and easy to use without installation.
+        </p>
       </section>
     </main>
   )
