@@ -23,6 +23,22 @@ export default function CategoriesIndexPage() {
           Explore tool collections by topic, including CSV tools, Excel tools,
           file conversion tools, and data cleaning tools.
         </p>
+
+        <div className='mt-6 flex flex-wrap gap-3'>
+          <Link
+            href='/tools'
+            className='inline-flex rounded-lg border border-neutral-200 px-4 py-2 text-sm font-medium text-neutral-900 transition hover:border-neutral-300 hover:bg-neutral-50'
+          >
+            View all tools
+          </Link>
+
+          <Link
+            href='/guides'
+            className='inline-flex rounded-lg border border-neutral-200 px-4 py-2 text-sm font-medium text-neutral-900 transition hover:border-neutral-300 hover:bg-neutral-50'
+          >
+            View all guides
+          </Link>
+        </div>
       </section>
 
       <section className='mt-10'>
@@ -40,6 +56,26 @@ export default function CategoriesIndexPage() {
             </Link>
           ))}
         </div>
+      </section>
+
+      <section className='mt-16'>
+        <h2 className='text-2xl font-semibold tracking-tight'>
+          Browse tools and guides by category
+        </h2>
+
+        <p className='mt-4 text-base leading-7 text-neutral-600'>
+          Categories make it easier to explore related tools and guides across
+          the site. Instead of browsing every page individually, you can focus
+          on CSV tools, Excel tools, file conversion workflows, or data cleaning
+          tasks depending on what you need to solve.
+        </p>
+
+        <p className='mt-4 text-base leading-7 text-neutral-600'>
+          This category structure also helps connect tools with guides, making
+          it easier to find practical workflows for converting files, validating
+          data, cleaning datasets, and preparing structured information for
+          imports, reports, and automation.
+        </p>
       </section>
     </main>
   )
