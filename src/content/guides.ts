@@ -1784,84 +1784,81 @@ export const guideRegistry: Record<string, GuideConfig> = {
 
   'how-to-reorder-columns-in-a-csv-file': {
     slug: 'how-to-reorder-columns-in-a-csv-file',
-
     title: 'How to Reorder Columns in a CSV File',
-
     seoTitle: 'How to Reorder Columns in a CSV File - Step-by-Step Guide',
-
     seoDescription:
       'Learn how to reorder columns in a CSV file to match required formats or import templates.',
-
     intro:
-      'Reordering columns helps match file structures required by systems and templates.',
-
+      'Reordering columns in a CSV file is useful when you need to match a required import format, simplify a dataset, or prepare data for reporting and automation. This guide shows a simple way to reorganize columns without manually editing the file row by row.',
     summary:
-      'Many import systems require columns in a specific order. Reordering ensures compatibility.',
-
+      'Column order matters in many CSV workflows, especially when importing files into systems, databases, CRMs, or third-party tools. Reordering columns makes the file easier to use, easier to review, and more compatible with templates that expect a specific field order.',
     whenToUse: [
-      'Before importing CSV files.',
-      'When matching templates.',
-      'When standardizing file formats.',
+      'When a platform requires columns in a specific order before import.',
+      'When you want to simplify a CSV file by keeping only the most important columns first.',
+      'When you need to standardize exported CSV files for reporting or automation workflows.',
     ],
-
     steps: [
-      'Review the desired column order.',
+      'Prepare your CSV file and check which columns should appear first.',
       'Open the CSV Column Selector tool.',
-      'Upload the CSV file.',
-      'Enter columns in the correct order.',
-      'Run the tool.',
-      'Download the reordered file.',
+      'Enter the columns in the exact order you want to keep.',
+      'Run the tool to generate the reordered CSV file.',
+      'Review the output and confirm that the headers now match the required order.',
+      'Use the new CSV file for import, reporting, or further cleanup.',
     ],
-
     commonMistakes: [
-      'Incorrect column order.',
-      'Missing required columns.',
-      'Skipping validation.',
+      'Reordering columns without checking the import template first.',
+      'Accidentally omitting columns that are still required later.',
+      'Changing the column order but forgetting to validate the final file.',
     ],
-
     faq: [
       {
-        question: 'Why reorder columns?',
+        question: 'Why does column order matter in a CSV file?',
         answer:
-          'Correct column order ensures compatibility with import systems.',
+          'Some systems, templates, and workflows expect fields in a specific order. Reordering columns helps match those requirements and reduces import errors.',
+      },
+      {
+        question: 'Can I remove columns while reordering them?',
+        answer:
+          'Yes. Reordering is often combined with keeping only the columns you actually need.',
+      },
+      {
+        question: 'Should I validate the CSV after reordering columns?',
+        answer:
+          'Yes. It is a good idea to confirm that the structure is still correct before importing or sharing the file.',
       },
     ],
-
     toolBenefits: [
-      'Match required file formats.',
-      'Standardize datasets.',
-      'Reduce import errors.',
+      'Reorder columns quickly without manually editing spreadsheets.',
+      'Match import templates and required field layouts more easily.',
+      'Create cleaner, more organized CSV files for downstream workflows.',
     ],
-
-    expectedResult: 'A CSV file with columns arranged in the correct order.',
-
+    expectedResult:
+      'A CSV file with columns arranged in the exact order you need, ready for import, sharing, or analysis.',
     whyThisMatters:
-      'Correct column order prevents mapping errors during data import.',
+      'Many CSV workflows fail because the file structure does not match what another system expects. Reordering columns is a simple but important step when preparing files for imports, reports, integrations, and automation. It makes the dataset easier to read and reduces compatibility problems.',
 
     beforeYouStart: [
-      'Identify required column order.',
-      'Verify column names.',
-      'Backup file.',
+      'Check the exact order required by the system or template you will use.',
+      'Make sure the CSV headers are clear and correctly named.',
+      'Keep a backup copy of the original CSV file before making structural changes.',
     ],
 
     afterYouFinish: [
-      'Confirm column order.',
-      'Validate output.',
-      'Proceed with import.',
+      'Review the output file and confirm the header order is correct.',
+      'Run a validation step if the CSV will be imported into another system.',
+      'Store the reordered version separately so you can reuse it later if needed.',
     ],
 
     realWorldTips: [
-      'Use templates when possible.',
-      'Double-check mapping rules.',
-      'Validate before uploading.',
+      'If you prepare CSV files for repeated imports, save the desired column order as a standard workflow.',
+      'When working with large CSV files, reorder columns before deeper manual review to reduce confusion.',
+      'If column names are inconsistent, rename the headers first and then reorder them.',
     ],
-
     toolSlug: 'csv-column-selector',
-
     relatedCategorySlugs: ['csv-tools', 'data-cleaning-tools'],
-
     relatedGuideSlugs: [
       'how-to-select-columns-in-a-csv-file',
+      'how-to-rename-csv-headers',
       'how-to-prepare-a-csv-file-for-import',
     ],
   },
