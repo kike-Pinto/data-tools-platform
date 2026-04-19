@@ -106,6 +106,8 @@ export const guideRegistry: Record<string, GuideConfig> = {
     relatedGuideSlugs: [
       'how-to-convert-json-to-csv',
       'how-to-clean-a-csv-file',
+      'how-to-convert-csv-to-excel',
+      'how-to-convert-excel-to-json',
     ],
   },
 
@@ -163,7 +165,12 @@ export const guideRegistry: Record<string, GuideConfig> = {
       'A CSV file generated from your JSON input, ready for spreadsheet review or export workflows.',
     toolSlug: 'json-to-csv',
     relatedCategorySlugs: ['csv-tools', 'file-conversion-tools'],
-    relatedGuideSlugs: ['how-to-convert-csv-to-json'],
+    relatedGuideSlugs: [
+      'how-to-convert-csv-to-json',
+      'how-to-clean-a-csv-file',
+      'how-to-convert-csv-to-excel',
+      'how-to-convert-excel-to-json',
+    ],
   },
 
   'how-to-convert-csv-to-excel': {
@@ -215,7 +222,12 @@ export const guideRegistry: Record<string, GuideConfig> = {
       'An Excel file created from your CSV data, ready to open and review.',
     toolSlug: 'csv-to-excel',
     relatedCategorySlugs: ['excel-tools', 'file-conversion-tools'],
-    relatedGuideSlugs: ['how-to-convert-excel-to-csv'],
+    relatedGuideSlugs: [
+      'how-to-convert-excel-to-csv',
+      'how-to-convert-csv-to-json',
+      'how-to-clean-messy-excel-data',
+      'how-to-convert-excel-to-json',
+    ],
   },
 
   'how-to-convert-excel-to-csv': {
@@ -287,7 +299,12 @@ export const guideRegistry: Record<string, GuideConfig> = {
     ],
     toolSlug: 'excel-to-csv',
     relatedCategorySlugs: ['excel-tools', 'file-conversion-tools'],
-    relatedGuideSlugs: ['how-to-convert-csv-to-excel'],
+    relatedGuideSlugs: [
+      'how-to-convert-csv-to-excel',
+      'how-to-convert-excel-to-json',
+      'how-to-clean-messy-excel-data',
+      'how-to-clean-a-csv-file',
+    ],
   },
 
   'how-to-clean-a-csv-file': {
@@ -368,6 +385,8 @@ export const guideRegistry: Record<string, GuideConfig> = {
       'how-to-remove-duplicates-in-csv',
       'how-to-remove-empty-columns-in-csv',
       'how-to-validate-a-csv-file',
+      'how-to-prepare-a-csv-file-for-import',
+      'how-to-clean-large-csv-files-without-errors',
     ],
   },
 
@@ -443,6 +462,8 @@ export const guideRegistry: Record<string, GuideConfig> = {
     relatedGuideSlugs: [
       'how-to-clean-a-csv-file',
       'how-to-remove-empty-columns-in-csv',
+      'how-to-create-a-clean-csv-dataset',
+      'how-to-clean-large-csv-files-without-errors',
     ],
   },
 
@@ -518,6 +539,9 @@ export const guideRegistry: Record<string, GuideConfig> = {
     relatedGuideSlugs: [
       'how-to-clean-a-csv-file',
       'how-to-remove-duplicates-in-csv',
+      'how-to-validate-a-csv-file',
+      'how-to-select-columns-in-a-csv-file',
+      'how-to-clean-large-csv-files-without-errors',
     ],
   },
 
@@ -590,7 +614,12 @@ export const guideRegistry: Record<string, GuideConfig> = {
     ],
     toolSlug: 'csv-sorter',
     relatedCategorySlugs: ['csv-tools', 'data-cleaning-tools'],
-    relatedGuideSlugs: ['how-to-filter-csv-rows', 'how-to-clean-a-csv-file'],
+    relatedGuideSlugs: [
+      'how-to-filter-csv-rows',
+      'how-to-clean-a-csv-file',
+      'how-to-validate-a-csv-file',
+      'how-to-remove-duplicates-in-csv',
+    ],
   },
 
   'how-to-filter-csv-rows': {
@@ -662,7 +691,12 @@ export const guideRegistry: Record<string, GuideConfig> = {
     ],
     toolSlug: 'csv-filter-rows',
     relatedCategorySlugs: ['csv-tools', 'data-cleaning-tools'],
-    relatedGuideSlugs: ['how-to-sort-a-csv-file', 'how-to-clean-a-csv-file'],
+    relatedGuideSlugs: [
+      'how-to-sort-a-csv-file',
+      'how-to-clean-a-csv-file',
+      'how-to-count-rows-in-a-csv-file',
+      'how-to-remove-duplicates-in-csv',
+    ],
   },
 
   'how-to-validate-a-csv-file': {
@@ -741,6 +775,9 @@ export const guideRegistry: Record<string, GuideConfig> = {
     relatedCategorySlugs: ['csv-tools', 'data-cleaning-tools'],
     relatedGuideSlugs: [
       'how-to-clean-a-csv-file',
+      'how-to-check-csv-file-structure',
+      'how-to-fix-invalid-csv-file',
+      'how-to-prepare-a-csv-file-for-import',
       'how-to-remove-empty-columns-in-csv',
     ],
   },
@@ -831,8 +868,10 @@ export const guideRegistry: Record<string, GuideConfig> = {
     relatedCategorySlugs: ['csv-tools', 'file-conversion-tools'],
 
     relatedGuideSlugs: [
+      'how-to-split-csv-file',
       'how-to-remove-duplicates-in-csv',
       'how-to-validate-a-csv-file',
+      'how-to-organize-large-csv-files',
     ],
   },
 
@@ -914,7 +953,12 @@ export const guideRegistry: Record<string, GuideConfig> = {
 
     relatedCategorySlugs: ['csv-tools', 'data-cleaning-tools'],
 
-    relatedGuideSlugs: ['how-to-merge-csv-files', 'how-to-validate-a-csv-file'],
+    relatedGuideSlugs: [
+      'how-to-merge-csv-files',
+      'how-to-count-rows-in-a-csv-file',
+      'how-to-organize-large-csv-files',
+      'how-to-clean-large-csv-files-without-errors',
+    ],
   },
 
   'how-to-fix-invalid-csv-file': {
@@ -994,7 +1038,12 @@ export const guideRegistry: Record<string, GuideConfig> = {
 
     relatedCategorySlugs: ['csv-tools', 'data-cleaning-tools'],
 
-    relatedGuideSlugs: ['how-to-validate-a-csv-file'],
+    relatedGuideSlugs: [
+      'how-to-validate-a-csv-file',
+      'how-to-check-csv-file-structure',
+      'how-to-clean-a-csv-file',
+      'how-to-prepare-a-csv-file-for-import',
+    ],
   },
 
   'how-to-clean-messy-excel-data': {
@@ -1075,7 +1124,12 @@ export const guideRegistry: Record<string, GuideConfig> = {
 
     relatedCategorySlugs: ['excel-tools'],
 
-    relatedGuideSlugs: ['how-to-convert-excel-to-csv'],
+    relatedGuideSlugs: [
+      'how-to-convert-excel-to-csv',
+      'how-to-convert-excel-to-json',
+      'how-to-clean-a-csv-file',
+      'how-to-prepare-a-csv-file-for-import',
+    ],
   },
 
   'how-to-convert-excel-to-json': {
@@ -1171,6 +1225,7 @@ export const guideRegistry: Record<string, GuideConfig> = {
       'how-to-convert-excel-to-csv',
       'how-to-convert-csv-to-json',
       'how-to-clean-messy-excel-data',
+      'how-to-convert-csv-to-excel',
     ],
   },
 
@@ -1261,6 +1316,7 @@ export const guideRegistry: Record<string, GuideConfig> = {
       'how-to-split-csv-file',
       'how-to-filter-csv-rows',
       'how-to-validate-a-csv-file',
+      'how-to-organize-large-csv-files',
     ],
   },
 
@@ -1352,6 +1408,8 @@ export const guideRegistry: Record<string, GuideConfig> = {
       'how-to-remove-empty-columns-in-csv',
       'how-to-remove-columns-from-a-csv-file',
       'how-to-clean-a-csv-file',
+      'how-to-rename-csv-headers',
+      'how-to-reorder-columns-in-a-csv-file',
     ],
   },
 
@@ -1527,6 +1585,8 @@ export const guideRegistry: Record<string, GuideConfig> = {
     relatedGuideSlugs: [
       'how-to-rename-csv-headers',
       'how-to-select-columns-in-a-csv-file',
+      'how-to-merge-csv-columns',
+      'how-to-remove-columns-from-a-csv-file',
     ],
   },
 
@@ -1611,6 +1671,8 @@ export const guideRegistry: Record<string, GuideConfig> = {
     relatedGuideSlugs: [
       'how-to-select-columns-in-a-csv-file',
       'how-to-rename-csv-headers',
+      'how-to-add-a-column-to-a-csv-file',
+      'how-to-remove-columns-from-a-csv-file',
     ],
   },
 
@@ -1695,6 +1757,8 @@ export const guideRegistry: Record<string, GuideConfig> = {
     relatedGuideSlugs: [
       'how-to-select-columns-in-a-csv-file',
       'how-to-clean-a-csv-file',
+      'how-to-add-a-column-to-a-csv-file',
+      'how-to-merge-csv-columns',
     ],
   },
 
@@ -1779,6 +1843,9 @@ export const guideRegistry: Record<string, GuideConfig> = {
     relatedGuideSlugs: [
       'how-to-clean-a-csv-file',
       'how-to-validate-a-csv-file',
+      'how-to-check-csv-file-structure',
+      'how-to-reorder-columns-in-a-csv-file',
+      'how-to-create-a-clean-csv-dataset',
     ],
   },
 
@@ -1860,6 +1927,8 @@ export const guideRegistry: Record<string, GuideConfig> = {
       'how-to-select-columns-in-a-csv-file',
       'how-to-rename-csv-headers',
       'how-to-prepare-a-csv-file-for-import',
+      'how-to-remove-columns-from-a-csv-file',
+      'how-to-add-a-column-to-a-csv-file',
     ],
   },
 
@@ -1942,7 +2011,9 @@ export const guideRegistry: Record<string, GuideConfig> = {
 
     relatedGuideSlugs: [
       'how-to-validate-a-csv-file',
+      'how-to-fix-invalid-csv-file',
       'how-to-clean-a-csv-file',
+      'how-to-prepare-a-csv-file-for-import',
     ],
   },
 
@@ -2025,6 +2096,8 @@ export const guideRegistry: Record<string, GuideConfig> = {
 
     relatedGuideSlugs: [
       'how-to-clean-a-csv-file',
+      'how-to-remove-duplicates-in-csv',
+      'how-to-remove-empty-columns-in-csv',
       'how-to-validate-a-csv-file',
     ],
   },
@@ -2107,7 +2180,12 @@ export const guideRegistry: Record<string, GuideConfig> = {
 
     relatedCategorySlugs: ['csv-tools'],
 
-    relatedGuideSlugs: ['how-to-split-csv-file', 'how-to-merge-csv-files'],
+    relatedGuideSlugs: [
+      'how-to-split-csv-file',
+      'how-to-merge-csv-files',
+      'how-to-count-rows-in-a-csv-file',
+      'how-to-clean-large-csv-files-without-errors',
+    ],
   },
 
   'how-to-clean-large-csv-files-without-errors': {
@@ -2191,6 +2269,7 @@ export const guideRegistry: Record<string, GuideConfig> = {
       'how-to-remove-empty-columns-in-csv',
       'how-to-validate-a-csv-file',
       'how-to-filter-csv-rows',
+      'how-to-organize-large-csv-files',
     ],
   },
 }
