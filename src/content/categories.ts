@@ -90,7 +90,7 @@ export const categoryRegistry: Record<string, CategoryConfig> = {
     seoDescription:
       'Free online data cleaning tools to remove duplicates, clean CSV files, delete empty columns, validate structure, and prepare data for analysis.',
     intro:
-      'Clean and prepare your data with tools for removing duplicates, deleting empty columns, validating file structure, filtering rows, and organizing CSV files.',
+      'Clean and prepare CSV data before imports, reporting, analytics, or automation workflows. Use these tools to remove duplicates, validate structure, filter rows, organize columns, and fix formatting issues.',
     toolSlugs: [
       'csv-cleaner',
       'remove-duplicates-csv',
@@ -108,6 +108,8 @@ export const categoryRegistry: Record<string, CategoryConfig> = {
       'how-to-remove-empty-columns-in-csv',
       'how-to-filter-csv-rows',
       'how-to-validate-a-csv-file',
+      'how-to-fix-invalid-csv-file',
+      'how-to-prepare-a-csv-file-for-import',
     ],
   },
 }

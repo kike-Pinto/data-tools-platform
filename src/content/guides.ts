@@ -972,10 +972,10 @@ export const guideRegistry: Record<string, GuideConfig> = {
       'Learn how to fix invalid CSV files by detecting structural issues, correcting formatting problems, and validating data.',
 
     intro:
-      'Invalid CSV files can cause import failures, broken reports, or missing data. Fixing structural problems ensures reliability.',
+      'Invalid CSV files often cause failed imports, broken dashboards, missing records, or automation errors. Detecting and fixing structural problems early helps prevent data issues later.',
 
     summary:
-      'CSV validation and repair workflows help detect formatting errors and restore file consistency.',
+      'CSV validation and repair workflows help detect malformed rows, inconsistent columns, delimiter issues, and formatting errors before importing data into systems or databases.',
 
     whenToUse: [
       'When a CSV file fails to import.',
@@ -1002,6 +1002,17 @@ export const guideRegistry: Record<string, GuideConfig> = {
         question: 'What causes invalid CSV files?',
         answer:
           'Common causes include mismatched columns, missing values, or formatting errors.',
+      },
+      {
+        question: 'Why do CSV imports fail?',
+        answer:
+          'CSV imports often fail because of malformed rows, inconsistent column counts, delimiter issues, or invalid formatting.',
+      },
+
+      {
+        question: 'Should I validate CSV files before importing?',
+        answer:
+          'Yes. Validating CSV files before imports helps detect structural issues early and prevents downstream data problems.',
       },
     ],
 

@@ -3,7 +3,8 @@ import type { ToolConfig } from '../types'
 export const csvValidatorTool: ToolConfig = {
   slug: 'csv-validator',
   name: 'CSV Validator',
-  description: 'Validate the structure of your CSV file.',
+  description:
+    'Validate CSV structure, detect formatting issues, and identify malformed rows before importing files into systems or databases.',
   category: 'csv',
 
   input: {
@@ -16,8 +17,9 @@ export const csvValidatorTool: ToolConfig = {
   },
 
   seo: {
-    title: 'Validate CSV Online',
-    description: 'Upload a CSV file and validate its structure instantly.',
+    title: 'Validate CSV Files Online',
+    description:
+      'Upload CSV files to validate structure, detect malformed rows, and identify formatting issues before imports or automation workflows.',
   },
 
   processorKey: 'csvValidator',
