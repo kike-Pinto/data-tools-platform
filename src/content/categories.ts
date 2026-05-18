@@ -14,9 +14,9 @@ export const categoryRegistry: Record<string, CategoryConfig> = {
     name: 'CSV Tools',
     seoTitle: 'CSV Tools - Free Online CSV Utilities',
     seoDescription:
-      'Free online CSV tools to clean, validate, sort, filter, merge, split, and convert CSV files.',
+      'Free online CSV tools to clean, validate, sort, filter, merge, split, and convert CSV files for imports, reporting, analysis, and automation workflows.',
     intro:
-      'Explore free online CSV tools to clean data, remove duplicates, validate file structure, sort rows, filter records, merge files, split files, and more.',
+      'Explore free online CSV tools to clean messy spreadsheet exports, validate file structure, remove duplicates, sort rows, filter records, merge files, split files, and prepare CSV data for imports, reporting, analysis, and automation workflows.',
     toolSlugs: [
       'csv-to-json',
       'json-to-csv',
@@ -42,6 +42,9 @@ export const categoryRegistry: Record<string, CategoryConfig> = {
       'how-to-remove-duplicates-in-csv',
       'how-to-sort-a-csv-file',
       'how-to-validate-a-csv-file',
+      'how-to-prepare-a-csv-file-for-import',
+      'how-to-fix-invalid-csv-file',
+      'how-to-clean-large-csv-files-without-errors',
     ],
   },
 

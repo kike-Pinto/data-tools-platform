@@ -314,42 +314,48 @@ export const guideRegistry: Record<string, GuideConfig> = {
     seoDescription:
       'Learn how to clean a CSV file by fixing messy data, removing extra spaces, and preparing rows and columns for analysis or import.',
     intro:
-      'Cleaning a CSV file is often necessary before importing data into another system, generating reports, or sharing structured files with clients or teammates.',
+      'Cleaning a CSV file is often necessary before importing data into another system, uploading spreadsheet exports, generating reports, or using structured data in automation workflows.',
     summary:
-      'CSV files often contain extra spaces, inconsistent rows, empty fields, duplicate entries, or structural problems. A cleaning workflow reduces friction before analysis, import, or reporting.',
+      'CSV files often contain empty rows, extra spaces, inconsistent formatting, duplicate records, blank fields, or structural problems. A simple cleaning workflow helps reduce import errors and makes the file easier to analyze, validate, and reuse.',
     whenToUse: [
-      'Before importing CSV files into another platform.',
-      'Before sharing exported data with teammates or clients.',
-      'Before filtering, sorting, or validating the data further.',
+      'Before importing CSV files into another platform, database, or internal system.',
+      'After exporting messy data from spreadsheets, CRMs, admin panels, or reporting tools.',
+      'Before sharing, validating, filtering, sorting, or converting the data further.',
     ],
     steps: [
-      'Review the CSV structure and identify messy rows, blank values, or inconsistent formatting.',
-      'Use a CSV cleaning tool to normalize the file.',
-      'Remove duplicate rows if needed.',
-      'Remove empty columns or unnecessary fields.',
-      'Validate the final structure.',
-      'Export the cleaned version for reuse or import.',
+      'Review the CSV structure and identify empty rows, blank values, duplicated records, or inconsistent formatting.',
+      'Use a CSV cleaning tool to remove unnecessary empty rows and normalize the file.',
+      'Remove duplicate rows if the file contains repeated records.',
+      'Remove empty columns or unnecessary fields if they are not needed.',
+      'Validate the final CSV structure before importing or converting it.',
+      'Export the cleaned version for reporting, analysis, automation, or reuse.',
     ],
     commonMistakes: [
-      'Cleaning only visible problems and ignoring structural issues.',
+      'Cleaning only visible problems and ignoring hidden structural issues.',
       'Skipping validation after cleanup.',
-      'Trying to fix multiple different CSV issues manually when tools can simplify the process.',
+      'Importing exported CSV files without checking for empty rows or inconsistent formatting.',
+      'Trying to fix large CSV files manually instead of using a repeatable cleanup workflow.',
     ],
     faq: [
       {
         question: 'What does cleaning a CSV file usually involve?',
         answer:
-          'It often includes normalizing values, removing duplicates, deleting empty columns, and validating structure.',
+          'It usually involves removing empty rows, fixing inconsistent formatting, deleting unnecessary columns, removing duplicates, and preparing the file for validation, import, or analysis.',
+      },
+      {
+        question: 'Should I clean a CSV file before importing it?',
+        answer:
+          'Yes. Cleaning a CSV file before importing it can reduce errors caused by blank rows, inconsistent values, duplicated records, or messy spreadsheet exports.',
+      },
+      {
+        question: 'Can empty rows break CSV imports?',
+        answer:
+          'Yes. Some systems may reject CSV files or import incorrect data if the file contains empty rows, unexpected blank records, or inconsistent structure.',
       },
       {
         question: 'Should I validate the CSV after cleaning it?',
         answer:
-          'Yes. Validation helps confirm the file is consistent before you import or share it.',
-      },
-      {
-        question: 'Can CSV cleaning improve imports?',
-        answer:
-          'Yes. Cleaner files usually reduce errors and make downstream workflows easier.',
+          'Yes. Validation helps confirm that the cleaned file still has a consistent structure before you import, convert, or share it.',
       },
     ],
     toolBenefits: [
