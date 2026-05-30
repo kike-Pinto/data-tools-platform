@@ -708,57 +708,69 @@ export const guideRegistry: Record<string, GuideConfig> = {
   'how-to-validate-a-csv-file': {
     slug: 'how-to-validate-a-csv-file',
     title: 'How to Validate a CSV File',
-    seoTitle: 'How to Validate a CSV File - Step-by-Step Guide',
+    seoTitle: 'How to Validate a CSV File - Check CSV Structure Online',
     seoDescription:
-      'Learn how to validate a CSV file and detect structural issues before import, export, or automation workflows.',
+      'Learn how to validate a CSV file, check structure, detect malformed rows, and find formatting issues before imports, reports, or automation workflows.',
     intro:
-      'Validating a CSV file helps detect inconsistent column counts, missing headers, and other structural issues before they cause bigger problems.',
+      'Validating a CSV file helps detect malformed rows, inconsistent column counts, missing headers, and formatting issues before the file breaks imports, reports, or automation workflows.',
     summary:
-      'CSV validation is one of the most important pre-import checks. It helps detect format inconsistencies early, so the file is easier to trust and safer to use in downstream systems.',
+      'CSV validation is one of the most important checks before importing or processing structured data. It helps confirm that rows, columns, headers, and formatting are consistent enough for downstream systems.',
     whenToUse: [
-      'Before importing a CSV into another platform.',
-      'After cleaning or editing a CSV manually.',
-      'When a CSV export seems broken or inconsistent.',
+      'Before importing a CSV into another platform, database, CRM, or internal system.',
+      'After cleaning, editing, exporting, or manually modifying a CSV file.',
+      'When a CSV file opens in Excel but still causes errors during upload or import.',
     ],
     steps: [
       'Prepare the CSV file you want to check.',
       'Open the CSV Validator tool.',
-      'Upload the file.',
-      'Run the validation.',
-      'Review any detected issues.',
-      'Fix the file or continue if the structure is valid.',
+      'Upload the CSV file.',
+      'Run the validation check.',
+      'Review detected issues such as malformed rows, missing headers, or inconsistent columns.',
+      'Fix the file and validate it again before importing, converting, or sharing it.',
     ],
     commonMistakes: [
-      'Assuming a file is valid just because it opens in Excel.',
-      'Skipping validation after manual edits.',
-      'Ignoring duplicated headers or inconsistent row lengths.',
+      'Assuming a file is valid just because it opens in Excel or Google Sheets.',
+      'Skipping validation after cleaning or manually editing the CSV.',
+      'Ignoring duplicated headers, missing values, or inconsistent row lengths.',
+      'Importing CSV files into production systems without checking structure first.',
     ],
     faq: [
       {
-        question: 'Why validate a CSV file?',
+        question: 'What does a CSV validator check?',
         answer:
-          'Validation helps catch structural issues before they break imports, reports, or automations.',
+          'A CSV validator checks whether the file structure is consistent. It can help detect malformed rows, inconsistent column counts, missing headers, duplicated headers, or formatting problems that may break imports.',
       },
       {
-        question: 'Can a CSV look normal but still be invalid?',
+        question: 'Why should I validate a CSV file before importing it?',
         answer:
-          'Yes. A file can appear fine visually and still contain structural inconsistencies.',
+          'Validating a CSV file before import helps prevent upload errors, broken reports, incomplete data, and automation failures caused by inconsistent structure or malformed rows.',
       },
       {
-        question: 'Should validation happen before import?',
+        question:
+          'Can a CSV file open correctly in Excel but still be invalid?',
         answer:
-          'Yes. It is one of the safest checks you can do before using a CSV in another system.',
+          'Yes. Excel may open a CSV file even when the file contains structural issues, inconsistent rows, hidden formatting problems, or missing headers that can break other systems.',
+      },
+      {
+        question: 'What are malformed rows in a CSV file?',
+        answer:
+          'Malformed rows are rows that do not match the expected structure of the file. For example, a row may have too many columns, too few columns, missing values, or broken separators.',
+      },
+      {
+        question: 'Should I validate a CSV after cleaning it?',
+        answer:
+          'Yes. After cleaning a CSV file, validation helps confirm that the final structure is still consistent before using the file for imports, reports, analysis, or automation workflows.',
       },
     ],
     toolBenefits: [
-      'Catch structural problems before they break downstream workflows.',
-      'Reduce failed imports and confusing file errors.',
-      'Build confidence before using a CSV in another system.',
+      'Detect malformed rows and inconsistent structure before imports.',
+      'Reduce failed uploads, broken reports, and confusing CSV errors.',
+      'Check whether a CSV file is safer to use in another system.',
     ],
     expectedResult:
-      'A validation result that helps confirm whether your CSV structure is safe to use.',
+      'A clear validation result showing whether your CSV structure is consistent enough for imports, reports, conversion, or automation workflows.',
     whyThisMatters:
-      'Validating a CSV file helps detect structural problems early, such as mismatched columns, missing headers, or inconsistent formatting. Fixing these issues before importing or sharing the file prevents failed uploads, broken reports, and unexpected data loss.',
+      'Validating a CSV file helps detect structural problems early, such as malformed rows, mismatched columns, missing headers, duplicated headers, or inconsistent formatting. Fixing these issues before importing or sharing the file can prevent failed uploads, broken reports, automation errors, and unexpected data loss.',
 
     beforeYouStart: [
       'Make sure your CSV file is saved correctly and not corrupted.',

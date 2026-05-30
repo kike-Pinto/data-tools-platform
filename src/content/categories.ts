@@ -91,9 +91,9 @@ export const categoryRegistry: Record<string, CategoryConfig> = {
     name: 'Data Cleaning Tools',
     seoTitle: 'Data Cleaning Tools - Free Online Data Cleanup Utilities',
     seoDescription:
-      'Free online data cleaning tools to remove duplicates, clean CSV files, delete empty columns, validate structure, and prepare data for analysis.',
+      'Free online data cleaning tools to clean CSV files, validate structure, remove duplicates, delete empty columns, filter rows, and prepare data for imports, reports, analysis, and automation workflows.',
     intro:
-      'Clean and prepare CSV data before imports, reporting, analytics, or automation workflows. Use these tools to remove duplicates, validate structure, filter rows, organize columns, and fix formatting issues.',
+      'Clean, validate, and prepare CSV data before imports, reporting, analytics, or automation workflows. Use these tools to remove duplicates, validate CSV structure, filter rows, organize columns, delete empty fields, and fix common formatting issues.',
     toolSlugs: [
       'csv-cleaner',
       'remove-duplicates-csv',
@@ -107,12 +107,12 @@ export const categoryRegistry: Record<string, CategoryConfig> = {
     ],
     guideSlugs: [
       'how-to-clean-a-csv-file',
-      'how-to-remove-duplicates-in-csv',
-      'how-to-remove-empty-columns-in-csv',
-      'how-to-filter-csv-rows',
       'how-to-validate-a-csv-file',
       'how-to-fix-invalid-csv-file',
       'how-to-prepare-a-csv-file-for-import',
+      'how-to-remove-duplicates-in-csv',
+      'how-to-remove-empty-columns-in-csv',
+      'how-to-filter-csv-rows',
     ],
   },
 }

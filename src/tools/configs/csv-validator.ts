@@ -4,12 +4,12 @@ export const csvValidatorTool: ToolConfig = {
   slug: 'csv-validator',
   name: 'CSV Validator',
   description:
-    'Validate CSV structure, detect formatting issues, and identify malformed rows before importing files into systems or databases.',
+    'Validate CSV files online, detect malformed rows, check structure, and find formatting issues before imports or automation workflows.',
   category: 'csv',
 
   input: {
     kind: 'file',
-    accept: '.csv',
+    accept: '.csv,text/csv',
   },
 
   output: {
@@ -17,9 +17,9 @@ export const csvValidatorTool: ToolConfig = {
   },
 
   seo: {
-    title: 'Validate CSV Files Online',
+    title: 'CSV Validator Online - Validate CSV Files',
     description:
-      'Upload CSV files to validate structure, detect malformed rows, and identify formatting issues before imports or automation workflows.',
+      'Validate CSV files online for free. Detect malformed rows, inconsistent columns, missing headers, and formatting issues before imports, reports, or automation workflows.',
   },
 
   processorKey: 'csvValidator',
