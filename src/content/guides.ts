@@ -399,77 +399,89 @@ export const guideRegistry: Record<string, GuideConfig> = {
   'how-to-remove-duplicates-in-csv': {
     slug: 'how-to-remove-duplicates-in-csv',
     title: 'How to Remove Duplicates in CSV',
-    seoTitle: 'How to Remove Duplicates in CSV - Step-by-Step Guide',
+    seoTitle: 'How to Remove Duplicates in CSV - Clean Duplicate Rows',
     seoDescription:
-      'Learn how to remove duplicate rows from a CSV file quickly and prepare cleaner data for reports, imports, or analysis.',
+      'Learn how to remove duplicate rows from a CSV file, clean repeated records, and prepare better data for imports, reports, analysis, or automation workflows.',
     intro:
-      'Duplicate rows can create import issues, inaccurate reporting, and messy exports. This guide shows how to remove them quickly and safely.',
+      'Duplicate rows in CSV files can create import issues, inflated reports, repeated records, and unreliable analysis. This guide shows how to remove duplicates safely before using the file in another workflow.',
     summary:
-      'Removing duplicate rows is one of the simplest ways to improve CSV quality. It reduces repeated records, makes reports more accurate, and prepares files for cleaner imports.',
+      'Removing duplicate rows is one of the simplest ways to improve CSV quality. It reduces repeated records, improves reporting accuracy, and helps prepare cleaner files for imports, validation, analysis, and automation workflows.',
     whenToUse: [
-      'When exported data contains repeated rows.',
-      'When reports look inflated because records appear more than once.',
-      'Before importing CSV data into another system.',
+      'When exported CSV data contains repeated rows or duplicated records.',
+      'When reports, totals, or analysis results look inflated because records appear more than once.',
+      'Before importing CSV data into another platform, database, CRM, or internal system.',
     ],
     steps: [
-      'Open your CSV file and confirm which rows are duplicated.',
+      'Open your CSV file and check whether duplicate rows should actually be removed.',
       'Go to the Remove Duplicates CSV tool.',
-      'Upload the file.',
-      'Run the tool.',
-      'Download the cleaned file.',
-      'Validate the result before using it in another workflow.',
+      'Upload the CSV file.',
+      'Run the duplicate removal process.',
+      'Download the cleaned CSV file.',
+      'Review the row count and validate the final file before using it in another workflow.',
     ],
     commonMistakes: [
       'Removing rows without checking whether duplicates are truly unwanted.',
-      'Assuming similar rows are identical when key fields differ.',
-      'Skipping a final review after deduplication.',
+      'Assuming similar rows are identical when key fields or timestamps are different.',
+      'Skipping a final row count review after removing duplicates.',
+      'Removing duplicates after importing instead of cleaning the CSV before the import.',
     ],
     faq: [
       {
-        question: 'Why are duplicate rows a problem?',
+        question: 'Why are duplicate rows a problem in CSV files?',
         answer:
-          'They can distort reports, create import issues, and reduce trust in the dataset.',
+          'Duplicate rows can inflate totals, distort reports, create repeated records, and make analysis less reliable. They can also cause problems when importing data into another system.',
       },
       {
-        question: 'Should I review duplicates before deleting them?',
+        question: 'Should I remove duplicates before importing a CSV file?',
         answer:
-          'Yes. Some repeated-looking records may still represent valid separate entries.',
+          'Yes. Removing duplicate rows before import can reduce repeated records, prevent inflated reports, and make the imported data easier to trust.',
+      },
+      {
+        question: 'Are similar rows always duplicates?',
+        answer:
+          'No. Similar rows are not always true duplicates. Some records may look similar but have different IDs, dates, timestamps, statuses, or other important fields.',
+      },
+      {
+        question: 'What should I check after removing duplicates?',
+        answer:
+          'After removing duplicates, review the row count, check important records, and validate the CSV structure before using it in reports, imports, or automation workflows.',
       },
     ],
     toolBenefits: [
       'Remove repeated rows faster than doing it manually.',
-      'Improve reporting accuracy and reduce noise in exports.',
-      'Prepare cleaner files for imports and analysis.',
+      'Improve reporting accuracy and reduce duplicated records in exports.',
+      'Prepare cleaner CSV files for imports, validation, analysis, and automation workflows.',
     ],
     expectedResult:
-      'A CSV file with duplicate rows removed and a cleaner final dataset.',
+      'A cleaner CSV file with duplicate rows removed and fewer repeated records before imports, reports, analysis, or automation workflows.',
     whyThisMatters:
-      'Duplicate rows can distort reports, inflate totals, and create confusion during analysis. Removing duplicates ensures that each record is counted only once, making your dataset more accurate and reliable.',
+      'Duplicate rows can distort reports, inflate totals, create repeated records, and reduce trust in your data. Removing duplicates before importing, validating, or analyzing a CSV file helps make the dataset cleaner, more accurate, and easier to reuse.',
 
     beforeYouStart: [
-      'Decide which columns define a duplicate record.',
-      'Check if duplicates should be removed entirely or merged.',
+      'Decide which columns define a true duplicate record.',
+      'Check whether repeated-looking rows should be removed or kept as valid separate entries.',
       'Save a copy of the original file before removing duplicates.',
     ],
 
     afterYouFinish: [
       'Review the cleaned dataset to confirm duplicates were removed correctly.',
-      'Check totals or row counts to verify expected results.',
-      'Validate the file before importing or sharing it.',
+      'Compare row counts before and after removing duplicates.',
+      'Validate the file before importing, sharing, or using it in automation workflows.',
     ],
 
     realWorldTips: [
-      'Duplicates often appear after merging multiple CSV files.',
-      'Always verify that unique identifiers remain consistent.',
-      'Removing duplicates regularly keeps datasets easier to manage.',
+      'Duplicates often appear after merging multiple CSV files or exporting data from different systems.',
+      'Always verify that unique identifiers, dates, and timestamps remain consistent.',
+      'If a CSV file will be imported into another system, remove duplicates before the upload instead of fixing them later.',
     ],
     toolSlug: 'remove-duplicates-csv',
     relatedCategorySlugs: ['csv-tools', 'data-cleaning-tools'],
     relatedGuideSlugs: [
       'how-to-clean-a-csv-file',
+      'how-to-validate-a-csv-file',
+      'how-to-fix-invalid-csv-file',
+      'how-to-prepare-a-csv-file-for-import',
       'how-to-remove-empty-columns-in-csv',
-      'how-to-create-a-clean-csv-dataset',
-      'how-to-clean-large-csv-files-without-errors',
     ],
   },
 

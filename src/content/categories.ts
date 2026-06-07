@@ -107,10 +107,10 @@ export const categoryRegistry: Record<string, CategoryConfig> = {
     ],
     guideSlugs: [
       'how-to-clean-a-csv-file',
+      'how-to-remove-duplicates-in-csv',
       'how-to-validate-a-csv-file',
       'how-to-fix-invalid-csv-file',
       'how-to-prepare-a-csv-file-for-import',
-      'how-to-remove-duplicates-in-csv',
       'how-to-remove-empty-columns-in-csv',
       'how-to-filter-csv-rows',
     ],
