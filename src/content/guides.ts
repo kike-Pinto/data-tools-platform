@@ -1289,78 +1289,91 @@ export const guideRegistry: Record<string, GuideConfig> = {
 
     title: 'How to Count Rows in a CSV File',
 
-    seoTitle: 'How to Count Rows in a CSV File - Quick Step-by-Step Guide',
+    seoTitle: 'How to Count Rows in a CSV File - Count CSV Records',
 
     seoDescription:
-      'Learn how to count rows in a CSV file quickly to measure dataset size before splitting, importing, or analyzing data.',
+      'Learn how to count rows in a CSV file, measure dataset size, verify exports, and prepare CSV files for imports, splitting, reporting, or analysis.',
 
     intro:
-      'Counting rows in a CSV file is a simple but useful step when you want to understand dataset size before cleaning, splitting, importing, or reporting.',
+      'Counting rows in a CSV file is one of the quickest ways to understand dataset size before cleaning, validating, splitting, importing, reporting, or analyzing structured data.',
 
     summary:
-      'A quick row count helps you estimate file size, verify exports, and confirm whether a filtered or cleaned dataset contains the expected number of records.',
+      'A CSV row count helps estimate dataset size, verify spreadsheet exports, compare original and cleaned files, and prepare large datasets for imports, validation, reporting, or analysis.',
 
     whenToUse: [
-      'Before splitting a large CSV file.',
-      'Before importing data into another platform.',
-      'When verifying export size or expected record counts.',
+      'Before splitting a large CSV file into smaller files.',
+      'Before importing CSV data into another platform or database.',
+      'When verifying exported data or checking expected record counts.',
+      'When comparing original and cleaned CSV datasets.',
     ],
 
     steps: [
       'Open the CSV Row Counter tool.',
       'Upload your CSV file.',
-      'Run the tool.',
-      'Review the total row count.',
-      'Use the result to plan the next step in your workflow.',
+      'Run the row counting process.',
+      'Review the total number of data rows.',
+      'Compare the result with expected export totals if needed.',
+      'Use the row count to plan validation, splitting, imports, or further processing.',
     ],
 
     commonMistakes: [
-      'Assuming the file size tells you enough without checking row count.',
-      'Forgetting to confirm whether the count refers to data rows only.',
-      'Skipping row checks before splitting or importing large files.',
+      'Assuming the file size alone indicates how much data the CSV contains.',
+      'Forgetting to check whether the tool counts only data rows or includes the header.',
+      'Skipping row count verification before splitting or importing very large CSV files.',
+      'Ignoring differences between the original dataset and the cleaned dataset.',
     ],
 
     faq: [
       {
         question: 'Why count rows in a CSV file?',
         answer:
-          'Row counts help you understand dataset size before analysis, splitting, import, or reporting.',
+          'Counting rows helps estimate dataset size, verify exports, compare datasets, and prepare CSV files for imports, splitting, reporting, or analysis.',
       },
       {
-        question: 'Can row counting help before splitting a file?',
+        question: 'Does the row count include the header row?',
         answer:
-          'Yes. It makes it easier to decide how to divide a large dataset into smaller parts.',
+          'That depends on the tool. Many CSV row counters report only data rows, while others may include the header separately.',
+      },
+      {
+        question: 'Why compare row counts before and after cleaning?',
+        answer:
+          'Comparing row counts helps confirm whether duplicate rows, empty rows, or filtered records were removed as expected during the cleaning process.',
+      },
+      {
+        question: 'Can row counting help before splitting a CSV file?',
+        answer:
+          'Yes. Knowing the total number of rows makes it much easier to divide large datasets into smaller files of similar size.',
       },
     ],
 
     toolBenefits: [
-      'Measure dataset size quickly.',
-      'Plan imports, splits, and reviews more easily.',
-      'Verify whether exports contain the expected number of records.',
+      'Measure CSV dataset size in seconds.',
+      'Verify spreadsheet exports before imports or reporting.',
+      'Compare original and cleaned datasets more easily.',
     ],
 
     expectedResult:
-      'A row count result showing how many records exist in the CSV file.',
+      'An accurate row count showing how many data records exist in the CSV file before further processing.',
 
     whyThisMatters:
-      'Knowing how many rows a CSV file contains helps you estimate effort, confirm export quality, and avoid mistakes in later steps such as splitting, importing, or validating the dataset.',
+      'Knowing how many rows a CSV file contains helps estimate processing effort, confirm export quality, compare datasets, and reduce mistakes before splitting, importing, validating, or analyzing structured data.',
 
     beforeYouStart: [
-      'Make sure the CSV file is the final version you want to inspect.',
-      'Keep in mind whether you care about header rows or only data rows.',
-      'Save the original file if you plan to process it afterward.',
+      'Make sure the CSV file is the version you actually want to measure.',
+      'Know whether you need to count only data rows or include the header row.',
+      'Keep the original CSV file if additional processing will be performed later.',
     ],
 
     afterYouFinish: [
-      'Use the row count to decide whether the file needs splitting.',
-      'Compare the count with expected totals if the file came from an export.',
-      'Continue with validation, filtering, or cleanup if needed.',
+      'Compare the row count with the expected number of exported records.',
+      'Use the result to decide whether the CSV should be split into smaller files.',
+      'Continue with validation, cleanup, filtering, or imports if needed.',
     ],
 
     realWorldTips: [
-      'Row counting is useful before splitting large files into smaller parts.',
-      'A quick row count can reveal whether an export is incomplete.',
-      'Use row counts to compare original and cleaned datasets.',
+      'Large CSV exports often contain more records than expected because of duplicate rows.',
+      'Comparing row counts before and after cleanup helps verify that changes were applied correctly.',
+      'Many import limits are based on row count rather than file size, so checking rows first can save time.',
     ],
 
     toolSlug: 'csv-row-counter',
@@ -1369,9 +1382,10 @@ export const guideRegistry: Record<string, GuideConfig> = {
 
     relatedGuideSlugs: [
       'how-to-split-csv-file',
-      'how-to-filter-csv-rows',
+      'how-to-clean-a-csv-file',
       'how-to-validate-a-csv-file',
       'how-to-organize-large-csv-files',
+      'how-to-filter-csv-rows',
     ],
   },
 
