@@ -1,114 +1,105 @@
 # Data Tools Platform Metrics
 
-## 2026-05-XX (Reporte anterior)
+## Current Snapshot
 
-### Indexation
+Latest report: 2026-06-XX
 
-Indexed pages: 16
+Indexed pages: 37  
+Non-indexed pages: 19  
+Clicks: 29  
+Impressions: 3360  
+CTR: 0.9%  
+Average position: 37.2
 
-Non-indexed pages: 40
+Main SEO clusters:
 
-### Search Performance
-
-Clicks: 10
-
-Impressions: 1760
-
-CTR: 0.6%
-
-Average Position: 33.9
-
-### Top Queries
-
-| Query                | Clicks | Impressions |
-| -------------------- | -----: | ----------: |
-| validate csv         |      1 |         145 |
-| csv sorter           |      1 |           5 |
-| data cleaning online |      1 |           3 |
-| csv validator online |      0 |         114 |
-| csv to json          |      0 |          97 |
-
-### Top Pages
-
-| Page                    | Clicks | Impressions |
-| ----------------------- | -----: | ----------: |
-| csv-validator           |      1 |         411 |
-| how-to-clean-a-csv-file |      2 |         384 |
-| csv-sorter              |      2 |         149 |
-| data-cleaning-tools     |      1 |         278 |
-| home                    |      1 |          73 |
-
-### Notes
-
-- CSV Validator emerged as the strongest SEO tool.
-- Data Cleaning cluster started generating impressions.
-- CSV to JSON cluster showed growth potential.
+1. CSV to JSON
+2. CSV Validation
+3. Data Cleaning
+4. CSV Row Counting
 
 ---
 
-## 2026-06-XX (Current Report)
+## Reports
 
-### Indexation
+### 2026-06-XX
 
-Indexed pages: 32
+Indexed pages: 37  
+Non-indexed pages: 19  
+Clicks: 29  
+Impressions: 3360  
+CTR: 0.9%  
+Average position: 37.2
 
-Non-indexed pages: 24
-
-### Search Performance
-
-Clicks: 17
-
-Impressions: 2120
-
-CTR: 0.8%
-
-Average Position: 35.6
-
-### Growth vs Previous Report
-
-Indexed Pages: +16
-
-Clicks: +7
-
-Impressions: +360
-
-CTR: +0.2%
-
-### Top Queries
+Top queries:
 
 | Query                | Clicks | Impressions |
 | -------------------- | -----: | ----------: |
-| validate csv         |      1 |         174 |
-| csv to json          |      1 |         140 |
-| csv sorter           |      1 |           5 |
-| data cleaning online |      1 |           4 |
-| csv validator online |      0 |         145 |
+| csv to json          |      1 |         291 |
+| validate csv         |      1 |         261 |
+| csv validator online |      0 |         225 |
+| data cleansing tools |      0 |          66 |
+| convert csv to json  |      0 |          47 |
 
-### Top Pages
+Top pages:
 
-| Page                       | Clicks | Impressions |
-| -------------------------- | -----: | ----------: |
-| csv-validator              |      2 |         503 |
-| how-to-clean-a-csv-file    |      2 |         421 |
-| csv-sorter                 |      2 |         172 |
-| how-to-convert-csv-to-json |      1 |         368 |
-| data-cleaning-tools        |      1 |         302 |
+| Page                            | Clicks | Impressions |
+| ------------------------------- | -----: | ----------: |
+| how-to-count-rows-in-a-csv-file |      6 |         141 |
+| csv-validator                   |      3 |         733 |
+| how-to-clean-a-csv-file         |      3 |         489 |
+| excel-cleaner                   |      3 |           9 |
+| how-to-convert-csv-to-json      |      1 |         667 |
 
-### Strongest SEO Clusters
+Notes:
 
-1. CSV Validation
-2. CSV to JSON
-3. Data Cleaning
+- Indexed pages increased from 32 to 37.
+- CSV to JSON became the strongest impression cluster.
+- Count Rows guide showed unusual growth (+347%).
+- CSV Validator remains the strongest tool page by impressions.
 
-### Notes
+---
 
-- Indexed pages doubled from 16 to 32.
-- CSV Validator remains the strongest performing tool.
-- CSV to JSON continues to gain impressions.
-- Data Cleaning category continues to strengthen.
-- Google is indexing deeper pages across the site.
-- Continue strengthening winning clusters instead of creating new tool families.
+### 2026-06-XX Previous Report
 
-```
+Indexed pages: 32  
+Non-indexed pages: 24  
+Clicks: 17  
+Impressions: 2120  
+CTR: 0.8%  
+Average position: 35.6
 
-```
+---
+
+### 2026-05-XX
+
+Indexed pages: 16  
+Non-indexed pages: 40  
+Clicks: 10  
+Impressions: 1760  
+CTR: 0.6%  
+Average position: 33.9
+
+---
+
+## SEO Backlog
+
+### High Priority
+
+- csv-to-json
+- how-to-convert-csv-to-json
+- csv-validator
+- how-to-count-rows-in-a-csv-file
+
+### Medium Priority
+
+- csv-cleaner
+- remove-duplicates-csv
+- excel-cleaner
+- data-cleaning-tools
+
+### Later
+
+- Spanish version
+- UI modernization
+- New tool families
