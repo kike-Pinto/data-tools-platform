@@ -32,57 +32,69 @@ export const guideRegistry: Record<string, GuideConfig> = {
   'how-to-convert-csv-to-json': {
     slug: 'how-to-convert-csv-to-json',
     title: 'How to Convert CSV to JSON',
-    seoTitle: 'How to Convert CSV to JSON - Simple Step-by-Step Guide',
+    seoTitle: 'How to Convert CSV to JSON - CSV to JSON Guide',
     seoDescription:
-      'Learn how to convert CSV to JSON step by step using a simple online tool.',
+      'Learn how to convert CSV to JSON, transform spreadsheet rows into structured JSON objects, and prepare data for apps, APIs, scripts, integrations, or automation workflows.',
     intro:
-      'Converting CSV to JSON is useful when you need to move spreadsheet-style data into apps, APIs, scripts, or web workflows. This guide shows the simplest way to do it.',
+      'Converting CSV to JSON is useful when you need to move spreadsheet-style data into apps, APIs, scripts, integrations, or automation workflows. This guide explains how to convert CSV rows and headers into structured JSON safely.',
     summary:
-      'CSV to JSON conversion is one of the most common data preparation tasks when moving from spreadsheet-based files into software workflows. The main goal is to preserve the structure of the original rows and columns while transforming them into valid JSON objects.',
+      'CSV to JSON conversion transforms tabular rows and columns into structured JSON objects. It is commonly used when moving spreadsheet exports into software workflows, APIs, integrations, scripts, and web applications.',
     whenToUse: [
-      'When you need to send tabular data into an app or API.',
-      'When you want to transform spreadsheet exports into developer-friendly structured data.',
-      'When you need JSON output for automation, scripts, or web projects.',
+      'When you need to send tabular CSV data into an app, API, script, or integration.',
+      'When you want to transform spreadsheet exports into developer-friendly JSON objects.',
+      'When a workflow, automation, or web project requires JSON instead of raw CSV.',
     ],
     steps: [
-      'Prepare your CSV file and make sure the headers are correct.',
+      'Prepare your CSV file and confirm that the first row contains clear headers.',
+      'Clean the CSV file if it contains empty rows, duplicate records, or inconsistent formatting.',
       'Open the CSV to JSON tool.',
       'Upload your CSV file.',
       'Run the conversion.',
-      'Copy or download the resulting JSON output.',
-      'Validate the output before using it in your project or workflow.',
+      'Review, copy, or download the resulting JSON output.',
+      'Validate the JSON structure before using it in an app, API, script, or workflow.',
     ],
     commonMistakes: [
-      'Using a CSV file with missing or inconsistent headers.',
-      'Ignoring extra spaces or malformed rows before converting.',
-      'Assuming the output JSON is ready for production without validating it.',
+      'Using a CSV file with missing, duplicated, or inconsistent headers.',
+      'Converting messy CSV data without cleaning or validating it first.',
+      'Ignoring malformed rows that can produce incorrect JSON objects.',
+      'Assuming the generated JSON is ready for production without reviewing the output.',
     ],
     faq: [
       {
         question: 'Why convert CSV to JSON?',
         answer:
-          'JSON is easier to use in apps, APIs, scripts, and web development workflows than raw CSV files.',
+          'JSON is easier to use in apps, APIs, scripts, integrations, and web development workflows. Converting CSV to JSON helps transform spreadsheet-style rows into structured objects.',
       },
       {
-        question: 'Do CSV headers matter?',
+        question: 'Do CSV headers become JSON keys?',
         answer:
-          'Yes. Headers usually become the property names in the resulting JSON objects.',
+          'Usually yes. The column headers in the CSV file are commonly used as the property names in the resulting JSON objects.',
       },
       {
-        question: 'Should I clean the CSV before converting?',
+        question: 'Should I clean the CSV before converting it to JSON?',
         answer:
-          'Yes. Cleaning the file first can reduce errors and produce more reliable JSON output.',
+          'Yes. Cleaning the CSV first can reduce problems caused by empty rows, duplicated records, inconsistent formatting, or malformed rows.',
+      },
+      {
+        question: 'Can CSV to JSON conversion be used for APIs?',
+        answer:
+          'Yes. Many APIs and software workflows use JSON, so converting CSV data to JSON can make spreadsheet exports easier to reuse in applications and integrations.',
+      },
+      {
+        question: 'What can break CSV to JSON conversion?',
+        answer:
+          'Missing headers, duplicated headers, inconsistent columns, unexpected line breaks, and malformed rows can all produce incorrect or confusing JSON output.',
       },
     ],
     toolBenefits: [
       'Convert spreadsheet-style rows into structured JSON quickly.',
-      'Avoid doing manual copy-paste transformations.',
-      'Get output that is easier to use in apps, APIs, and scripts.',
+      'Prepare CSV data for apps, APIs, scripts, integrations, and automation workflows.',
+      'Avoid manual copy-paste transformations and reduce formatting mistakes.',
     ],
     expectedResult:
-      'A structured JSON output generated from your CSV file, ready to review, copy, or reuse.',
+      'A structured JSON output generated from your CSV file, ready to review, copy, download, validate, or reuse in apps, APIs, scripts, and workflows.',
     whyThisMatters:
-      'CSV to JSON conversion is one of the most common transformations when moving spreadsheet data into software systems. Many apps, APIs, and automation workflows rely on JSON, so understanding how to convert reliably helps prevent broken imports and data errors.',
+      'CSV to JSON conversion is one of the most common transformations when moving spreadsheet data into software systems. Apps, APIs, integrations, and automation workflows often rely on JSON, so converting CSV files correctly helps prevent broken imports, malformed objects, and data mapping errors.',
 
     beforeYouStart: [
       'Make sure your CSV file contains clear column headers.',
@@ -106,6 +118,8 @@ export const guideRegistry: Record<string, GuideConfig> = {
     relatedGuideSlugs: [
       'how-to-convert-json-to-csv',
       'how-to-clean-a-csv-file',
+      'how-to-validate-a-csv-file',
+      'how-to-fix-invalid-csv-file',
       'how-to-convert-csv-to-excel',
       'how-to-convert-excel-to-json',
     ],

@@ -21,18 +21,24 @@ import type { ToolConfig } from '@/tools/types'
 export const csvToJsonTool: ToolConfig = {
   slug: 'csv-to-json',
   name: 'CSV to JSON',
-  description: 'Convert CSV files into formatted JSON.',
+  description:
+    'Convert CSV files to JSON online and transform spreadsheet data into structured JSON for apps, APIs, scripts, and automation workflows.',
   category: 'csv',
+
   input: {
     kind: 'file',
     accept: '.csv,text/csv',
   },
+
   output: {
     kind: 'text',
   },
+
   seo: {
-    title: 'CSV to JSON Converter',
-    description: 'Convert CSV files to JSON instantly in your browser.',
+    title: 'CSV to JSON Converter Online',
+    description:
+      'Convert CSV to JSON online for free. Transform CSV files into structured JSON for apps, APIs, scripts, integrations, and automation workflows.',
   },
+
   processorKey: 'csvToJson',
 }

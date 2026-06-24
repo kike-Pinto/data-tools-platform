@@ -65,9 +65,9 @@ export const categoryRegistry: Record<string, CategoryConfig> = {
     name: 'File Conversion Tools',
     seoTitle: 'File Conversion Tools - Free Online File Converters',
     seoDescription:
-      'Convert files between CSV, JSON, and Excel formats with free online file conversion tools.',
+      'Free online file conversion tools to convert CSV, JSON, and Excel files for apps, APIs, reports, imports, integrations, and automation workflows.',
     intro:
-      'Convert data files between common formats like CSV, JSON, and Excel using simple online tools.',
+      'Convert data files between common formats like CSV, JSON, and Excel. Use these free online tools to prepare spreadsheet exports, structured data, reports, imports, API workflows, integrations, and automation tasks.',
     toolSlugs: [
       'csv-to-json',
       'json-to-csv',
@@ -81,8 +81,8 @@ export const categoryRegistry: Record<string, CategoryConfig> = {
       'how-to-convert-json-to-csv',
       'how-to-convert-csv-to-excel',
       'how-to-convert-excel-to-csv',
-      'how-to-clean-messy-excel-data',
       'how-to-convert-excel-to-json',
+      'how-to-clean-messy-excel-data',
     ],
   },
 
